@@ -16,10 +16,12 @@ import { VideoLibraryModal } from '@/components/VideoLibraryModal';
 import { VideoSection } from '@/components/VideoSection';
 import { Footer } from '@/components/Footer';
 import { GreenerHomeDetail } from '@/components/GreenerHomeDetail';
+import { GreenerFoodDetail } from '@/components/GreenerFoodDetail';
 
 export default function Home() {
   const [activePage, setActivePage] = useState<string>('home');
   const [selectedDetailArticleId, setSelectedDetailArticleId] = useState<string>('detail-1');
+  const [selectedFoodArticleId, setSelectedFoodArticleId] = useState<string>('food-detail-1');
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const [consultationOpen, setConsultationOpen] = useState<boolean>(false);
   const [compareOpen, setCompareOpen] = useState<boolean>(false);
@@ -197,18 +199,26 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 pb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Clean Produce', img: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=800&auto=format&fit=crop', desc: 'Soaking fruits and vegetables in Strong Kangen Water (pH 11.5) removes oily pesticides and residue that tap water cannot wash off.' },
-                { title: 'Cooking with Kangen Water®', img: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to integrate Kangen Water® into your favorite recipes by simply replacing tap water with one of the 3 different types of Kangen Water® for cooking.' },
-                { title: 'Kangen Tea', img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop', desc: 'Infuse tea effortlessly! Kangen Water\'s micro-clustered molecules penetrate tea leaves quickly even with cold or room-temp water.' },
-                { title: 'Brining & Tenderizing Meat with Kangen Water®', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop', desc: 'Soak meats in Kangen 9.5 before cooking to draw out gamey odors, tenderize tough fibers, and lock in savory natural juices.' },
-                { title: 'Green Smoothie', img: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=800&auto=format&fit=crop', desc: 'Boost your daily morning smoothie by blending organic greens with Kangen Water for maximum nutrient absorption and energy.' },
-                { title: 'Sayra\'s Cornbread', img: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=800&auto=format&fit=crop', desc: 'Bake lighter, fluffier cornbread using Kangen 9.5 Water. The micro-clustering enhances texture and preserves rich corn flavor.' }
+                { id: 'food-detail-1', title: 'Best Produce', img: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=800&auto=format&fit=crop', desc: 'Buying local and organic produce ensures fresher, healthier food while reducing exposure to pesticides and GMOs.' },
+                { id: 'food-detail-2', title: 'Clean Produce', img: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=800&auto=format&fit=crop', desc: 'Soaking fruits and vegetables in Strong Kangen Water (pH 11.5) removes oily pesticides and residue that tap water cannot wash off.' },
+                { id: 'food-detail-3', title: 'Cooking with Kangen Water®', img: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to integrate Kangen Water® into your favorite recipes by simply replacing tap water with one of the 3 different types of Kangen Water® for cooking.' },
+                { id: 'food-detail-4', title: 'Kangen Tea', img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop', desc: 'Infuse tea effortlessly! Kangen Water\'s micro-clustered molecules penetrate tea leaves quickly even with cold or room-temp water.' },
+                { id: 'food-detail-5', title: 'Brining & Tenderizing Meat with Kangen Water®', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop', desc: 'Soak meats in Kangen 9.5 before cooking to draw out gamey odors, tenderize tough fibers, and lock in savory natural juices.' },
+                { id: 'food-detail-6', title: 'Green Smoothie', img: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=800&auto=format&fit=crop', desc: 'Boost your daily morning smoothie by blending organic greens with Kangen Water for maximum nutrient absorption and energy.' },
+                { id: 'food-detail-7', title: 'Sayra\'s Cornbread', img: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=800&auto=format&fit=crop', desc: 'Bake lighter, fluffier cornbread using Kangen 9.5 Water. The micro-clustering enhances texture and preserves rich corn flavor.' }
               ].map((card, i) => (
-                <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelectedFoodArticleId(card.id);
+                    handleNavigate('greener-food-detail');
+                  }}
+                  className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition cursor-pointer group"
+                >
                   <div>
-                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover" />
+                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover group-hover:scale-105 transition duration-500" />
                     <div className="p-6 space-y-3">
-                      <h3 className="font-serif text-xl font-bold text-[#333333]">{card.title}</h3>
+                      <h3 className="font-serif text-xl font-bold text-[#333333] group-hover:text-emerald-700 transition">{card.title}</h3>
                       <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
                     </div>
                   </div>
@@ -217,6 +227,15 @@ export default function Home() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* GREENER FOOD DETAIL VIEW */}
+      {activePage === 'greener-food-detail' && (
+        <GreenerFoodDetail
+          initialArticleId={selectedFoodArticleId}
+          onNavigate={handleNavigate}
+          onOpenConsultation={() => setConsultationOpen(true)}
+        />
       )}
 
       {/* GREENER BEAUTY CATEGORY VIEW */}
