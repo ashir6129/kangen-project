@@ -25,7 +25,7 @@ const SLIDES: Slide[] = [
     desc: '',
     btnText: 'Greener Home',
     page: 'greener-home',
-    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_1.jpg',
+    bgImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop',
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const SLIDES: Slide[] = [
     desc: 'Cook, clean, rinse produce, sanitize surfaces and wash dishes with Kangen Water!',
     btnText: 'Greener Food',
     page: 'food',
-    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_food.jpg',
+    bgImage: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2000&auto=format&fit=crop',
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const SLIDES: Slide[] = [
     desc: 'Ingredients in beauty products are not stringently tested for safety, leaving you exposed as a consumer. Safely green your beauty routine with Enagic!',
     btnText: 'Greener Beauty',
     page: 'beauty',
-    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_beauty_spa.jpg',
+    bgImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2000&auto=format&fit=crop',
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const SLIDES: Slide[] = [
     desc: 'Gardening is beneficial for both you and the Earth. Take your outdoor skills to the next level with Kangen Water!',
     btnText: 'Greener Garden',
     page: 'garden',
-    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_garden_plant.jpg',
+    bgImage: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=2000&auto=format&fit=crop',
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const SLIDES: Slide[] = [
     desc: 'Caring for your beloved pets has never been easier, or greener with Kangen Water!',
     btnText: 'Greener Pet',
     page: 'pet',
-    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_pet.jpg',
+    bgImage: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2000&auto=format&fit=crop',
   },
 ];
 
@@ -92,8 +92,11 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
             style={{ backgroundImage: `url(${slide.bgImage})` }}
           />
 
+          {/* Dark Overlay for Ultra-Crisp Text Readability */}
+          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+
           {index === 0 && (
-            <div className="hidden md:block absolute inset-0 max-w-6xl mx-auto pointer-events-none">
+            <div className="hidden md:block absolute inset-0 max-w-6xl mx-auto pointer-events-none z-10">
               <span className="hero-badge-black absolute top-1/2 left-20">COOKING</span>
               <span className="hero-badge-black absolute top-1/3 left-1/3">DISHWASHING</span>
               <span className="hero-badge-black absolute top-1/2 left-1/2">GARDENING</span>
@@ -103,7 +106,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
             </div>
           )}
 
-          <div className="relative max-w-5xl mx-auto h-full px-4 flex flex-col justify-center items-center text-center text-white">
+          <div className="relative max-w-5xl mx-auto h-full px-4 flex flex-col justify-center items-center text-center text-white z-10">
             <h1 className="font-serif text-5xl sm:text-7xl font-normal leading-tight drop-shadow-lg">
               {slide.title}
             </h1>

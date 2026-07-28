@@ -48,8 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const { getTotalItems, setIsOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [productHovered, setProductHovered] = useState(false);
-  const [companyHovered, setCompanyHovered] = useState(false);
+  const [activeHover, setActiveHover] = useState<'product' | 'company' | null>(null);
 
   return (
     <header className="sticky top-0 z-40 bg-white border-t-4 border-[#075f70] shadow-xs border-b border-slate-200 font-sans">
@@ -74,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* KANGEN WATER Logo in Center or Left */}
+          {/* KANGEN WATER Logo */}
           <div className="flex-shrink-0 flex items-center">
             <button
               onClick={() => { onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
@@ -88,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Desktop Nav Links (Dual-Line Upper-case Styling matching Bulma site) */}
+          {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center h-20 gap-1">
             {/* GREENER HOME */}
             <button
@@ -173,10 +172,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* BROWSE PRODUCTS DROPDOWN */}
             <div
               className="relative h-20 flex items-center"
-              onMouseEnter={() => setProductHovered(true)}
-              onMouseLeave={() => setProductHovered(false)}
+              onMouseEnter={() => setActiveHover('product')}
+              onMouseLeave={() => setActiveHover(null)}
             >
-              <div className={`nav-link-item ${productHovered ? 'active' : ''}`}>
+              <div className={`nav-link-item ${activeHover === 'product' ? 'active' : ''}`}>
                 <div className="flex flex-col items-center leading-tight pt-2">
                   <span className="nav-text-line1">BROWSE</span>
                   <span className="nav-text-line2 flex items-center gap-0.5">
@@ -185,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               </div>
 
-              {productHovered && (
+              {activeHover === 'product' && (
                 <div className="absolute left-0 top-full mt-0 w-56 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-100">
                   {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
                     <div
@@ -202,10 +201,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* ABOUT COMPANY DROPDOWN */}
             <div
               className="relative h-20 flex items-center"
-              onMouseEnter={() => setCompanyHovered(true)}
-              onMouseLeave={() => setCompanyHovered(false)}
+              onMouseEnter={() => setActiveHover('company')}
+              onMouseLeave={() => setActiveHover(null)}
             >
-              <div className={`nav-link-item ${companyHovered ? 'active' : ''}`}>
+              <div className={`nav-link-item ${activeHover === 'company' ? 'active' : ''}`}>
                 <div className="flex flex-col items-center leading-tight pt-2">
                   <span className="nav-text-line1">ABOUT</span>
                   <span className="nav-text-line2 flex items-center gap-0.5">
@@ -214,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               </div>
 
-              {companyHovered && (
+              {activeHover === 'company' && (
                 <div className="absolute right-0 top-full mt-0 w-52 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-100">
                   {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
                     <div
