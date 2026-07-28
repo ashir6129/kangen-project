@@ -132,18 +132,32 @@ const ARTICLES: ArticleDetailData[] = [
     id: 'food-detail-6',
     title: 'Green Smoothie',
     image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Boost your daily morning smoothie by blending organic greens with Kangen Water for maximum nutrient absorption.',
+    desc: 'Adapted from Sakara, The 10-Day Reset. Boost your morning smoothie by blending organic greens with Kangen Water.',
     content: [
-      'Blend organic kale, spinach, banana, and chia seeds with cold Kangen 9.5 Water for optimal cell hydration and antioxidant absorption.'
+      'Adapted from: Sakara, The 10-Day Reset',
+      'Ingredients:\n• 1/2 a medium banana\n• 1 handful spinach, washed in Kangen 11.5 Water\n• 1 cup almond milk (or non-dairy milk of choice)\n• 1 tbsp healthy fat (try coconut oil, nut butter or seeds)\n• 1 scoop protein powder\n• 3–4 Kangen Water® ice cubes\n• Optional: sweeten to taste w/ 1–2 tsp maple syrup or raw honey',
+      'Directions:\nCombine all ingredients in high-speed blender, blend until smooth and enjoy!'
+    ],
+    bulletPoints: [
+      'Wash spinach & greens in Strong Kangen Water® (11.5 pH) before blending.',
+      'Use Kangen Water® ice cubes for maximum cell hydration and antioxidant absorption.',
+      'Add healthy fats (nut butter, coconut oil) to sustain clean energy throughout the day.'
     ]
   },
   {
     id: 'food-detail-7',
     title: "Sayra's Cornbread",
     image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Bake lighter, fluffier cornbread using Kangen 9.5 Water. Micro-clustering enhances texture and preserves rich corn flavor.',
+    desc: 'Recipe from Sundays At Moosewood Restaurant. Bake lighter, fluffier cornbread using Kangen 9.5 Water.',
     content: [
-      'Bake fluffier, moist cornbread by substituting milk or tap water with Kangen 9.5 Water in your favorite batter recipe.'
+      'Recipe from: Sundays At Moosewood Restaurant',
+      'Ingredients:\n• 2 eggs\n• 1 cup milk or buttermilk (or Kangen 9.5 Water)\n• 1/4 cup cooking oil\n• 1/4 tsp salt\n• 1/4 cup brown sugar (optional)\n• 4 tsp baking powder\n• 1 cup white or yellow cornmeal (preferably good quality stone ground)\n• 1 cup unbleached white flour (or half whole wheat, half white)',
+      'Directions:\n1. Preheat the oven to 400°F.\n2. In a large bowl, beat together the eggs, milk (or Kangen Water®), oil, salt, and brown sugar (if desired) until well blended.\n3. Sift in the baking powder and whisk until foamy. Quickly mix in the cornmeal and flour. Beat until the batter is smooth.\n4. Pour into an oiled 9-inch square or 10-inch round baking pan. Bake for 20 to 25 minutes, or until a knife inserted in the center comes out clean.'
+    ],
+    bulletPoints: [
+      'Substitute part or all of liquid with Kangen 9.5 Water for extra light texture.',
+      'Use high quality stone-ground white or yellow cornmeal.',
+      'Bake at 400°F for 20 to 25 minutes until golden brown and center tests clean.'
     ]
   },
   {
@@ -170,6 +184,70 @@ const ARTICLES: ArticleDetailData[] = [
         imageOverlayText: "Natural Fruit & Herb Infusions",
         text: "Sometimes it's not so easy to replace sugary or caffeinated drinks. Use these ideas to liven up your Kangen Water® with natural flavors:\n\n• Crushed Herbs: Add mint or lemongrass for refreshing aroma and flavor.\n• Citrus & Berries: Cut or squeeze oranges, limes, blueberries, or strawberries. Try mixing lemon and lime.\n• Pitcher Slices: Fill a pitcher with lemon slices and Kangen Water® for cool, refreshing water all day.\n• Natural Juices: Add unsweetened fruit juices such as cranberry cocktail for stronger flavor.\n• Fruit Ice Cubes: Freeze small fruit slices (clementine oranges, mango, berries) as delicious ice cubes in your Kangen Water®.\n• Afternoon Iced Tea: Add Fair Trade herbal tea bags to cold Kangen Water® for effortless infusion."
       }
+    ]
+  },
+  {
+    id: 'food-detail-9',
+    title: 'Chicken with Artichokes in Creamy Mustard Sauce',
+    image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Recipe from dinneralovestory.com. Tender chicken thighs with artichokes in a rich creamy Dijon mustard sauce.',
+    content: [
+      'Recipe from: dinneralovestory.com',
+      'Ingredients:\n• 1 1/3 lb chicken thighs, salted and peppered (pre-soaked in Kangen 9.5 Water for 20 mins)\n• 3 tbsp olive oil\n• 1 small onion, chopped (about 1/2 cup)\n• 1/2 cup chopped grape tomatoes\n• 8 oz (about 1 1/2 cups) thawed frozen or canned artichokes, drained\n• Zest from 1 lemon (about 1/2 tsp)\n• Salt and freshly ground pepper\n• 1/2 cup Kangen Water® (or white wine)\n• 1/2 cup chicken broth (or 1/4 cup Kangen Water® + 1/4 cup broth)\n• 1/4 – 1/3 cup cream\n• 2 tsp Dijon mustard\n• Chopped parsley or thyme',
+      'Directions:\n1. In a large skillet, brown chicken pieces in olive oil over medium-high heat (about 2-3 minutes per side). Remove and decrease heat to medium.\n2. Add chopped onion. Cook 1-2 minutes, scraping brown bits leftover from chicken.\n3. Add tomatoes, artichokes, lemon zest, salt, and pepper. Cook another 2-3 minutes.\n4. Nestle chicken thighs in the vegetables, then add Kangen Water® and chicken broth. Bring to a boil, then reduce to a simmer and cover. Cook another 8 to 10 minutes.\n5. While simmering, whisk together cream and mustard. Remove skillet from heat and stir in creamy mustard mixture. Garnish with fresh parsley or thyme.'
+    ],
+    bulletPoints: [
+      'Soak chicken thighs in Kangen 9.5 Water for 20 minutes before cooking for maximum tenderness.',
+      'Substitute Kangen Water® for white wine and half of the chicken broth for a clean, rich reduction sauce.',
+      'Whisk cream and Dijon mustard separately before stirring in at the end to prevent curdling.'
+    ]
+  },
+  {
+    id: 'food-detail-10',
+    title: 'Chicken and Barley Soup',
+    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Recipe from Dinner the Playbook. A comforting, nutrient-dense chicken and barley soup diluted & simmered with Kangen Water®.',
+    content: [
+      'Recipe from: Dinner the Playbook',
+      'Ingredients:\n• 2 tbsp olive oil\n• 1/2 tsp red pepper flakes\n• 1 cup chopped yellow onion\n• 1 cup peeled and chopped carrots (about 1 large carrot)\n• 1 cup chopped celery (about 2 celery stalks)\n• 1/2 cup chopped red bell pepper\n• Salt and pepper to taste\n• 4 cups chicken broth (or 2 cups chicken broth + 2 cups Kangen 9.5 Water)\n• 1 bay leaf\n• 4 fresh thyme sprigs\n• 3 to 4 boneless chicken breast halves\n• 1/2 cup uncooked barley\n• Handful of chopped fresh parsley, for garnish',
+      'Directions:\n1. In a large stockpot, warm olive oil and red pepper flakes over medium heat for 1 to 2 minutes.\n2. Add onions, carrots, celery, bell pepper, salt, and pepper. Cook for 10 to 12 minutes until onions are soft.\n3. Add broth (and Kangen Water®), bay leaf, and thyme. Bring to a boil.\n4. Add uncooked chicken breast halves and simmer over medium-low heat for 15 to 20 minutes.\n5. Remove chicken from pot and shred using two forks.\n6. Return shredded chicken to pot, add barley, and simmer covered on low heat for 20-25 minutes until barley is tender but not mushy.\n7. Add Kangen Water® if soup becomes too thick. Discard bay leaf, sprinkle with fresh parsley, and serve warm!'
+    ],
+    bulletPoints: [
+      'Use Kangen 9.5 Water to adjust soup thickness and lock in vegetable minerals.',
+      'Shred chicken breast with two forks for tender, juicy texture in every spoonful.',
+      'Barley absorbs liquid rapidly—add Kangen Water® as needed while simmering.'
+    ]
+  },
+  {
+    id: 'food-detail-11',
+    title: 'Boiled Kale with a Fried Egg and Toast',
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Adapted from The Zuni Café Cookbook. Tender dino kale simmered in Kangen Water® served over garlic-rubbed toast with a fried egg.',
+    content: [
+      'Adapted from: The Zuni Café Cookbook & Orangette',
+      'Ingredients:\n• About 8 oz kale (lacinato/dino kale is best)\n• 5 tbsp olive oil\n• 1 medium yellow onion, diced\n• Pinch of dried red pepper flakes\n• 2 large garlic cloves, thinly sliced\n• 3 to 4 cups Kangen Water® (or mild chicken stock / combination)\n\nTo Serve:\n• Thick slices of country bread\n• Fresh eggs\n• Olive oil\n• Prosciutto, torn into bite-sized bits (optional)\n• Freshly grated Parmigiano Reggiano or Pecorino Romano',
+      'Directions:\n1. Prepare Kale: Trim discolored spots, remove thick stems, and slice into 1/4-inch ribbons. Wash thoroughly in Kangen 11.5 Water in a salad spinner to remove trapped dirt, then spin dry.\n2. Cook Kale: In a 4-quart saucepan, warm oil over medium-low heat. Add onions and cook until translucent. Add red pepper flakes, garlic, and kale; stir until wilted. Add Kangen Water® to cover by 1/2 inch. Simmer covered for 30 minutes until tender. Season generously with salt.\n3. Serve: Toast country bread and lightly rub both sides with raw garlic while hot. Place toast in soup bowls, pile warm kale on top with broth, add olive-oil fried egg, optional prosciutto bits, and grated Parmigiano Reggiano!'
+    ],
+    bulletPoints: [
+      'Wash dino kale ribbons in Kangen 11.5 Water in a salad spinner to lift hidden dirt & residue.',
+      'Simmer kale in Kangen Water® to preserve vibrant green pigments and tenderize fibers without losing nutrients.',
+      'Rub hot toasted country bread with fresh garlic cloves before layering simmered kale and olive-oil fried eggs.'
+    ]
+  },
+  {
+    id: 'food-detail-12',
+    title: 'Salmon Baked in Parchment',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Recipe from Moosewood Restaurant Celebrates. Tender salmon fillets baked in parchment with a shallot, wine & fresh herb reduction.',
+    content: [
+      'Recipe from: Moosewood Restaurant Celebrates',
+      'Ingredients:\n• 4 inch-thick salmon fillets (about 6 oz each, washed in Kangen Water®)\n• 3 tbsp butter\n• 1 1/2 cup minced shallots\n• 1 1/2 cup dry white wine (or Kangen Water® reduction)\n• 1/3 cup chopped fresh Italian parsley\n• 1 1/2 tbsp minced fresh dill\n• Salt and ground black pepper to taste\n• 4 pieces of 9x15 inch parchment paper\n• 4 fresh Italian parsley sprigs\n• 4 fresh dill sprigs',
+      'Directions:\n1. Prepare Salmon: Gently rinse salmon fillets in cold Kangen Water®, pat them dry with paper towels, and set aside.\n2. Shallot Reduction: Melt butter in a medium skillet. Add shallots and sauté over medium heat for 10 minutes until translucent and golden. Add wine, simmering uncovered for ~20 minutes until reduced to a syrupy 3/4 to 1 cup sauce. Stir in chopped parsley, dill, salt, and pepper.\n3. Prepare Packets & Preheat: Fold parchment paper pieces into 9x7.5 inch rectangles, rounding opposite corners to form ovals. Preheat oven to 350°F.\n4. Assemble & Crimp: Lightly butter inside of parchment oval. Place salmon fillet on one side, spoon 3-4 tbsp of shallot sauce over top, and top with parsley & dill sprigs. Fold parchment over and crimp open edges twice around the perimeter to form a tight seal.\n5. Bake & Serve: Bake at 350°F for ~15 minutes. Snip packets open with scissors and serve immediately!'
+    ],
+    bulletPoints: [
+      'Rinse & clean salmon fillets in cold Kangen 9.5 Water before cooking to draw out fishy odors and lock in natural moisture.',
+      'Baking in parchment locks in aromatic steam, keeping salmon ultra tender and flaky without drying out.',
+      'Double crimp packet edges to prevent savory shallot and wine reduction from leaking during baking.'
     ]
   }
 ];
