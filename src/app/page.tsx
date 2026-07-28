@@ -19,6 +19,7 @@ import { GreenerHomeDetail } from '@/components/GreenerHomeDetail';
 
 export default function Home() {
   const [activePage, setActivePage] = useState<string>('home');
+  const [selectedDetailArticleId, setSelectedDetailArticleId] = useState<string>('detail-1');
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const [consultationOpen, setConsultationOpen] = useState<boolean>(false);
   const [compareOpen, setCompareOpen] = useState<boolean>(false);
@@ -128,7 +129,10 @@ export default function Home() {
               ].map((card, i) => (
                 <div
                   key={i}
-                  onClick={() => handleNavigate('greener-home-detail')}
+                  onClick={() => {
+                    setSelectedDetailArticleId(card.id);
+                    handleNavigate('greener-home-detail');
+                  }}
                   className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition cursor-pointer group"
                 >
                   <div>
@@ -148,6 +152,7 @@ export default function Home() {
       {/* GREENER HOME DETAIL VIEW */}
       {activePage === 'greener-home-detail' && (
         <GreenerHomeDetail
+          initialArticleId={selectedDetailArticleId}
           onNavigate={handleNavigate}
           onOpenConsultation={() => setConsultationOpen(true)}
         />

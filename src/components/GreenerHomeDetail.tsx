@@ -14,6 +14,23 @@ interface Comment {
   replies?: Comment[];
 }
 
+interface ArticleSubSection {
+  heading?: string;
+  subtext?: string;
+  image?: string;
+  imageOverlayText?: string;
+  text?: string;
+}
+
+interface ArticleDetailData {
+  id: string;
+  title: string;
+  image: string;
+  desc: string;
+  content: string[];
+  subSections?: ArticleSubSection[];
+}
+
 const INITIAL_COMMENTS: Comment[] = [
   {
     id: 'comm-1',
@@ -26,6 +43,15 @@ const INITIAL_COMMENTS: Comment[] = [
   },
   {
     id: 'comm-2',
+    name: 'Eliza',
+    email: 'eliza@example.com',
+    date: 'Sep 14',
+    text: 'Soaking our greasy baking sheets in 11.5 water has saved so much time! The grease literally wipes right off.',
+    likes: 5,
+    avatarBg: 'bg-indigo-600',
+  },
+  {
+    id: 'comm-3',
     name: 'Kyle &. T.',
     email: 'kyle@example.com',
     date: 'Jul 13',
@@ -34,7 +60,7 @@ const INITIAL_COMMENTS: Comment[] = [
     avatarBg: 'bg-amber-600',
   },
   {
-    id: 'comm-3',
+    id: 'comm-4',
     name: 'Nav S.',
     email: 'nav@example.com',
     date: 'Apr 18',
@@ -43,7 +69,7 @@ const INITIAL_COMMENTS: Comment[] = [
     avatarBg: 'bg-sky-600',
   },
   {
-    id: 'comm-4',
+    id: 'comm-5',
     name: 'Sherri B.',
     email: 'sherri@example.com',
     date: 'Mar 02',
@@ -52,16 +78,16 @@ const INITIAL_COMMENTS: Comment[] = [
     avatarBg: 'bg-teal-600',
   },
   {
-    id: 'comm-5',
+    id: 'comm-6',
     name: 'David M.',
     email: 'david@example.com',
     date: 'Feb 14',
     text: 'Using 11.5 pH water to clean grease off stove tops is mind blowing. It dissolves grease like magic without any soap residue.',
     likes: 6,
-    avatarBg: 'bg-indigo-600',
+    avatarBg: 'bg-purple-600',
   },
   {
-    id: 'comm-6',
+    id: 'comm-7',
     name: 'Elena R.',
     email: 'elena@example.com',
     date: 'Jan 28',
@@ -69,27 +95,154 @@ const INITIAL_COMMENTS: Comment[] = [
     likes: 2,
     avatarBg: 'bg-rose-600',
   },
+];
+
+const ARTICLES: ArticleDetailData[] = [
   {
-    id: 'comm-7',
-    name: 'Marcus L.',
-    email: 'marcus@example.com',
-    date: 'Jan 10',
-    text: 'The savings on cleaning products alone make the Kangen machine pay for itself over time. Highly recommended for families.',
-    likes: 4,
-    avatarBg: 'bg-purple-600',
+    id: 'detail-1',
+    title: 'A Greener Home',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
+    desc: "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
+    content: [
+      "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
+      "In a perfect world, your cleaning products would be gentle and safe for everyday use, but still powerful on dirt, stains, and germs. Thanks to your multi-purpose Enagic machine, this IS possible!",
+      "You can make your own eco-friendly products that actually work!",
+      "Learn how you can conveniently maintain a clean and green home with the power of Enagic. Get the most of Kangen Water®, and discover a chemical-free lifestyle today!"
+    ],
+    subSections: [
+      {
+        heading: "Eco-Friendly Living Made Simple",
+        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Chemical-Free Home Environment",
+        text: "Switching to Kangen Water allows you to reduce plastic waste from commercial cleaner bottles, eliminate synthetic dyes and fragrances, and keep your family safe from toxic residues."
+      }
+    ]
   },
+  {
+    id: 'detail-2',
+    title: 'Non-toxic Cleaning',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.',
+    content: [
+      'Powerful Strong Kangen Water (pH 11.5) has strong emulsifying properties that break down oils and grime on stovetops, counters, and floors naturally.',
+      'By replacing toxic commercial spray cleaners with Kangen 11.5 Water, you protect your family and pets from hazardous chemical fumes and chemical residues.'
+    ],
+    subSections: [
+      {
+        heading: "Multi-Surface All-Purpose Spray",
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "All-Purpose Spray Cleaner",
+        text: "Fill a spray bottle with Strong Kangen Water (11.5 pH) for heavy grease on stovetops, range hoods, and oven doors. For general daily dusting and counter wiping, use Neutral Water (7.0 pH) or Beauty Water (6.0 pH)."
+      },
+      {
+        heading: "Bathroom & Mirror Sanitizer",
+        image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Streak-Free Mirror & Tile Cleaner",
+        text: "Spray Strong Acidic Water (2.5 pH) on sinks, faucets, tiles, and toilet surfaces to eliminate bacteria and mold. Wipe mirrors with Beauty Water (6.0 pH) for a streak-free shine without glass cleaner chemicals."
+      }
+    ]
+  },
+  {
+    id: 'detail-3',
+    title: 'Doing the Dishes',
+    image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).',
+    content: [
+      'Dishes, cutting boards, and cutlery can be cleaned and sanitized naturally using Strong Acidic Water (pH 2.5) and Strong Kangen Water (pH 11.5).'
+    ],
+    subSections: [
+      {
+        heading: "Disinfecting Dishes without Chemical Residue",
+        image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Glassware Disinfection",
+        text: "Soak wine glasses, glass cups, and food containers in Strong Kangen Water (11.5 pH) to remove oily film, then spray with 2.5 pH Strong Acidic Water to sanitize. Rinse with Beauty Water for a sparkling shine without spots or film."
+      },
+      {
+        heading: "A Dishwashing Superstar!",
+        subtext: "Make your own natural dish soap using Kangen Water and liquid castile soap for a chemical-free kitchen.",
+        image: "https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Strong Kangen Water® Dish Soap",
+        text: "Mix 1 cup of Liquid Castile Soap with 1/2 cup of Strong Kangen Water (11.5 pH) and 10 drops of lemon or orange essential oil in a dispenser bottle. Use as your daily eco-friendly dish soap for cutting grease effortlessly while staying gentle on skin."
+      }
+    ]
+  },
+  {
+    id: 'detail-4',
+    title: 'In the Laundry room',
+    image: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Replace harsh chemical detergents with Kangen Water to keep your linens fresh, soft, and non-toxic.',
+    content: [
+      'Pouring Strong Kangen Water 11.5 into your wash cycle lifts oils and dirt out of clothes fibers naturally, reducing the need for chemical laundry detergent.',
+      'Your towels and clothes remain soft, hypoallergenic, and completely free of artificial synthetic perfumes.'
+    ],
+    subSections: [
+      {
+        heading: "Detergent-Free Laundry Refresh",
+        image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Fresh Cotton Linens",
+        text: "Add 1 to 2 liters of Strong Kangen Water (11.5 pH) directly into your washer drum during the soak cycle to loosen tough grime and odors naturally."
+      }
+    ]
+  },
+  {
+    id: 'detail-5',
+    title: 'Powerful Stain remover',
+    image: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.',
+    content: [
+      'Soak stubborn spots like coffee, sauce, or grease in Strong Kangen Water 11.5 before washing to easily lift stains.',
+      'It works quickly on carpets, upholstery, and clothing without bleaching fabric colors.'
+    ],
+    subSections: [
+      {
+        heading: "Spot Cleaning & Carpet Care",
+        image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Spot Stain Treatment",
+        text: "Spray 11.5 Strong Kangen Water directly onto wine, coffee, or oil spots. Let sit for 3 to 5 minutes, then blot with a clean towel. The stain lifts without harsh bleaches."
+      }
+    ]
+  },
+  {
+    id: 'detail-6',
+    title: 'Kangen Water® Liquid Castile Cleaner',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.',
+    content: [
+      'Combining pure liquid castile soap with Kangen Water creates an all-natural, multi-surface spray for marble, tile, wood, and glass.',
+      'Infuse essential oils like lemon or tea tree for a refreshing, non-toxic aromatic green cleaning routine.'
+    ],
+    subSections: [
+      {
+        heading: "Natural Castile Cleaner Recipe",
+        image: "https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Castile Liquid Soap",
+        text: "Combine 2 tbsp liquid castile soap, 2 cups of 11.5 pH Kangen Water, and 10 drops of lavender or eucalyptus essential oil in a glass spray bottle."
+      }
+    ]
+  },
+  {
+    id: 'detail-7',
+    title: 'Strong Kangen Water® Dish Soap',
+    image: 'https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Stains happen. With Strong Kangen Water® make stains disappear like magic without harsh chemicals.',
+    content: [
+      'Mix liquid castile soap with Strong Kangen Water for a powerful natural dish soap that cuts through stubborn grease while keeping your hands moisturized.'
+    ]
+  }
 ];
 
 interface GreenerHomeDetailProps {
+  initialArticleId?: string;
   onNavigate: (page: string) => void;
   onOpenConsultation?: () => void;
 }
 
 export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
+  initialArticleId = 'detail-1',
   onNavigate,
   onOpenConsultation,
 }) => {
-  const [selectedArticleId, setSelectedArticleId] = useState<string>('detail-1');
+  const [selectedArticleId, setSelectedArticleId] = useState<string>(initialArticleId);
   const [showForm, setShowForm] = useState<boolean>(true);
   
   // Real-time comment form state
@@ -100,7 +253,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
   const [notifyMe, setNotifyMe] = useState<boolean>(false);
   const [optinEbook, setOptinEbook] = useState<boolean>(false);
 
-  // Active reply target ID
+  // Reply state
   const [replyingToId, setReplyingToId] = useState<string | null>(null);
   const [replyText, setReplyText] = useState<string>('');
 
@@ -108,27 +261,33 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
   const [comments, setComments] = useState<Comment[]>(INITIAL_COMMENTS);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Load saved comments & saved name/email on mount
+  useEffect(() => {
+    if (initialArticleId) {
+      setSelectedArticleId(initialArticleId);
+    }
+  }, [initialArticleId]);
+
   useEffect(() => {
     try {
-      const savedComms = localStorage.getItem('kangen_home_comments');
+      const savedComms = localStorage.getItem(`kangen_comments_${selectedArticleId}`);
       if (savedComms) {
         setComments(JSON.parse(savedComms));
+      } else {
+        setComments(INITIAL_COMMENTS);
       }
       const savedName = localStorage.getItem('kangen_comment_name');
       const savedEmail = localStorage.getItem('kangen_comment_email');
       if (savedName) setFullname(savedName);
       if (savedEmail) setEmail(savedEmail);
     } catch (e) {
-      console.error('Error loading comments from localStorage', e);
+      console.error('Error loading comments', e);
     }
-  }, []);
+  }, [selectedArticleId]);
 
-  // Save comments when updated
   const saveCommentsToStorage = (updatedComms: Comment[]) => {
     setComments(updatedComms);
     try {
-      localStorage.setItem('kangen_home_comments', JSON.stringify(updatedComms));
+      localStorage.setItem(`kangen_comments_${selectedArticleId}`, JSON.stringify(updatedComms));
     } catch (e) {
       console.error('Error saving comments', e);
     }
@@ -141,9 +300,6 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
     if (rememberMe) {
       localStorage.setItem('kangen_comment_name', fullname);
       localStorage.setItem('kangen_comment_email', email);
-    } else {
-      localStorage.removeItem('kangen_comment_name');
-      localStorage.removeItem('kangen_comment_email');
     }
 
     const newComment: Comment = {
@@ -194,9 +350,9 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
     setTimeout(() => setToastMessage(null), 3000);
   };
 
-  const toggleLike = (id: string, isReply = false, parentId?: string) => {
+  const toggleLike = (id: string) => {
     const updated = comments.map((c) => {
-      if (!isReply && c.id === id) {
+      if (c.id === id) {
         const liked = !c.liked;
         return {
           ...c,
@@ -204,92 +360,10 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
           likes: liked ? c.likes + 1 : c.likes - 1,
         };
       }
-      if (isReply && c.id === parentId && c.replies) {
-        return {
-          ...c,
-          replies: c.replies.map((r) => {
-            if (r.id === id) {
-              const liked = !r.liked;
-              return {
-                ...r,
-                liked,
-                likes: liked ? r.likes + 1 : r.likes - 1,
-              };
-            }
-            return r;
-          }),
-        };
-      }
       return c;
     });
     saveCommentsToStorage(updated);
   };
-
-  // Article dictionary
-  const ARTICLES = [
-    {
-      id: 'detail-1',
-      title: 'A Greener Home',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
-      desc: "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
-      content: [
-        "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
-        "In a perfect world, your cleaning products would be gentle and safe for everyday use, but still powerful on dirt, stains, and germs. Thanks to your multi-purpose Enagic machine, this IS possible!",
-        "You can make your own eco-friendly products that actually work!",
-        "Learn how you can conveniently maintain a clean and green home with the power of Enagic. Get the most of Kangen Water®, and discover a chemical-free lifestyle today!"
-      ]
-    },
-    {
-      id: 'detail-2',
-      title: 'Non-toxic Cleaning',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
-      desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.',
-      content: [
-        'Powerful Strong Kangen Water (pH 11.5) has strong emulsifying properties that break down oils and grime on stovetops, counters, and floors naturally.',
-        'By replacing toxic commercial spray cleaners with Kangen 11.5 Water, you protect your family and pets from hazardous chemical fumes and chemical residues.'
-      ]
-    },
-    {
-      id: 'detail-3',
-      title: 'Doing the Dishes',
-      image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=1200&auto=format&fit=crop',
-      desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).',
-      content: [
-        'Strong Acidic Water (pH 2.5) provides powerful natural sanitization for knives, cutting boards, sinks, and dishware.',
-        'Use Strong Kangen Water 11.5 for soaking greasy pans, followed by Strong Acidic 2.5 to sanitize thoroughly without chemical soap films.'
-      ]
-    },
-    {
-      id: 'detail-4',
-      title: 'In the Laundry room',
-      image: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=1200&auto=format&fit=crop',
-      desc: 'Replace harsh chemical detergents with Kangen Water to keep your linens fresh, soft, and non-toxic.',
-      content: [
-        'Pouring Strong Kangen Water 11.5 into your wash cycle lifts oils and dirt out of clothes fibers naturally, reducing the need for chemical laundry detergent.',
-        'Your towels and clothes remain soft, hypoallergenic, and completely free of artificial synthetic perfumes.'
-      ]
-    },
-    {
-      id: 'detail-5',
-      title: 'Powerful Stain remover',
-      image: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1200&auto=format&fit=crop',
-      desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.',
-      content: [
-        'Soak stubborn spots like coffee, sauce, or grease in Strong Kangen Water 11.5 before washing to easily lift stains.',
-        'It works quickly on carpets, upholstery, and clothing without bleaching fabric colors.'
-      ]
-    },
-    {
-      id: 'detail-6',
-      title: 'Kangen Water® Liquid Castile Cleaner',
-      image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop',
-      desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.',
-      content: [
-        'Combining pure liquid castile soap with Kangen Water creates an all-natural, multi-surface spray for marble, tile, wood, and glass.',
-        'Infuse essential oils like lemon or tea tree for a refreshing, non-toxic aromatic green cleaning routine.'
-      ]
-    }
-  ];
 
   const currentArticle = ARTICLES.find((a) => a.id === selectedArticleId) || ARTICLES[0];
 
@@ -365,7 +439,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
               <h4 className="font-serif font-bold text-sm text-slate-700 uppercase tracking-wider border-b border-slate-200 pb-2">
                 Greener Home Articles
               </h4>
-              <div className="space-y-3 max-h-[500px] overflow-y-auto pr-1">
+              <div className="space-y-3 max-h-[550px] overflow-y-auto pr-1">
                 {ARTICLES.map((art) => {
                   const isActive = art.id === selectedArticleId;
                   return (
@@ -377,7 +451,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                       }}
                       className={`w-full text-left p-2.5 rounded-lg border transition flex items-center gap-3 cursor-pointer ${
                         isActive
-                          ? 'border-emerald-600 bg-emerald-50/70 shadow-xs'
+                          ? 'border-emerald-600 bg-emerald-50/70 shadow-xs ring-1 ring-emerald-500'
                           : 'border-slate-200/80 bg-slate-50 hover:bg-slate-100'
                       }`}
                     >
@@ -385,12 +459,12 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                         src={art.image}
                         alt={art.title}
                         className={`w-14 h-12 rounded object-cover border ${
-                          isActive ? 'grayscale-0 ring-2 ring-emerald-500' : 'grayscale-20'
+                          isActive ? 'grayscale-0' : 'grayscale-20'
                         }`}
                       />
                       <span
                         className={`text-xs font-serif font-semibold leading-snug line-clamp-2 ${
-                          isActive ? 'text-emerald-900' : 'text-slate-700'
+                          isActive ? 'text-emerald-900 font-bold' : 'text-slate-700'
                         }`}
                       >
                         {art.title}
@@ -405,7 +479,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
           {/* MAIN ARTICLE AREA (9 cols) */}
           <main className="lg:col-span-9 space-y-10">
 
-            {/* Article Detail */}
+            {/* Article Detail Header */}
             <article className="space-y-6">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                 <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333]">
@@ -420,7 +494,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
               </div>
 
               {/* Main Feature Image */}
-              <div className="rounded-lg overflow-hidden border border-slate-200 shadow-xs max-h-[420px]">
+              <div className="rounded-lg overflow-hidden border border-slate-200 shadow-xs max-h-[440px]">
                 <img
                   src={currentArticle.image}
                   alt={currentArticle.title}
@@ -431,18 +505,59 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
               {/* Article Paragraphs */}
               <div className="space-y-4 text-slate-700 text-sm leading-relaxed font-sans pt-2">
                 {currentArticle.content.map((paragraph, idx) => (
-                  <p
-                    key={idx}
-                    className={
-                      idx === 2
-                        ? 'font-serif font-bold text-lg text-[#333333] pt-2 pb-1'
-                        : 'text-slate-600'
-                    }
-                  >
+                  <p key={idx} className="text-slate-600 leading-relaxed text-sm sm:text-base">
                     {paragraph}
                   </p>
                 ))}
               </div>
+
+              {/* Sub-sections (for rich pages like Doing the Dishes & Non-toxic Cleaning) */}
+              {currentArticle.subSections && currentArticle.subSections.length > 0 && (
+                <div className="space-y-10 pt-6">
+                  {currentArticle.subSections.map((sub, sIdx) => (
+                    <div key={sIdx} className="space-y-4 border-t border-slate-100 pt-6">
+                      {sub.heading && (
+                        <h3 className="font-serif text-2xl font-bold text-[#333333]">
+                          {sub.heading}
+                        </h3>
+                      )}
+                      {sub.subtext && (
+                        <p className="text-xs sm:text-sm text-slate-500 italic font-serif">
+                          {sub.subtext}
+                        </p>
+                      )}
+
+                      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+                        {sub.image && (
+                          <div className="md:col-span-6 relative rounded-lg overflow-hidden border border-slate-200 shadow-xs h-56 group">
+                            <img
+                              src={sub.image}
+                              alt={sub.heading || 'Sub Feature'}
+                              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            />
+                            {sub.imageOverlayText && (
+                              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-xs py-2 px-4 text-center rounded-xs shadow-md">
+                                <span className="font-serif italic text-xs sm:text-sm text-[#333333] font-semibold">
+                                  {sub.imageOverlayText}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        <div className={sub.image ? 'md:col-span-6 space-y-3' : 'md:col-span-12 space-y-3'}>
+                          {sub.text && (
+                            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                              {sub.text}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
             </article>
 
             {/* Category Breadcrumbs Nav Bar */}
