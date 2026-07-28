@@ -21,7 +21,7 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        {/* 3-Column Masonry Lifestyle Grid with High-Definition Photography */}
+        {/* 3-Column Masonry Lifestyle Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
 
           {/* Column 1: Cooking (Top) & Beauty (Bottom) */}
@@ -59,17 +59,17 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
             </button>
           </div>
 
-          {/* Column 2: Center Featured "Benefits of Kangen Water" (Tall Glass Card) */}
+          {/* Column 2: Center Featured "Benefits of Kangen Water" (User-Provided Glass Photo) */}
           <button
             onClick={() => onNavigate?.('water-types')}
             className="group relative rounded-xs overflow-hidden flex items-center justify-center min-h-[536px] w-full text-left shadow-sm border border-slate-200 cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=1200&auto=format&fit=crop"
+              src="/images/drink-glass.png"
               alt="Benefits of Kangen Water Glass"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
             />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
+            <div className="absolute inset-0 bg-black/15 group-hover:bg-black/5 transition" />
             <div className="category-white-box text-center py-6 px-4 shadow-lg rounded-xs">
               <span className="font-serif italic text-lg sm:text-xl text-[#333333] font-semibold leading-snug">
                 Benefits of<br />Kangen Water®
