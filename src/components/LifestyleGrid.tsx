@@ -21,7 +21,7 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        {/* 3-Column Masonry Lifestyle Grid matching drinkfromheaven.com */}
+        {/* 3-Column Masonry Lifestyle Grid with High-Definition Photography */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
 
           {/* Column 1: Cooking (Top) & Beauty (Bottom) */}
@@ -29,13 +29,14 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
             {/* COOKING */}
             <button
               onClick={() => onNavigate?.('food')}
-              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-xs border border-slate-200 cursor-pointer"
+              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
               <img
-                src="https://www.drinkfromheaven.com/affsites/eco/images/blog/cook.jpg?v=3"
-                alt="Cooking"
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop"
+                alt="Cooking with Kangen Water"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
               <div className="category-white-box shadow-md rounded-xs">
                 <span className="font-serif italic text-lg text-[#333333] font-semibold">Cooking</span>
               </div>
@@ -44,29 +45,31 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
             {/* BEAUTY */}
             <button
               onClick={() => onNavigate?.('beauty')}
-              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-xs border border-slate-200 cursor-pointer"
+              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
               <img
-                src="https://www.drinkfromheaven.com/affsites/eco/images/blog/beauty.jpg?v=3"
-                alt="Beauty"
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1000&auto=format&fit=crop"
+                alt="Beauty Care with Kangen Water"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
               <div className="category-white-box shadow-md rounded-xs">
                 <span className="font-serif italic text-lg text-[#333333] font-semibold">Beauty</span>
               </div>
             </button>
           </div>
 
-          {/* Column 2: Center Featured "Benefits of Kangen Water" (Tall Card) */}
+          {/* Column 2: Center Featured "Benefits of Kangen Water" (Tall Glass Card) */}
           <button
             onClick={() => onNavigate?.('water-types')}
-            className="group relative rounded-xs overflow-hidden flex items-center justify-center min-h-[536px] w-full text-left shadow-xs border border-slate-200 cursor-pointer"
+            className="group relative rounded-xs overflow-hidden flex items-center justify-center min-h-[536px] w-full text-left shadow-sm border border-slate-200 cursor-pointer"
           >
             <img
-              src="https://www.drinkfromheaven.com/affsites/eco/images/blog/drink.jpg?v=3"
-              alt="Benefits of Kangen Water"
+              src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=1200&auto=format&fit=crop"
+              alt="Benefits of Kangen Water Glass"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
             />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
             <div className="category-white-box text-center py-6 px-4 shadow-lg rounded-xs">
               <span className="font-serif italic text-lg sm:text-xl text-[#333333] font-semibold leading-snug">
                 Benefits of<br />Kangen Water®
@@ -79,13 +82,14 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
             {/* CLEANING */}
             <button
               onClick={() => onNavigate?.('greener-home')}
-              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-xs border border-slate-200 cursor-pointer"
+              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
               <img
-                src="https://www.drinkfromheaven.com/affsites/eco/images/blog/clean.jpg?v=3"
-                alt="Cleaning"
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1000&auto=format&fit=crop"
+                alt="Non-Toxic Cleaning"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
               <div className="category-white-box shadow-md rounded-xs">
                 <span className="font-serif italic text-lg text-[#333333] font-semibold">Cleaning</span>
               </div>
@@ -94,13 +98,14 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
             {/* GARDENING */}
             <button
               onClick={() => onNavigate?.('garden')}
-              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-xs border border-slate-200 cursor-pointer"
+              className="group relative rounded-xs overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
               <img
-                src="https://www.drinkfromheaven.com/affsites/eco/images/blog/garden.jpg?v=3"
-                alt="Gardening"
+                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1000&auto=format&fit=crop"
+                alt="Lush Gardening with Kangen Water"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
               <div className="category-white-box shadow-md rounded-xs">
                 <span className="font-serif italic text-lg text-[#333333] font-semibold">Gardening</span>
               </div>

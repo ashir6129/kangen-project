@@ -13,19 +13,19 @@ const RECIPES: RecipeCard[] = [
   {
     title: 'Kangen® Hand Sanitizer',
     desc: 'The dangers of triclosan are well known and documented. Reduce your exposure to this harmful chemical by making your own Kangen® Hand Sanitizer.',
-    image: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-beauty-hand-sanitizer-w600.jpg',
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1000&auto=format&fit=crop',
     link: '#shop',
   },
   {
     title: 'Cooking with Kangen Water®',
     desc: 'Learn how to integrate Kangen Water® into your favorite recipes by simply replacing tap water with one of the 3 different types of Kangen Water® for cooking.',
-    image: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-food-cookingkangen-w600.jpg',
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop',
     link: '#shop',
   },
   {
     title: 'Powerful Stain Remover',
     desc: 'Stains happen. With Strong Kangen Water® make stains disappear like magic without harsh chemicals.',
-    image: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-home-stain-remover-w600.jpg?v=2',
+    image: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=1000&auto=format&fit=crop',
     link: '#shop',
   },
 ];
