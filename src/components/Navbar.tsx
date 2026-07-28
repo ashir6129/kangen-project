@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ShoppingCart, Search, Menu, X, ChevronDown } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
@@ -48,24 +48,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const { getTotalItems, setIsOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [productDropdownOpen, setProductDropdownOpen] = useState(false);
-  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
-
-  const productDropdownRef = useRef<HTMLDivElement>(null);
-  const companyDropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (productDropdownRef.current && !productDropdownRef.current.contains(e.target as Node)) {
-        setProductDropdownOpen(false);
-      }
-      if (companyDropdownRef.current && !companyDropdownRef.current.contains(e.target as Node)) {
-        setCompanyDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, []);
+  const [productHovered, setProductHovered] = useState(false);
+  const [companyHovered, setCompanyHovered] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 bg-white border-t-4 border-[#075f70] shadow-xs border-b border-slate-200 font-sans">
@@ -186,74 +170,62 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             </button>
 
-            {/* BROWSE PRODUCTS DROPDOWN (AUTOMATIC HOVER UI) */}
+            {/* BROWSE PRODUCTS DROPDOWN */}
             <div
-              className="relative h-20 flex items-center group"
-              ref={productDropdownRef}
-              onMouseEnter={() => setProductDropdownOpen(true)}
-              onMouseLeave={() => setProductDropdownOpen(false)}
+              className="relative h-20 flex items-center"
+              onMouseEnter={() => setProductHovered(true)}
+              onMouseLeave={() => setProductHovered(false)}
             >
-              <button
-                onClick={() => setProductDropdownOpen(!productDropdownOpen)}
-                className={`nav-link-item ${productDropdownOpen ? 'active' : ''}`}
-              >
+              <div className={`nav-link-item ${productHovered ? 'active' : ''}`}>
                 <div className="flex flex-col items-center leading-tight pt-2">
                   <span className="nav-text-line1">BROWSE</span>
                   <span className="nav-text-line2 flex items-center gap-0.5">
                     PRODUCTS <ChevronDown className="w-2.5 h-2.5 opacity-60" />
                   </span>
                 </div>
-              </button>
-
-              <div
-                className={`absolute left-0 top-full mt-0 w-56 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md ${
-                  productDropdownOpen ? 'block' : 'hidden group-hover:block'
-                }`}
-              >
-                {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
-                  >
-                    {item.label}
-                  </div>
-                ))}
               </div>
+
+              {productHovered && (
+                <div className="absolute left-0 top-full mt-0 w-56 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-100">
+                  {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
+                    >
+                      {item.label}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* ABOUT COMPANY DROPDOWN (AUTOMATIC HOVER UI) */}
+            {/* ABOUT COMPANY DROPDOWN */}
             <div
-              className="relative h-20 flex items-center group"
-              ref={companyDropdownRef}
-              onMouseEnter={() => setCompanyDropdownOpen(true)}
-              onMouseLeave={() => setCompanyDropdownOpen(false)}
+              className="relative h-20 flex items-center"
+              onMouseEnter={() => setCompanyHovered(true)}
+              onMouseLeave={() => setCompanyHovered(false)}
             >
-              <button
-                onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
-                className={`nav-link-item ${companyDropdownOpen ? 'active' : ''}`}
-              >
+              <div className={`nav-link-item ${companyHovered ? 'active' : ''}`}>
                 <div className="flex flex-col items-center leading-tight pt-2">
                   <span className="nav-text-line1">ABOUT</span>
                   <span className="nav-text-line2 flex items-center gap-0.5">
                     COMPANY <ChevronDown className="w-2.5 h-2.5 opacity-60" />
                   </span>
                 </div>
-              </button>
-
-              <div
-                className={`absolute right-0 top-full mt-0 w-52 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md ${
-                  companyDropdownOpen ? 'block' : 'hidden group-hover:block'
-                }`}
-              >
-                {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
-                  >
-                    {item.label}
-                  </div>
-                ))}
               </div>
+
+              {companyHovered && (
+                <div className="absolute right-0 top-full mt-0 w-52 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-100">
+                  {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
+                    >
+                      {item.label}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </nav>
 
