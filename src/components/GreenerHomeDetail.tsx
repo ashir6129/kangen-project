@@ -255,6 +255,32 @@ const ARTICLES: ArticleDetailData[] = [
         text: "Combining Strong Kangen Water® with white vinegar and natural castile soap creates a powerful glass cleaner that cuts through grime, smudges, and fingerprints without leaving streaky chemical films."
       }
     ]
+  },
+  {
+    id: 'detail-9',
+    title: 'All-Purpose Strong Kangen Water Cleaner',
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Learn how to make a versatile, all-natural All-Purpose Spray Cleaner using Strong Kangen Water®, washing soda, and borax.',
+    content: [
+      'Ingredients:\n• 1/2 tsp washing soda\n• 2 tsp borax powder\n• 1/2 tsp liquid soap\n• 2 cups Strong Kangen Water®\n• 10-12 drops of essential oil (optional)',
+      'Directions:\nPut all ingredients into a spray bottle, tighten lid, and shake thoroughly to blend ingredients.',
+      'Spray on kitchen counters, appliances, stovetops, sinks, and bathroom surfaces for a powerful, chemical-free all-purpose cleaning spray!'
+    ],
+    bulletPoints: [
+      'No harsh chemicals!',
+      'No cocamidopropyl betaine, sulfates (SLS, SLES, SCS), formaldehyde, or salicylates.',
+      'No parabens, phosphates, MEA, DEA, TEA, or petroleum-based ingredients.',
+      'No animal by-products, perfumes, dyes, or caustics.',
+      '100% Non-toxic, hypoallergenic, gluten-free, biodegradable, cruelty-free.'
+    ],
+    subSections: [
+      {
+        heading: "All-Purpose Household Cleaning Guide",
+        image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "All-Purpose Kangen Spray",
+        text: "Combining washing soda, borax, and liquid soap with Strong Kangen Water® creates an all-surface cleaning spray that dissolves grease, grime, and water spots without leaving hazardous chemical residues."
+      }
+    ]
   }
 ];
 
