@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, FileText, Send } from 'lucide-react';
+import { CheckCircle2, FileText } from 'lucide-react';
 
 export const EbookBanner: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -44,16 +44,17 @@ export const EbookBanner: React.FC = () => {
 
   return (
     <section
-      className="relative py-14 text-white overflow-hidden font-sans shadow-md"
+      className="relative py-14 text-white overflow-hidden font-sans shadow-md call-to-action-style-3 ebookfooter"
+      id="ebookfooter0"
       style={{
         backgroundImage:
-          'url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1800&auto=format&fit=crop)',
+          'url(https://www.drinkfromheaven.com/affsites/eco/images/call-to-action/ebook.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-xs" />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-xs" />
 
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center space-y-3">
         {success ? (
@@ -77,7 +78,7 @@ export const EbookBanner: React.FC = () => {
               GET YOUR FREE ECO-LIVING EBOOK!
             </h2>
             <p className="text-xs sm:text-sm text-slate-200 max-w-xl mx-auto font-sans leading-relaxed">
-              29 pages of daily tips for a greener and healthier lifestyle with Kangen Water®!
+              29 pages of daily tips for a greener and healthier lifestyle with Kangen Water!
             </p>
 
             <form onSubmit={handleSubmit} className="pt-3">
@@ -103,8 +104,8 @@ export const EbookBanner: React.FC = () => {
               {error && (
                 <p className="mt-2 text-rose-300 text-xs font-medium">{error}</p>
               )}
-              <p className="text-[11px] text-slate-400 mt-3">
-                The ebook is sent to you via email. Your data is kept safe & never sold. Read our Privacy Policy.
+              <p className="text-[11px] text-slate-300 mt-3">
+                The ebook is sent to you via email or sms. Your data is kept safe; never sold or rented. Feel free to read our Privacy Policy.
               </p>
             </form>
           </>

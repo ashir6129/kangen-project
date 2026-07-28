@@ -25,7 +25,7 @@ const SLIDES: Slide[] = [
     desc: '',
     btnText: 'Greener Home',
     page: 'greener-home',
-    bgImage: 'https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=1800&auto=format&fit=crop',
+    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_1.jpg',
   },
   {
     id: 2,
@@ -34,34 +34,34 @@ const SLIDES: Slide[] = [
     desc: 'Cook, clean, rinse produce, sanitize surfaces and wash dishes with Kangen Water!',
     btnText: 'Greener Food',
     page: 'food',
-    bgImage: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1800&auto=format&fit=crop',
+    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_food.jpg',
   },
   {
     id: 3,
     title: 'Beauty Care',
     subtitle: 'Nontoxic Chemical-Free Beauty',
-    desc: 'Safely green your beauty routine. Ingredients in commercial beauty products are not stringently tested.',
+    desc: 'Ingredients in beauty products are not stringently tested for safety, leaving you exposed as a consumer. Safely green your beauty routine with Enagic!',
     btnText: 'Greener Beauty',
     page: 'beauty',
-    bgImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1800&auto=format&fit=crop',
+    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_beauty_spa.jpg',
   },
   {
     id: 4,
     title: 'Gardening',
     subtitle: 'Lush Organic Plants',
-    desc: 'Gardening is beneficial for both you and the Earth. Take your outdoor skills to the next level with Kangen Water®!',
+    desc: 'Gardening is beneficial for both you and the Earth. Take your outdoor skills to the next level with Kangen Water!',
     btnText: 'Greener Garden',
     page: 'garden',
-    bgImage: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1800&auto=format&fit=crop',
+    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_garden_plant.jpg',
   },
   {
     id: 5,
     title: 'Pet Care',
     subtitle: 'Pure Hydration for Pets',
-    desc: 'Caring for your beloved pets has never been easier, or greener with Kangen Water®!',
+    desc: 'Caring for your beloved pets has never been easier, or greener with Kangen Water!',
     btnText: 'Greener Pet',
     page: 'pet',
-    bgImage: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=1800&auto=format&fit=crop',
+    bgImage: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_pet.jpg',
   },
 ];
 
@@ -79,7 +79,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
 
   return (
-    <div className="relative w-full h-[520px] sm:h-[620px] overflow-hidden bg-slate-900 group font-sans">
+    <div className="relative w-full h-[520px] sm:h-[620px] overflow-hidden bg-slate-900 group font-sans" id="slider-2">
       {SLIDES.map((slide, index) => (
         <div
           key={slide.id}
@@ -91,7 +91,6 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.bgImage})` }}
           />
-          <div className="absolute inset-0 bg-black/40" />
 
           {index === 0 && (
             <div className="hidden md:block absolute inset-0 max-w-6xl mx-auto pointer-events-none">
