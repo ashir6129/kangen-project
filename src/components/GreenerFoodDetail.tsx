@@ -249,6 +249,22 @@ const ARTICLES: ArticleDetailData[] = [
       'Baking in parchment locks in aromatic steam, keeping salmon ultra tender and flaky without drying out.',
       'Double crimp packet edges to prevent savory shallot and wine reduction from leaking during baking.'
     ]
+  },
+  {
+    id: 'food-detail-13',
+    title: 'Honey Sesame Seared Tuna with Wasabi Cucumber Salad',
+    image: 'https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Recipe from wildoats.com. Sesame-crusted seared ahi tuna served over chilled wasabi cucumber, carrot & green onion salad.',
+    content: [
+      'Recipe from: wildoats.com',
+      'Ingredients:\n• 1/4 cup plus 2 tbsp rice wine vinegar\n• 2 tbsp olive oil\n• 1/4 tsp wasabi powder or paste (to taste)\n• 1 tsp turbinado sugar\n• 2 large seedless cucumbers, thinly sliced (washed in Kangen 11.5 Water)\n• 1 bunch green onions, sliced\n• 1 carrot, shredded\n• 1/4 cup soy sauce or tamari\n• 2 tbsp honey\n• 1 tbsp sesame oil\n• 1 reclosable gallon-size bag\n• 4 6-oz tuna steaks (washed in cold Kangen 9.5 Water)\n• 1/2 cup toasted sesame seeds\n• 1 tbsp olive oil for searing',
+      'Directions:\n1. Wasabi Cucumber Salad: Mix 1/4 cup rice wine vinegar, olive oil, wasabi, and sugar in a bowl. Stir in cucumbers, green onions, and shredded carrot. Cover and chill in fridge.\n2. Marinate Tuna: In a gallon bag, mix soy sauce, honey, sesame oil, and 2 tbsp rice wine vinegar. Add tuna steaks and refrigerate for 15 minutes.\n3. Sesame Crust & Sear: Spread toasted sesame seeds on a baking sheet. Press one side of each tuna steak into sesame seeds. Heat 1 tbsp olive oil in a skillet over high heat.\n4. Sear: Place tuna in skillet sesame-side down; sear for 1 minute. Turn and cook 2 minutes longer for medium-rare steaks.\n5. Assemble & Serve: Divide chilled wasabi cucumber salad onto 4 plates, slice tuna steaks diagonally, layer over salad, garnish with extra sesame seeds, and enjoy!'
+    ],
+    bulletPoints: [
+      'Clean fresh tuna steaks & cucumbers in cold Kangen 9.5 and 11.5 Water before marinating.',
+      'Sear tuna over high heat for just 1-2 minutes per side to maintain a tender, medium-rare center.',
+      'Wasabi cucumber salad provides a crisp, refreshing, low-calorie pairing rich in antioxidants.'
+    ]
   }
 ];
 
