@@ -230,6 +230,32 @@ const ARTICLES: ArticleDetailData[] = [
       }
     ]
   },
+  {
+    id: 'detail-8',
+    title: 'Strong Kangen Water Window Cleaner',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Learn how to make a streak-free, non-toxic window cleaner using Strong Kangen Water® and white vinegar.',
+    content: [
+      'Ingredients:\n• 1/4 cup distilled white vinegar\n• 1/2 tsp Strong Kangen Water® Dish Soap\n• 2 cups Strong Kangen Water®\n• 10 drops essential oil (optional)',
+      'Directions:\nCombine all ingredients in a spray bottle and shake well to blend.',
+      'Spray on windows, glass surfaces, and mirrors, then wipe clean with a lint-free microfiber cloth for a crystal-clear, streak-free shine without chemical ammonia fumes!'
+    ],
+    bulletPoints: [
+      'No harsh chemicals!',
+      'No cocamidopropyl betaine, sulfates (SLS, SLES, SCS), formaldehyde, or salicylates.',
+      'No parabens, phosphates, MEA, DEA, TEA, or petroleum-based ingredients.',
+      'No animal by-products, perfumes, dyes, or caustics.',
+      '100% Non-toxic, hypoallergenic, gluten-free, biodegradable, cruelty-free.'
+    ],
+    subSections: [
+      {
+        heading: "Streak-Free Window & Glass Cleaning Guide",
+        image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Streak-Free Window Spray",
+        text: "Combining Strong Kangen Water® with white vinegar and natural castile soap creates a powerful glass cleaner that cuts through grime, smudges, and fingerprints without leaving streaky chemical films."
+      }
+    ]
+  }
 ];
 
 interface GreenerHomeDetailProps {
