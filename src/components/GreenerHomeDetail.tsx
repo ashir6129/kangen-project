@@ -180,10 +180,26 @@ const ARTICLES: ArticleDetailData[] = [
     id: 'detail-5',
     title: 'Stain Remover',
     image: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.',
+    desc: 'Keep a spray bottle of Strong Kangen Water® on hand for stains. It works amazingly well on oily stains and food-based stains on clothing.',
     content: [
-      'Soak stubborn spots like coffee, sauce, or grease in Strong Kangen Water 11.5 before washing to easily lift stains.',
-      'It works quickly on carpets, upholstery, and clothing without bleaching fabric colors.'
+      'Keep a spray bottle of Strong Kangen Water® on hand for stains. It works amazingly well on oily stains and other food-based stains on clothing.',
+      'For stains on white clothing, add some lemon oil or lemon juice, spray on stained whites and line dry in the sun to remove stains.',
+      'For difficult and/or set-in stains: Fill a bucket with Strong Kangen Water® and soak whites overnight, then wash in washing machine the next day, and line dry in bright sunlight to whiten whites.'
+    ],
+    bulletPoints: [
+      'No harsh chemicals!',
+      'No cocamidopropyl betaine, sulfates (SLS, SLES, SCS), formaldehyde, or salicylates.',
+      'No parabens, phosphates, MEA, DEA, TEA, or petroleum-based ingredients.',
+      'No animal by-products, perfumes, dyes, or caustics.',
+      '100% Non-toxic, hypoallergenic, gluten-free, biodegradable, cruelty-free.'
+    ],
+    subSections: [
+      {
+        heading: "Ingredients & Stain Treatment Guide",
+        image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Chemical-Free Stain Removal",
+        text: "Strong Kangen Water (11.5 pH) acts as a powerful natural grease emulsifier. By pre-treating fabric spots with Kangen 11.5 Water and lemon juice, stains lift effortlessly without damaging sensitive clothing fibers or leaving toxic residue."
+      }
     ]
   },
   {
