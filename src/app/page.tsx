@@ -127,7 +127,7 @@ export default function Home() {
                 { id: 'detail-5', title: 'Powerful Stain remover', img: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=800&auto=format&fit=crop', desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.' },
                 { id: 'detail-6', title: 'Kangen Water® Liquid Castile Cleaner', img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop', desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.' },
                 { id: 'detail-8', title: 'Strong Kangen Water Window Cleaner', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to make a streak-free, non-toxic window cleaner using Strong Kangen Water® and white vinegar.' },
-                { id: 'detail-9', title: 'All-Purpose Strong Kangen Water Cleaner', img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to make a versatile, all-natural All-Purpose Spray Cleaner using Strong Kangen Water®, washing soda, and borax.' }
+                { id: 'detail-9', title: 'All-Purpose Strong Kangen Water Cleaner', img: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to make a versatile, all-natural All-Purpose Spray Cleaner using Strong Kangen Water®, washing soda, and borax.' }
               ].map((card, i) => (
                 <div
                   key={i}

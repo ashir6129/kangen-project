@@ -259,7 +259,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'detail-9',
     title: 'All-Purpose Strong Kangen Water Cleaner',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=1200&auto=format&fit=crop',
     desc: 'Learn how to make a versatile, all-natural All-Purpose Spray Cleaner using Strong Kangen Water®, washing soda, and borax.',
     content: [
       'Ingredients:\n• 1/2 tsp washing soda\n• 2 tsp borax powder\n• 1/2 tsp liquid soap\n• 2 cups Strong Kangen Water®\n• 10-12 drops of essential oil (optional)',
