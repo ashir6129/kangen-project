@@ -186,11 +186,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             </button>
 
-            {/* BROWSE PRODUCTS DROPDOWN (UI DISPLAY ONLY) */}
-            <div className="relative h-20 flex items-center" ref={productDropdownRef}>
+            {/* BROWSE PRODUCTS DROPDOWN (AUTOMATIC HOVER UI) */}
+            <div
+              className="relative h-20 flex items-center group"
+              ref={productDropdownRef}
+              onMouseEnter={() => setProductDropdownOpen(true)}
+              onMouseLeave={() => setProductDropdownOpen(false)}
+            >
               <button
                 onClick={() => setProductDropdownOpen(!productDropdownOpen)}
-                onMouseEnter={() => setProductDropdownOpen(true)}
                 className={`nav-link-item ${productDropdownOpen ? 'active' : ''}`}
               >
                 <div className="flex flex-col items-center leading-tight pt-2">
@@ -201,29 +205,31 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               </button>
 
-              {productDropdownOpen && (
-                <div
-                  onMouseLeave={() => setProductDropdownOpen(false)}
-                  className="absolute left-0 top-full mt-0 w-56 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-150"
-                >
-                  {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setProductDropdownOpen(false)}
-                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-pointer"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <div
+                className={`absolute left-0 top-full mt-0 w-56 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md ${
+                  productDropdownOpen ? 'block' : 'hidden group-hover:block'
+                }`}
+              >
+                {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
+                  >
+                    {item.label}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* ABOUT COMPANY DROPDOWN (UI DISPLAY ONLY) */}
-            <div className="relative h-20 flex items-center" ref={companyDropdownRef}>
+            {/* ABOUT COMPANY DROPDOWN (AUTOMATIC HOVER UI) */}
+            <div
+              className="relative h-20 flex items-center group"
+              ref={companyDropdownRef}
+              onMouseEnter={() => setCompanyDropdownOpen(true)}
+              onMouseLeave={() => setCompanyDropdownOpen(false)}
+            >
               <button
                 onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
-                onMouseEnter={() => setCompanyDropdownOpen(true)}
                 className={`nav-link-item ${companyDropdownOpen ? 'active' : ''}`}
               >
                 <div className="flex flex-col items-center leading-tight pt-2">
@@ -234,22 +240,20 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               </button>
 
-              {companyDropdownOpen && (
-                <div
-                  onMouseLeave={() => setCompanyDropdownOpen(false)}
-                  className="absolute right-0 top-full mt-0 w-52 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-150"
-                >
-                  {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCompanyDropdownOpen(false)}
-                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-pointer"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <div
+                className={`absolute right-0 top-full mt-0 w-52 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md ${
+                  companyDropdownOpen ? 'block' : 'hidden group-hover:block'
+                }`}
+              >
+                {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
+                  >
+                    {item.label}
+                  </div>
+                ))}
+              </div>
             </div>
           </nav>
 
