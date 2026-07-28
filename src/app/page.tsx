@@ -118,12 +118,12 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 pb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Greener Time', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/clean.jpg?v=3', desc: 'Greener home solutions save time and money while keeping your family safe from harmful chemical residue.' },
-                { title: 'Non-toxic Cleaning', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-home-stain-remover-w600.jpg?v=2', desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.' },
-                { title: 'Doing the Dishes', img: 'https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=600&auto=format&fit=crop', desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).' },
-                { title: 'In the Laundry room', img: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=600&auto=format&fit=crop', desc: 'Replace harsh chemical detergents with Kangen Water to keep your linens fresh, soft, and non-toxic.' },
-                { title: 'Powerful Stain remover', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-home-stain-remover-w600.jpg?v=2', desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.' },
-                { title: 'Kangen Water® Liquid Castile Cleaner', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-home-castile-soap-w600.jpg', desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.' }
+                { title: 'Greener Time', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', desc: 'Greener home solutions save time and money while keeping your family safe from harmful chemical residue.' },
+                { title: 'Non-toxic Cleaning', img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop', desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.' },
+                { title: 'Doing the Dishes', img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=800&auto=format&fit=crop', desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).' },
+                { title: 'In the Laundry room', img: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=800&auto=format&fit=crop', desc: 'Replace harsh chemical detergents with Kangen Water to keep your linens fresh, soft, and non-toxic.' },
+                { title: 'Powerful Stain remover', img: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=800&auto=format&fit=crop', desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.' },
+                { title: 'Kangen Water® Liquid Castile Cleaner', img: 'https://images.unsplash.com/photo-1608248597260-652196130954?q=80&w=800&auto=format&fit=crop', desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.' }
               ].map((card, i) => (
                 <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                   <div>
@@ -177,12 +177,12 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 pb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Clean Produce', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-food-cookingkangen-w600.jpg', desc: 'Soaking fruits and vegetables in Strong Kangen Water (pH 11.5) removes oily pesticides and residue that tap water cannot wash off.' },
-                { title: 'Cooking with Kangen Water®', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-food-cookingkangen-w600.jpg', desc: 'Learn how to integrate Kangen Water® into your favorite recipes by simply replacing tap water with one of the 3 different types of Kangen Water® for cooking.' },
-                { title: 'Kangen Tea', img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600&auto=format&fit=crop', desc: 'Infuse tea effortlessly! Kangen Water\'s micro-clustered molecules penetrate tea leaves quickly even with cold or room-temp water.' },
-                { title: 'Brining & Tenderizing Meat with Kangen Water®', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop', desc: 'Soak meats in Kangen 9.5 before cooking to draw out gamey odors, tenderize tough fibers, and lock in savory natural juices.' },
-                { title: 'Green Smoothie', img: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=600&auto=format&fit=crop', desc: 'Boost your daily morning smoothie by blending organic greens with Kangen Water for maximum nutrient absorption and energy.' },
-                { title: 'Sayra\'s Cornbread', img: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=600&auto=format&fit=crop', desc: 'Bake lighter, fluffier cornbread using Kangen 9.5 Water. The micro-clustering enhances texture and preserves rich corn flavor.' }
+                { title: 'Clean Produce', img: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=800&auto=format&fit=crop', desc: 'Soaking fruits and vegetables in Strong Kangen Water (pH 11.5) removes oily pesticides and residue that tap water cannot wash off.' },
+                { title: 'Cooking with Kangen Water®', img: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to integrate Kangen Water® into your favorite recipes by simply replacing tap water with one of the 3 different types of Kangen Water® for cooking.' },
+                { title: 'Kangen Tea', img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop', desc: 'Infuse tea effortlessly! Kangen Water\'s micro-clustered molecules penetrate tea leaves quickly even with cold or room-temp water.' },
+                { title: 'Brining & Tenderizing Meat with Kangen Water®', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop', desc: 'Soak meats in Kangen 9.5 before cooking to draw out gamey odors, tenderize tough fibers, and lock in savory natural juices.' },
+                { title: 'Green Smoothie', img: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=800&auto=format&fit=crop', desc: 'Boost your daily morning smoothie by blending organic greens with Kangen Water for maximum nutrient absorption and energy.' },
+                { title: 'Sayra\'s Cornbread', img: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=800&auto=format&fit=crop', desc: 'Bake lighter, fluffier cornbread using Kangen 9.5 Water. The micro-clustering enhances texture and preserves rich corn flavor.' }
               ].map((card, i) => (
                 <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                   <div>
@@ -235,10 +235,10 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 pb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Be Green, Be Beautiful!', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/beauty.jpg?v=3', desc: 'To have a routine that keeps you healthy and hydrated can make you feel beautiful inside and out!' },
-                { title: 'A New Approach to Skin Care', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-beauty-soap-w600.jpg', desc: 'Replacing harsh chemicals with Kangen Water for daily cleansing, toning, and hydration can make all the difference.' },
-                { title: 'Kangen® Hand Sanitizer', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-beauty-hand-sanitizer-w600.jpg', desc: 'Learn how to make hand sanitizer without chemical alcohol using Strong Acidic Water (pH 2.5).' },
-                { title: 'Beauty Water Soap', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/greener-beauty-soap-w600.jpg', desc: 'These beautiful soaps make wonderful gifts, or can be used daily to nourish skin with gentle Beauty Water.' }
+                { title: 'Be Green, Be Beautiful!', img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop', desc: 'To have a routine that keeps you healthy and hydrated can make you feel beautiful inside and out!' },
+                { title: 'A New Approach to Skin Care', img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop', desc: 'Replacing harsh chemicals with Kangen Water for daily cleansing, toning, and hydration can make all the difference.' },
+                { title: 'Kangen® Hand Sanitizer', img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to make hand sanitizer without chemical alcohol using Strong Acidic Water (pH 2.5).' },
+                { title: 'Beauty Water Soap', img: 'https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=800&auto=format&fit=crop', desc: 'These beautiful soaps make wonderful gifts, or can be used daily to nourish skin with gentle Beauty Water.' }
               ].map((card, i) => (
                 <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                   <div>
@@ -303,9 +303,9 @@ export default function Home() {
 
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { title: 'Benefits of Gardening', img: 'https://www.drinkfromheaven.com/affsites/eco/images/blog/garden.jpg?v=3', desc: 'Health professionals have long touted the benefits of gardening on your mental health, budget, overall wellness, and building of the community.' },
-                  { title: 'Gardening With Kangen Water®', img: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_garden_plant.jpg', desc: 'Gardening with Kangen Water is a great way to keep your plants and flowers healthy, vibrant, and fresh.' },
-                  { title: 'Gardening with Kids', img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=600&auto=format&fit=crop', desc: 'Children who garden show heightened environmental awareness, responsibility, interpersonal skills, and team skills.' }
+                  { title: 'Benefits of Gardening', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop', desc: 'Health professionals have long touted the benefits of gardening on your mental health, budget, overall wellness, and building of the community.' },
+                  { title: 'Gardening With Kangen Water®', img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800&auto=format&fit=crop', desc: 'Gardening with Kangen Water is a great way to keep your plants and flowers healthy, vibrant, and fresh.' },
+                  { title: 'Gardening with Kids', img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=800&auto=format&fit=crop', desc: 'Children who garden show heightened environmental awareness, responsibility, interpersonal skills, and team skills.' }
                 ].map((card, i) => (
                   <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                     <div>
@@ -361,17 +361,17 @@ export default function Home() {
               {[
                 {
                   title: 'Flea and Tick Treatments',
-                  img: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600&auto=format&fit=crop',
+                  img: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=800&auto=format&fit=crop',
                   desc: 'How safe are the flea and tick treatments you are currently using?'
                 },
                 {
                   title: 'Eliminate Pet Odors',
-                  img: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=600&auto=format&fit=crop',
+                  img: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop',
                   desc: 'As much as you love your pets, you probably don\'t want pet odors or urine to dominate your green home.'
                 },
                 {
                   title: 'Pets Need Water, Too!',
-                  img: 'https://www.drinkfromheaven.com/affsites/eco/images/slide/home_pet.jpg',
+                  img: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop',
                   desc: 'A member of the family whose hydration may be overlooked at times is your beloved pet.'
                 }
               ].map((card, i) => (
