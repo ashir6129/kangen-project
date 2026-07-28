@@ -8,92 +8,106 @@ interface LifestyleGridProps {
 
 export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
   return (
-    <section className="py-14 bg-white font-sans">
+    <section className="py-16 bg-white font-sans">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333]">
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333] tracking-wide">
             A Greener Lifestyle with Kangen Water®
           </h2>
-          <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
             Minimize consumption, eliminate toxins and live healthier by simply adding water. Kangen Water® is the water that will change your life. Begin your green journey by making Enagic® an integral part of your daily routine. Discover more about these amazing waters and the variety of ways they can help you achieve the cleaner, greener life you deserve.
           </p>
         </div>
 
-        {/* 3-Column Lifestyle Category Tiles */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {/* 3-Column Masonry Lifestyle Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
 
-          {/* Col 1: Cooking (Top) & Beauty (Bottom) */}
+          {/* Column 1: Cooking (Top) & Beauty (Bottom) */}
           <div className="flex flex-col gap-6">
+            {/* COOKING */}
             <button
               onClick={() => onNavigate?.('food')}
-              className="group relative rounded-sm overflow-hidden flex items-center justify-center h-64 w-full text-left"
+              className="group relative rounded-md overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition duration-500"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop')" }}
+              <img
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop"
+                alt="Cooking with Kangen Water"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
-              <div className="category-white-box">
-                <span className="font-serif italic text-lg text-[#333333] font-normal">Cooking</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
+              <div className="category-white-box shadow-md rounded-xs">
+                <span className="font-serif italic text-lg text-[#333333] font-semibold">Cooking</span>
               </div>
             </button>
 
+            {/* BEAUTY */}
             <button
               onClick={() => onNavigate?.('beauty')}
-              className="group relative rounded-sm overflow-hidden flex items-center justify-center h-64 w-full text-left"
+              className="group relative rounded-md overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition duration-500"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512290900673-7002004117b9?q=80&w=800&auto=format&fit=crop')" }}
+              <img
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop"
+                alt="Greener Beauty with Kangen Water"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
-              <div className="category-white-box">
-                <span className="font-serif italic text-lg text-[#333333] font-normal">Beauty</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
+              <div className="category-white-box shadow-md rounded-xs">
+                <span className="font-serif italic text-lg text-[#333333] font-semibold">Beauty</span>
               </div>
             </button>
           </div>
 
-          {/* Col 2: Center Tall Benefits Tile */}
+          {/* Column 2: Center Featured "Benefits of Kangen Water" (Tall Card) */}
           <button
             onClick={() => onNavigate?.('shop')}
-            className="group relative rounded-sm overflow-hidden flex items-center justify-center min-h-[536px] w-full text-left"
+            className="group relative rounded-md overflow-hidden flex items-center justify-center min-h-[536px] w-full text-left shadow-sm border border-slate-200 cursor-pointer"
           >
-            <div
-              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition duration-500"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=1200&auto=format&fit=crop')" }}
+            <img
+              src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=1000&auto=format&fit=crop"
+              alt="Benefits of Kangen Water"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
             />
-            <div className="category-white-box text-center py-6 px-4">
-              <span className="font-serif italic text-lg sm:text-xl text-[#333333] font-normal leading-snug">
+            <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/20 transition" />
+            <div className="category-white-box text-center py-6 px-4 shadow-lg rounded-xs">
+              <span className="font-serif italic text-lg sm:text-xl text-[#333333] font-semibold leading-snug">
                 Benefits of<br />Kangen Water®
               </span>
             </div>
           </button>
 
-          {/* Col 3: Cleaning (Top) & Gardening (Bottom) */}
+          {/* Column 3: Cleaning (Top) & Gardening (Bottom) */}
           <div className="flex flex-col gap-6">
+            {/* CLEANING */}
             <button
               onClick={() => onNavigate?.('greener-home')}
-              className="group relative rounded-sm overflow-hidden flex items-center justify-center h-64 w-full text-left"
+              className="group relative rounded-md overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition duration-500"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop')" }}
+              <img
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop"
+                alt="Cleaning with Kangen Water"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
-              <div className="category-white-box">
-                <span className="font-serif italic text-lg text-[#333333] font-normal">Cleaning</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
+              <div className="category-white-box shadow-md rounded-xs">
+                <span className="font-serif italic text-lg text-[#333333] font-semibold">Cleaning</span>
               </div>
             </button>
 
+            {/* GARDENING */}
             <button
               onClick={() => onNavigate?.('garden')}
-              className="group relative rounded-sm overflow-hidden flex items-center justify-center h-64 w-full text-left"
+              className="group relative rounded-md overflow-hidden flex items-center justify-center h-64 w-full text-left shadow-sm border border-slate-200 cursor-pointer"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition duration-500"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop')" }}
+              <img
+                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop"
+                alt="Gardening with Kangen Water"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
-              <div className="category-white-box">
-                <span className="font-serif italic text-lg text-[#333333] font-normal">Gardening</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
+              <div className="category-white-box shadow-md rounded-xs">
+                <span className="font-serif italic text-lg text-[#333333] font-semibold">Gardening</span>
               </div>
             </button>
           </div>
