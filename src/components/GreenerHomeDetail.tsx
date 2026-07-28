@@ -28,27 +28,28 @@ interface ArticleDetailData {
   image: string;
   desc: string;
   content: string[];
+  bulletPoints?: string[];
   subSections?: ArticleSubSection[];
 }
 
 const INITIAL_COMMENTS: Comment[] = [
   {
     id: 'comm-1',
-    name: 'Grant',
-    email: 'grant@example.com',
-    date: 'Oct 27',
-    text: 'I agree the 2.5 and 11.5 have become an important part of our daily routine...in the kitchen, in the bathroom, so many uses as first aid treatment or Sherri and I plus our 2 dogs.\nThere has been several recalls for hand sanitizer, so we are grateful for these amazing bleach and alcohol free alternatives',
-    likes: 4,
-    avatarBg: 'bg-emerald-600',
-  },
-  {
-    id: 'comm-2',
     name: 'Eliza',
     email: 'eliza@example.com',
     date: 'Sep 14',
     text: 'Soaking our greasy baking sheets in 11.5 water has saved so much time! The grease literally wipes right off.',
     likes: 5,
-    avatarBg: 'bg-indigo-600',
+    avatarBg: 'bg-[#87b076]',
+  },
+  {
+    id: 'comm-2',
+    name: 'Grant',
+    email: 'grant@example.com',
+    date: 'Oct 27',
+    text: 'We love using 2.5 water on cutting boards after chopping raw meat. Gives us peace of mind without chemical bleach smells.',
+    likes: 4,
+    avatarBg: 'bg-amber-600',
   },
   {
     id: 'comm-3',
@@ -57,7 +58,7 @@ const INITIAL_COMMENTS: Comment[] = [
     date: 'Jul 13',
     text: 'The two specialty waters in 2.5 and 11.5 have been priceless!! So effective, multipurpose-full, and saved us a ton of money🙂',
     likes: 3,
-    avatarBg: 'bg-amber-600',
+    avatarBg: 'bg-[#87b076]',
   },
   {
     id: 'comm-4',
@@ -68,87 +69,22 @@ const INITIAL_COMMENTS: Comment[] = [
     likes: 4,
     avatarBg: 'bg-sky-600',
   },
-  {
-    id: 'comm-5',
-    name: 'Sherri B.',
-    email: 'sherri@example.com',
-    date: 'Mar 02',
-    text: 'Kangen water has completely transformed how we clean our home. No more toxic fumes when cleaning the bathroom or kitchen!',
-    likes: 5,
-    avatarBg: 'bg-teal-600',
-  },
-  {
-    id: 'comm-6',
-    name: 'David M.',
-    email: 'david@example.com',
-    date: 'Feb 14',
-    text: 'Using 11.5 pH water to clean grease off stove tops is mind blowing. It dissolves grease like magic without any soap residue.',
-    likes: 6,
-    avatarBg: 'bg-purple-600',
-  },
-  {
-    id: 'comm-7',
-    name: 'Elena R.',
-    email: 'elena@example.com',
-    date: 'Jan 28',
-    text: "I was skeptical at first, but after using Kangen water for dishes and laundry, my hands aren't dry anymore!",
-    likes: 2,
-    avatarBg: 'bg-rose-600',
-  },
 ];
 
 const ARTICLES: ArticleDetailData[] = [
   {
-    id: 'detail-1',
-    title: 'A Greener Home',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
-    desc: "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
-    content: [
-      "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
-      "In a perfect world, your cleaning products would be gentle and safe for everyday use, but still powerful on dirt, stains, and germs. Thanks to your multi-purpose Enagic machine, this IS possible!",
-      "You can make your own eco-friendly products that actually work!",
-      "Learn how you can conveniently maintain a clean and green home with the power of Enagic. Get the most of Kangen Water®, and discover a chemical-free lifestyle today!"
-    ],
-    subSections: [
-      {
-        heading: "Eco-Friendly Living Made Simple",
-        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
-        imageOverlayText: "Chemical-Free Home Environment",
-        text: "Switching to Kangen Water allows you to reduce plastic waste from commercial cleaner bottles, eliminate synthetic dyes and fragrances, and keep your family safe from toxic residues."
-      }
-    ]
-  },
-  {
-    id: 'detail-2',
-    title: 'Non-toxic Cleaning',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.',
-    content: [
-      'Powerful Strong Kangen Water (pH 11.5) has strong emulsifying properties that break down oils and grime on stovetops, counters, and floors naturally.',
-      'By replacing toxic commercial spray cleaners with Kangen 11.5 Water, you protect your family and pets from hazardous chemical fumes and chemical residues.'
-    ],
-    subSections: [
-      {
-        heading: "Multi-Surface All-Purpose Spray",
-        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
-        imageOverlayText: "All-Purpose Spray Cleaner",
-        text: "Fill a spray bottle with Strong Kangen Water (11.5 pH) for heavy grease on stovetops, range hoods, and oven doors. For general daily dusting and counter wiping, use Neutral Water (7.0 pH) or Beauty Water (6.0 pH)."
-      },
-      {
-        heading: "Bathroom & Mirror Sanitizer",
-        image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
-        imageOverlayText: "Streak-Free Mirror & Tile Cleaner",
-        text: "Spray Strong Acidic Water (2.5 pH) on sinks, faucets, tiles, and toilet surfaces to eliminate bacteria and mold. Wipe mirrors with Beauty Water (6.0 pH) for a streak-free shine without glass cleaner chemicals."
-      }
-    ]
-  },
-  {
     id: 'detail-3',
     title: 'Doing the Dishes',
     image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).',
+    desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5) and Strong Kangen Water (pH 11.5).',
     content: [
       'Dishes, cutting boards, and cutlery can be cleaned and sanitized naturally using Strong Acidic Water (pH 2.5) and Strong Kangen Water (pH 11.5).'
+    ],
+    bulletPoints: [
+      "Clean dirty dishes with 11.5 Strong Kangen Water to emulsify oil and grease without soap residue.",
+      "Wash cutting boards, dishcloths, sponges, and knives with 2.5 Strong Acidic Water to sanitize and disinfect without harmful chemicals.",
+      "Rinse glassware with Beauty Water (6.0 pH) or Kangen 9.5 for a streak-free, crystal-clear shine.",
+      "Soak fruits & vegetables with Kangen 11.5 Water to wash off oil-based pesticides that tap water cannot wash away."
     ],
     subSections: [
       {
@@ -167,6 +103,36 @@ const ARTICLES: ArticleDetailData[] = [
     ]
   },
   {
+    id: 'detail-2',
+    title: 'Green Cleaning / Non-toxic Cleaning',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.',
+    content: [
+      'Powerful Strong Kangen Water (pH 11.5) has strong emulsifying properties that break down oils and grime on stovetops, counters, and floors naturally.',
+      'By replacing toxic commercial spray cleaners with Kangen 11.5 Water, you protect your family and pets from hazardous chemical fumes and chemical residues.'
+    ],
+    bulletPoints: [
+      "Clean your entire home with non-toxic, chemical-free Kangen Water solutions.",
+      "Dissolve heavy grease on stovetops, range hoods, and oven doors using 11.5 Strong Kangen Water.",
+      "Sanitize bathroom fixtures, toilets, sinks, and countertops using 2.5 Strong Acidic Water.",
+      "Wipe windows, mirrors, and glass surfaces with 6.0 Beauty Water for a streak-free shine."
+    ],
+    subSections: [
+      {
+        heading: "Multi-Surface All-Purpose Spray",
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "All-Purpose Spray Cleaner",
+        text: "Fill a spray bottle with Strong Kangen Water (11.5 pH) for heavy grease on stovetops, range hoods, and oven doors. For general daily dusting and counter wiping, use Neutral Water (7.0 pH) or Beauty Water (6.0 pH)."
+      },
+      {
+        heading: "Bathroom & Mirror Sanitizer",
+        image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Streak-Free Mirror & Tile Cleaner",
+        text: "Spray Strong Acidic Water (2.5 pH) on sinks, faucets, tiles, and toilet surfaces to eliminate bacteria and mold. Wipe mirrors with Beauty Water (6.0 pH) for a streak-free shine without glass cleaner chemicals."
+      }
+    ]
+  },
+  {
     id: 'detail-4',
     title: 'In the Laundry room',
     image: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=1200&auto=format&fit=crop',
@@ -174,6 +140,11 @@ const ARTICLES: ArticleDetailData[] = [
     content: [
       'Pouring Strong Kangen Water 11.5 into your wash cycle lifts oils and dirt out of clothes fibers naturally, reducing the need for chemical laundry detergent.',
       'Your towels and clothes remain soft, hypoallergenic, and completely free of artificial synthetic perfumes.'
+    ],
+    bulletPoints: [
+      "Replace synthetic laundry detergents with Strong Kangen Water (pH 11.5).",
+      "Soak stained clothes, towels, and gym wear in 11.5 Kangen Water to loosen oils and odors naturally.",
+      "Add Beauty Water (pH 6.0) to rinse cycles as a natural fabric softener without artificial chemicals."
     ],
     subSections: [
       {
@@ -185,39 +156,15 @@ const ARTICLES: ArticleDetailData[] = [
     ]
   },
   {
-    id: 'detail-5',
-    title: 'Powerful Stain remover',
-    image: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.',
+    id: 'detail-1',
+    title: 'A Greener Home',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
+    desc: "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
     content: [
-      'Soak stubborn spots like coffee, sauce, or grease in Strong Kangen Water 11.5 before washing to easily lift stains.',
-      'It works quickly on carpets, upholstery, and clothing without bleaching fabric colors.'
-    ],
-    subSections: [
-      {
-        heading: "Spot Cleaning & Carpet Care",
-        image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?q=80&w=800&auto=format&fit=crop",
-        imageOverlayText: "Spot Stain Treatment",
-        text: "Spray 11.5 Strong Kangen Water directly onto wine, coffee, or oil spots. Let sit for 3 to 5 minutes, then blot with a clean towel. The stain lifts without harsh bleaches."
-      }
-    ]
-  },
-  {
-    id: 'detail-6',
-    title: 'Kangen Water® Liquid Castile Cleaner',
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.',
-    content: [
-      'Combining pure liquid castile soap with Kangen Water creates an all-natural, multi-surface spray for marble, tile, wood, and glass.',
-      'Infuse essential oils like lemon or tea tree for a refreshing, non-toxic aromatic green cleaning routine.'
-    ],
-    subSections: [
-      {
-        heading: "Natural Castile Cleaner Recipe",
-        image: "https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=800&auto=format&fit=crop",
-        imageOverlayText: "Castile Liquid Soap",
-        text: "Combine 2 tbsp liquid castile soap, 2 cups of 11.5 pH Kangen Water, and 10 drops of lavender or eucalyptus essential oil in a glass spray bottle."
-      }
+      "A green home means a home free of chemicals and other materials that are harsh on our Earth. Whether you're cleaning, laundering, or washing the dishes, you should be cautious of the products you use and their effect on your home and the environment.",
+      "In a perfect world, your cleaning products would be gentle and safe for everyday use, but still powerful on dirt, stains, and germs. Thanks to your multi-purpose Enagic machine, this IS possible!",
+      "You can make your own eco-friendly products that actually work!",
+      "Learn how you can conveniently maintain a clean and green home with the power of Enagic. Get the most of Kangen Water®, and discover a chemical-free lifestyle today!"
     ]
   },
   {
@@ -227,6 +174,25 @@ const ARTICLES: ArticleDetailData[] = [
     desc: 'Stains happen. With Strong Kangen Water® make stains disappear like magic without harsh chemicals.',
     content: [
       'Mix liquid castile soap with Strong Kangen Water for a powerful natural dish soap that cuts through stubborn grease while keeping your hands moisturized.'
+    ]
+  },
+  {
+    id: 'detail-5',
+    title: 'Stain Remover',
+    image: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.',
+    content: [
+      'Soak stubborn spots like coffee, sauce, or grease in Strong Kangen Water 11.5 before washing to easily lift stains.',
+      'It works quickly on carpets, upholstery, and clothing without bleaching fabric colors.'
+    ]
+  },
+  {
+    id: 'detail-6',
+    title: 'Kangen Water® Liquid Castile Cleaner',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.',
+    content: [
+      'Combining pure liquid castile soap with Kangen Water creates an all-natural, multi-surface spray for marble, tile, wood, and glass.'
     ]
   }
 ];
@@ -238,7 +204,7 @@ interface GreenerHomeDetailProps {
 }
 
 export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
-  initialArticleId = 'detail-1',
+  initialArticleId = 'detail-3',
   onNavigate,
   onOpenConsultation,
 }) => {
@@ -309,7 +275,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
       date: 'Just now',
       text: commentText,
       likes: 0,
-      avatarBg: 'bg-emerald-600',
+      avatarBg: 'bg-[#87b076]',
     };
 
     const updated = [newComment, ...comments];
@@ -371,31 +337,32 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
     <div className="bg-white min-h-screen font-sans text-slate-800">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-6 right-6 z-50 bg-emerald-700 text-white px-5 py-3 rounded-md shadow-xl text-xs font-semibold animate-bounce flex items-center gap-2">
+        <div className="fixed top-6 right-6 z-50 bg-[#87b076] text-white px-5 py-3 rounded-md shadow-xl text-xs font-semibold animate-bounce flex items-center gap-2">
           <span>✓</span> {toastMessage}
         </div>
       )}
 
-      {/* Sub Header Banner */}
-      <section className="relative w-full h-64 sm:h-72 bg-cover bg-center flex items-center justify-center shadow-inner"
+      {/* Sub Header Banner matching screenshot */}
+      <section
+        className="relative w-full h-64 sm:h-72 bg-cover bg-center flex items-center justify-center shadow-inner"
         style={{ backgroundImage: `url('${currentArticle.image}')` }}
       >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+        <div className="absolute inset-0 bg-black/45 backdrop-blur-xs"></div>
         <h1 className="relative z-10 font-serif text-3xl sm:text-5xl text-white font-normal drop-shadow-md tracking-wide">
           Greener Home
         </h1>
       </section>
 
-      {/* eBook Call to Action Bar */}
-      <section className="wood-consult-bg py-4 px-4 shadow-inner border-y border-slate-900/40">
+      {/* Search Header Bar matching screenshot */}
+      <section className="wood-consult-bg py-3 px-4 shadow-inner border-y border-slate-900/40">
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
           <input
-            type="email"
-            placeholder="Your email address..."
+            type="text"
+            placeholder="Search Greener Home..."
             className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
           />
           <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
-            SEND THE EBOOK
+            SEARCH
           </button>
         </div>
       </section>
@@ -405,10 +372,10 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
           {/* LEFT SIDEBAR (3 cols) */}
-          <aside className="lg:col-span-3 space-y-8">
-            {/* Distributor Card */}
+          <aside className="lg:col-span-3 space-y-6">
+            {/* Distributor Circle Profile Card */}
             <div className="p-6 border border-slate-200/80 rounded-lg bg-slate-50 text-center space-y-3 shadow-xs">
-              <div className="w-24 h-24 rounded-full border-2 border-emerald-600 mx-auto overflow-hidden shadow">
+              <div className="w-24 h-24 rounded-full border-2 border-[#87b076] mx-auto overflow-hidden shadow">
                 <img
                   src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
                   alt="Cynthia Briganti"
@@ -429,17 +396,14 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                   onClick={() => onOpenConsultation?.()}
                   className="text-xs text-emerald-700 font-semibold underline hover:text-emerald-900 cursor-pointer"
                 >
-                  contact distributor
+                  contact
                 </button>
               </div>
             </div>
 
-            {/* Sidebar Article List */}
+            {/* Sidebar Article List matching exact screenshot */}
             <div className="space-y-3">
-              <h4 className="font-serif font-bold text-sm text-slate-700 uppercase tracking-wider border-b border-slate-200 pb-2">
-                Greener Home Articles
-              </h4>
-              <div className="space-y-3 max-h-[550px] overflow-y-auto pr-1">
+              <div className="space-y-3 max-h-[600px] overflow-y-auto pr-1">
                 {ARTICLES.map((art) => {
                   const isActive = art.id === selectedArticleId;
                   return (
@@ -449,10 +413,10 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                         setSelectedArticleId(art.id);
                         window.scrollTo({ top: 300, behavior: 'smooth' });
                       }}
-                      className={`w-full text-left p-2.5 rounded-lg border transition flex items-center gap-3 cursor-pointer ${
+                      className={`w-full text-left p-2 rounded-lg border transition flex items-center gap-3 cursor-pointer ${
                         isActive
-                          ? 'border-emerald-600 bg-emerald-50/70 shadow-xs ring-1 ring-emerald-500'
-                          : 'border-slate-200/80 bg-slate-50 hover:bg-slate-100'
+                          ? 'border-blue-500 bg-slate-100 shadow-xs ring-1 ring-blue-500'
+                          : 'border-slate-200/80 bg-white hover:bg-slate-50'
                       }`}
                     >
                       <img
@@ -464,7 +428,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                       />
                       <span
                         className={`text-xs font-serif font-semibold leading-snug line-clamp-2 ${
-                          isActive ? 'text-emerald-900 font-bold' : 'text-slate-700'
+                          isActive ? 'text-slate-900 font-bold' : 'text-slate-700'
                         }`}
                       >
                         {art.title}
@@ -502,7 +466,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                 />
               </div>
 
-              {/* Article Paragraphs */}
+              {/* Intro Paragraphs */}
               <div className="space-y-4 text-slate-700 text-sm leading-relaxed font-sans pt-2">
                 {currentArticle.content.map((paragraph, idx) => (
                   <p key={idx} className="text-slate-600 leading-relaxed text-sm sm:text-base">
@@ -510,6 +474,23 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                   </p>
                 ))}
               </div>
+
+              {/* Bullet Points List if present */}
+              {currentArticle.bulletPoints && currentArticle.bulletPoints.length > 0 && (
+                <div className="bg-slate-50 border border-slate-200/80 rounded-lg p-5 space-y-3">
+                  <h4 className="font-serif font-bold text-base text-[#333333]">
+                    Key Uses & Benefits:
+                  </h4>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-700 font-sans">
+                    {currentArticle.bulletPoints.map((pt, pIdx) => (
+                      <li key={pIdx} className="flex items-start gap-2.5">
+                        <span className="text-[#87b076] font-bold text-base">✓</span>
+                        <span className="leading-relaxed">{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* Sub-sections (for rich pages like Doing the Dishes & Non-toxic Cleaning) */}
               {currentArticle.subSections && currentArticle.subSections.length > 0 && (
@@ -560,7 +541,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
 
             </article>
 
-            {/* Category Breadcrumbs Nav Bar */}
+            {/* Category Breadcrumbs Nav Bar matching screenshot */}
             <div className="bg-slate-100 rounded-lg p-3 text-xs text-slate-600 border border-slate-200/80 flex flex-wrap items-center gap-2 font-serif">
               <button
                 onClick={() => onNavigate('greener-home')}
@@ -612,7 +593,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
               </button>
             </div>
 
-            {/* REAL-TIME INTERACTIVE COMMENTS SECTION */}
+            {/* REAL-TIME INTERACTIVE COMMENTS SECTION matching screenshot */}
             <section className="space-y-8 pt-4 border-t border-slate-200">
 
               {/* Comments Section Header */}
@@ -731,7 +712,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                     <div className="flex items-center gap-3">
                       <div
                         className={`w-10 h-10 rounded-full text-white font-serif font-bold text-sm flex items-center justify-center shadow-xs ${
-                          comm.avatarBg || 'bg-emerald-600'
+                          comm.avatarBg || 'bg-[#87b076]'
                         }`}
                       >
                         {comm.name.charAt(0).toUpperCase()}
