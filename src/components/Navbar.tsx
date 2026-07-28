@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ShoppingCart, Search, Menu, X, ChevronDown, Award, Sparkles, Video, HelpCircle, PhoneCall, Droplets, Info } from 'lucide-react';
+import { ShoppingCart, Search, Menu, X, ChevronDown } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 interface NavbarProps {
@@ -14,28 +14,30 @@ interface NavbarProps {
 }
 
 const PRODUCT_DROPDOWN_ITEMS = [
-  { label: 'Browse Products Overview', page: 'shop' },
-  { label: 'Compare All Products Side-by-Side', action: 'compare' },
-  { label: 'Shop Machine Catalog', page: 'shop' },
-  { label: 'The 5 Kangen Water Types', page: 'water-types' },
-  { label: 'LeveLuk K8 (8-Plate Flagship)', page: 'shop' },
-  { label: 'LeveLuk SD501DX (Modern Icon)', page: 'shop' },
-  { label: 'SD501 Platinum (Sleek Finish)', page: 'shop' },
-  { label: 'Super 501 (12-Plate Commercial)', page: 'shop' },
-  { label: 'LeveLuk SD501U (Under-Counter)', page: 'shop' },
-  { label: 'LeveLuk JRIV (Junior Starter)', page: 'shop' },
-  { label: 'Anespa DX (Ionized Home Spa)', page: 'shop' },
-  { label: 'Kangen Ukon Annual Supplement', page: 'shop' },
+  { label: 'Browse Products' },
+  { label: 'Compare Products' },
+  { label: 'Shop' },
+  { label: 'Kangen Water' },
+  { label: 'LeveLuk K8' },
+  { label: 'LeveLuk SD501DX' },
+  { label: 'SD501 Platinum' },
+  { label: 'Super 501' },
+  { label: 'LeveLuk SD501U' },
+  { label: 'LeveLuk JRIV' },
+  { label: 'Anespa DX' },
+  { label: 'Kangen Ukon Annual' },
+  { label: 'Kangen Ukon Annual Combo' },
+  { label: 'Kangen Ukon DD' },
 ];
 
 const COMPANY_DROPDOWN_ITEMS = [
-  { label: 'Contact Cynthia Briganti 6A8-6', page: 'contact' },
-  { label: 'About Enagic® International', page: 'about' },
-  { label: 'Certifications & WQA Gold Seal', page: 'certifications' },
-  { label: 'Water Problems & Tap Contaminants', page: 'about' },
-  { label: 'The 5 Kangen Water Types', page: 'water-types' },
-  { label: 'Get Free ECO-Living eBook', action: 'ebook' },
-  { label: 'Demonstration Video Library', action: 'videos' },
+  { label: 'Contact' },
+  { label: 'Enagic' },
+  { label: 'Certifications' },
+  { label: 'Water Problems' },
+  { label: '5 Water Types' },
+  { label: 'Get free ECO eBook' },
+  { label: 'Demonstration Videos' },
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -43,8 +45,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenConsultation,
   onNavigate,
   activePage,
-  onOpenCompare,
-  onOpenVideoLibrary,
 }) => {
   const { getTotalItems, setIsOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -186,11 +186,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             </button>
 
-            {/* BROWSE PRODUCTS DROPDOWN */}
+            {/* BROWSE PRODUCTS DROPDOWN (UI DISPLAY ONLY) */}
             <div className="relative h-20 flex items-center" ref={productDropdownRef}>
               <button
                 onClick={() => setProductDropdownOpen(!productDropdownOpen)}
-                className={`nav-link-item ${activePage === 'shop' || activePage === 'water-types' ? 'active' : ''}`}
+                onMouseEnter={() => setProductDropdownOpen(true)}
+                className={`nav-link-item ${productDropdownOpen ? 'active' : ''}`}
               >
                 <div className="flex flex-col items-center leading-tight pt-2">
                   <span className="nav-text-line1">BROWSE</span>
@@ -201,19 +202,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               {productDropdownOpen && (
-                <div className="absolute left-0 top-full mt-0 w-64 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-lg">
+                <div
+                  onMouseLeave={() => setProductDropdownOpen(false)}
+                  className="absolute left-0 top-full mt-0 w-56 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-150"
+                >
                   {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
                     <button
                       key={idx}
-                      onClick={() => {
-                        if (item.action === 'compare' && onOpenCompare) {
-                          onOpenCompare();
-                        } else if (item.page) {
-                          onNavigate(item.page);
-                        }
-                        setProductDropdownOpen(false);
-                      }}
-                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border-b border-slate-100 last:border-0 font-medium transition cursor-pointer"
+                      onClick={() => setProductDropdownOpen(false)}
+                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-pointer"
                     >
                       {item.label}
                     </button>
@@ -222,11 +219,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </div>
 
-            {/* ABOUT COMPANY DROPDOWN */}
+            {/* ABOUT COMPANY DROPDOWN (UI DISPLAY ONLY) */}
             <div className="relative h-20 flex items-center" ref={companyDropdownRef}>
               <button
                 onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
-                className={`nav-link-item ${activePage === 'about' || activePage === 'contact' || activePage === 'certifications' ? 'active' : ''}`}
+                onMouseEnter={() => setCompanyDropdownOpen(true)}
+                className={`nav-link-item ${companyDropdownOpen ? 'active' : ''}`}
               >
                 <div className="flex flex-col items-center leading-tight pt-2">
                   <span className="nav-text-line1">ABOUT</span>
@@ -237,21 +235,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               {companyDropdownOpen && (
-                <div className="absolute right-0 top-full mt-0 w-60 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-lg">
+                <div
+                  onMouseLeave={() => setCompanyDropdownOpen(false)}
+                  className="absolute right-0 top-full mt-0 w-52 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-150"
+                >
                   {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
                     <button
                       key={idx}
-                      onClick={() => {
-                        if (item.action === 'videos' && onOpenVideoLibrary) {
-                          onOpenVideoLibrary();
-                        } else if (item.action === 'ebook') {
-                          onOpenConsultation();
-                        } else if (item.page) {
-                          onNavigate(item.page);
-                        }
-                        setCompanyDropdownOpen(false);
-                      }}
-                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border-b border-slate-100 last:border-0 font-medium transition cursor-pointer"
+                      onClick={() => setCompanyDropdownOpen(false)}
+                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-pointer"
                     >
                       {item.label}
                     </button>
@@ -354,53 +346,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               <div className="pt-3 pb-1">
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Products</span>
-                <button
-                  onClick={() => { onNavigate('shop'); setMobileMenuOpen(false); }}
-                  className="block w-full text-left py-2 text-xs text-slate-300 hover:text-white"
-                >
-                  Browse Products Catalog
-                </button>
-                <button
-                  onClick={() => { if (onOpenCompare) onOpenCompare(); setMobileMenuOpen(false); }}
-                  className="block w-full text-left py-2 text-xs text-emerald-400 hover:text-emerald-300 font-semibold"
-                >
-                  Compare Products Side-by-Side
-                </button>
-                <button
-                  onClick={() => { onNavigate('water-types'); setMobileMenuOpen(false); }}
-                  className="block w-full text-left py-2 text-xs text-slate-300 hover:text-white"
-                >
-                  The 5 Kangen Water Types
-                </button>
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Browse Products</span>
+                {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
+                  <div key={idx} className="block w-full text-left py-1.5 text-xs text-slate-300">
+                    {item.label}
+                  </div>
+                ))}
               </div>
 
               <div className="pt-3 pb-1">
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Company</span>
-                <button
-                  onClick={() => { onNavigate('contact'); setMobileMenuOpen(false); }}
-                  className="block w-full text-left py-2 text-xs text-slate-300 hover:text-white"
-                >
-                  Contact Cynthia Briganti 6A8-6
-                </button>
-                <button
-                  onClick={() => { onNavigate('about'); setMobileMenuOpen(false); }}
-                  className="block w-full text-left py-2 text-xs text-slate-300 hover:text-white"
-                >
-                  About Enagic®
-                </button>
-                <button
-                  onClick={() => { onNavigate('certifications'); setMobileMenuOpen(false); }}
-                  className="block w-full text-left py-2 text-xs text-slate-300 hover:text-white"
-                >
-                  Certifications
-                </button>
-                <button
-                  onClick={() => { if (onOpenVideoLibrary) onOpenVideoLibrary(); setMobileMenuOpen(false); }}
-                  className="block w-full text-left py-2 text-xs text-slate-300 hover:text-white"
-                >
-                  Demonstration Video Library
-                </button>
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">About Company</span>
+                {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
+                  <div key={idx} className="block w-full text-left py-1.5 text-xs text-slate-300">
+                    {item.label}
+                  </div>
+                ))}
               </div>
             </div>
 
