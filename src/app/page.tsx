@@ -15,6 +15,7 @@ import { WaterTypesSection } from '@/components/WaterTypesSection';
 import { VideoLibraryModal } from '@/components/VideoLibraryModal';
 import { VideoSection } from '@/components/VideoSection';
 import { Footer } from '@/components/Footer';
+import { GreenerHomeDetail } from '@/components/GreenerHomeDetail';
 
 export default function Home() {
   const [activePage, setActivePage] = useState<string>('home');
@@ -118,18 +119,22 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 pb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Greener Time', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', desc: 'Greener home solutions save time and money while keeping your family safe from harmful chemical residue.' },
-                { title: 'Non-toxic Cleaning', img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop', desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.' },
-                { title: 'Doing the Dishes', img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=800&auto=format&fit=crop', desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).' },
-                { title: 'In the Laundry room', img: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=800&auto=format&fit=crop', desc: 'Replace harsh chemical detergents with Kangen Water to keep your linens fresh, soft, and non-toxic.' },
-                { title: 'Powerful Stain remover', img: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=800&auto=format&fit=crop', desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.' },
-                { title: 'Kangen Water® Liquid Castile Cleaner', img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop', desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.' }
+                { id: 'detail-1', title: 'A Greener Home', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', desc: 'Greener home solutions save time and money while keeping your family safe from harmful chemical residue.' },
+                { id: 'detail-2', title: 'Non-toxic Cleaning', img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop', desc: 'Powerful Strong Kangen Water (pH 11.5) dissolves grease and tough grime without any harsh chemicals or fumes.' },
+                { id: 'detail-3', title: 'Doing the Dishes', img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=800&auto=format&fit=crop', desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).' },
+                { id: 'detail-4', title: 'In the Laundry room', img: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=800&auto=format&fit=crop', desc: 'Replace harsh chemical detergents with Kangen Water to keep your linens fresh, soft, and non-toxic.' },
+                { id: 'detail-5', title: 'Powerful Stain remover', img: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=800&auto=format&fit=crop', desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.' },
+                { id: 'detail-6', title: 'Kangen Water® Liquid Castile Cleaner', img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop', desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.' }
               ].map((card, i) => (
-                <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                <div
+                  key={i}
+                  onClick={() => handleNavigate('greener-home-detail')}
+                  className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition cursor-pointer group"
+                >
                   <div>
-                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover" />
+                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover group-hover:scale-105 transition duration-500" />
                     <div className="p-6 space-y-3">
-                      <h3 className="font-serif text-xl font-bold text-[#333333]">{card.title}</h3>
+                      <h3 className="font-serif text-xl font-bold text-[#333333] group-hover:text-emerald-700 transition">{card.title}</h3>
                       <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
                     </div>
                   </div>
@@ -138,6 +143,14 @@ export default function Home() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* GREENER HOME DETAIL VIEW */}
+      {activePage === 'greener-home-detail' && (
+        <GreenerHomeDetail
+          onNavigate={handleNavigate}
+          onOpenConsultation={() => setConsultationOpen(true)}
+        />
       )}
 
       {/* GREENER FOOD CATEGORY VIEW */}
