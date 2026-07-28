@@ -206,11 +206,30 @@ const ARTICLES: ArticleDetailData[] = [
     id: 'detail-6',
     title: 'Kangen Water® Liquid Castile Cleaner',
     image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.',
+    desc: 'Learn how to make your own all-natural Liquid Castile Soap using pure Kangen Water® and sunflower oil.',
     content: [
-      'Combining pure liquid castile soap with Kangen Water creates an all-natural, multi-surface spray for marble, tile, wood, and glass.'
+      'Ingredients:\n• 16 oz Sunflower Oil\n• 5.5 oz Potassium Chloride\n• 16 oz distilled Kangen Water (collected with a steam boiler)\n• 40 oz Kangen Water\n• Essential Oil (optional)',
+      'Blend: Pour the sunflower oil into a crock pot, with the heat on high. In a separate bowl, mix the potassium chloride with the distilled Kangen Water®. This mixture will become a lye. Add the lye to the crock pot. Mix together using a hand-held stick blender on low until you create a paste. Pour the regular Kangen Water® into the crock pot and combine using the stick blender.',
+      'Cook: Check the crock pot every hour. If the paste is separating, mix it with the stick blender. If not, stir with a wooden spoon. The consistency will change from a paste to something resembling applesauce. If it ever looks sticky and hard like taffy, use a potato masher to break it up. Once the mixture resembles petroleum jelly, your liquid castile soap is almost done.',
+      'Test: Now you must test the soap to see if it is done. Boil some Kangen Water® in a kettle and measure 2 oz into a clear measuring cup along with 1 oz of the soap mixture. Stir it with a spoon until the soap dissolves in the water. If it is cloudy, the soap is ready. If the mixture appears milky, the soap has not cooked long enough and needs to go back to the crock pot.',
+      'Once the consistency of the mixture is a bit cloudy, you can add a few drops of essential oil for a light scent (6-8 drops is usually enough). Pour warm liquid castile soap into bottles and allow to cool before using.'
+    ],
+    bulletPoints: [
+      'No harsh chemicals!',
+      'No cocamidopropyl betaine, sulfates (SLS, SLES, SCS), formaldehyde, or salicylates.',
+      'No parabens, phosphates, MEA, DEA, TEA, or petroleum-based ingredients.',
+      'No animal by-products, perfumes, dyes, or caustics.',
+      '100% Non-toxic, hypoallergenic, gluten-free, biodegradable, cruelty-free.'
+    ],
+    subSections: [
+      {
+        heading: "DIY Liquid Castile Soap Recipe & Directions",
+        image: "https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Liquid Castile Soap Recipe",
+        text: "Homemade Liquid Castile Soap infused with Kangen Water® provides multi-surface cleaning power for counters, floors, sinks, and dishwashing naturally without synthetic chemical residues."
+      }
     ]
-  }
+  },
 ];
 
 interface GreenerHomeDetailProps {
