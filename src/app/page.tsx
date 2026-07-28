@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSlider } from '@/components/HeroSlider';
 import { EbookBanner } from '@/components/EbookBanner';
@@ -27,8 +27,71 @@ export default function Home() {
   const [compareOpen, setCompareOpen] = useState<boolean>(false);
   const [videoLibraryOpen, setVideoLibraryOpen] = useState<boolean>(false);
 
-  const handleNavigate = (page: string) => {
+  // Sync active page with URL hash and listen for browser Back/Forward button clicks
+  useEffect(() => {
+    const parseUrlHash = () => {
+      const hash = window.location.hash.replace(/^#/, '');
+      if (!hash) {
+        setActivePage('home');
+        return;
+      }
+
+      const [page, queryString] = hash.split('?');
+      const params = new URLSearchParams(queryString || '');
+
+      if (page) setActivePage(page);
+
+      const homeArt = params.get('homeArt');
+      if (homeArt) setSelectedDetailArticleId(homeArt);
+
+      const foodArt = params.get('foodArt');
+      if (foodArt) setSelectedFoodArticleId(foodArt);
+    };
+
+    parseUrlHash();
+
+    const handlePopState = () => {
+      parseUrlHash();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('hashchange', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('hashchange', handlePopState);
+    };
+  }, []);
+
+  const handleNavigate = (page: string, targetArticleId?: string) => {
+    let newHomeArt = selectedDetailArticleId;
+    let newFoodArt = selectedFoodArticleId;
+
+    if (page === 'greener-home-detail' && targetArticleId) {
+      newHomeArt = targetArticleId;
+      setSelectedDetailArticleId(targetArticleId);
+    }
+    if (page === 'greener-food-detail' && targetArticleId) {
+      newFoodArt = targetArticleId;
+      setSelectedFoodArticleId(targetArticleId);
+    }
+
     setActivePage(page);
+
+    let newHash = `#${page}`;
+    if (page === 'greener-home-detail') {
+      newHash += `?homeArt=${targetArticleId || newHomeArt}`;
+    } else if (page === 'greener-food-detail') {
+      newHash += `?foodArt=${targetArticleId || newFoodArt}`;
+    }
+
+    if (window.location.hash !== newHash) {
+      window.history.pushState(
+        { page, homeArt: newHomeArt, foodArt: newFoodArt },
+        '',
+        newHash
+      );
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -134,8 +197,7 @@ export default function Home() {
                 <div
                   key={i}
                   onClick={() => {
-                    setSelectedDetailArticleId(card.id);
-                    handleNavigate('greener-home-detail');
+                    handleNavigate('greener-home-detail', card.id);
                   }}
                   className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition cursor-pointer group"
                 >
@@ -210,8 +272,7 @@ export default function Home() {
                 <div
                   key={i}
                   onClick={() => {
-                    setSelectedFoodArticleId(card.id);
-                    handleNavigate('greener-food-detail');
+                    handleNavigate('greener-food-detail', card.id);
                   }}
                   className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition cursor-pointer group"
                 >
