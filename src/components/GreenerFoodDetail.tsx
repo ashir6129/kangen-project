@@ -86,12 +86,18 @@ const ARTICLES: ArticleDetailData[] = [
   },
   {
     id: 'food-detail-2',
-    title: 'Clean Produce',
+    title: 'Cleaning Produce with Kangen Water®',
     image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1200&auto=format&fit=crop',
-    desc: 'Soaking fruits and vegetables in Strong Kangen Water (pH 11.5) removes oily pesticides and residue that tap water cannot wash off.',
+    desc: 'Washing your produce with Kangen Water® removes dirt, pathogens, and oily pesticides that tap water cannot wash off.',
     content: [
-      'Tap water cannot dissolve oil-based pesticides sprayed on commercial fruits and vegetables. Strong Kangen Water (11.5 pH) has strong emulsifying power that dissolves oily pesticide residues effortlessly.',
-      'Soak berries, tomatoes, apples, and leafy greens in Kangen 11.5 for 10-15 minutes, then rinse with Kangen 9.5 Water for clean, crisp, delicious produce.'
+      'As previously suggested, washing your produce is a must. Organic produce isn’t protected from pathogens in dirt and germs from various hands checking for ripeness. This is when your Kangen Water® really comes in handy. The Kangen machine produces up to 5 types of healthy water to get your food clean! Utilizing the various waters available like: Strong Acidic Water® (pH 2.5), Strong Kangen Water® (pH 11.0), and Kangen Water® (pH 9.5), you can ensure that your food is super clean and ready to eat.',
+      'If you don\'t have the luxury or availability of organic produce it’s even more important to wash your fruits and veggies considering they have been treated with pesticides. Strong Kangen Water® is powerful enough to break apart the pesticide, leaving your food clean and chemical-free. Tap water itself can’t clean your produce and produce sprays are expensive and leave an aftertaste on the more porous produce. Using your Kangen® machine in the kitchen is the healthiest and most cost-effective way to clean your produce!'
+    ],
+    bulletPoints: [
+      'Always buy in season to ensure freshness.',
+      'Always examine produce for ripeness and bruising.',
+      'Wash hands before and after handling food.',
+      'Now that everything is clean and ready to use, check out our favorite recipes substituting Kangen Water®!'
     ]
   },
   {
@@ -138,6 +144,32 @@ const ARTICLES: ArticleDetailData[] = [
     desc: 'Bake lighter, fluffier cornbread using Kangen 9.5 Water. Micro-clustering enhances texture and preserves rich corn flavor.',
     content: [
       'Bake fluffier, moist cornbread by substituting milk or tap water with Kangen 9.5 Water in your favorite batter recipe.'
+    ]
+  },
+  {
+    id: 'food-detail-8',
+    title: 'Kangen Water® with a Twist',
+    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200&auto=format&fit=crop',
+    desc: 'Drink Green, Drink Healthy: Liven up your alkaline Kangen Water® with natural citrus, fresh berries, mint, and tea infusions.',
+    content: [
+      'Staying hydrated with alkaline Kangen Water® is an important step toward physical health, but a healthy diet is also paramount in overall wellness. Healthy eating supports a healthy body.',
+      'Here\'s a ranking of the most consumed beverages in the U.S.:\n1. Carbonated Soft Drinks (almost twice as much as any other beverage)\n2. Bottled Water\n3. Coffee\n4. Milk\n5. Beer',
+      'Aside from what some of these beverages can do to your overall health, they are also harmful to our environment. Over 75% of all plastic bottles end up in landfills (taking 500 years to biodegrade). PET plastic generates 13 lbs of CO2 per 1 lb of plastic. US coffee drinkers use 65 billion paper & plastic cups annually—wrapping around Earth 55 times!',
+      'Kangen Water® hydrates your body with clean, healthy water without wasteful packaging. Simply fill up a BPA-free reusable Enagic® water bottle with Kangen Water® before leaving the house and enjoy healthy, green hydration all day.'
+    ],
+    bulletPoints: [
+      'Say NO to plastic bottles and wasteful disposable paper packaging.',
+      'Fill a BPA-free reusable Enagic® bottle with Kangen Water® before leaving home.',
+      'Fight the urge to fill your body with unhealthy sugary soda drinks.',
+      'Be smart: hydrate with fresh Kangen Water® for better health and a greener life.'
+    ],
+    subSections: [
+      {
+        heading: "Making the Switch: Natural Flavor Ideas for Kangen Water®",
+        image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop",
+        imageOverlayText: "Natural Fruit & Herb Infusions",
+        text: "Sometimes it's not so easy to replace sugary or caffeinated drinks. Use these ideas to liven up your Kangen Water® with natural flavors:\n\n• Crushed Herbs: Add mint or lemongrass for refreshing aroma and flavor.\n• Citrus & Berries: Cut or squeeze oranges, limes, blueberries, or strawberries. Try mixing lemon and lime.\n• Pitcher Slices: Fill a pitcher with lemon slices and Kangen Water® for cool, refreshing water all day.\n• Natural Juices: Add unsweetened fruit juices such as cranberry cocktail for stronger flavor.\n• Fruit Ice Cubes: Freeze small fruit slices (clementine oranges, mango, berries) as delicious ice cubes in your Kangen Water®.\n• Afternoon Iced Tea: Add Fair Trade herbal tea bags to cold Kangen Water® for effortless infusion."
+      }
     ]
   }
 ];
