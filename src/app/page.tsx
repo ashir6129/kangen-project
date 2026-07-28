@@ -123,7 +123,7 @@ export default function Home() {
                 { title: 'Doing the Dishes', img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=800&auto=format&fit=crop', desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5).' },
                 { title: 'In the Laundry room', img: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?q=80&w=800&auto=format&fit=crop', desc: 'Replace harsh chemical detergents with Kangen Water to keep your linens fresh, soft, and non-toxic.' },
                 { title: 'Powerful Stain remover', img: 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=800&auto=format&fit=crop', desc: 'Soaking spots in Strong Kangen Water 11.5 removes stubborn stains without harsh chemical bleaches.' },
-                { title: 'Kangen Water® Liquid Castile Cleaner', img: 'https://images.unsplash.com/photo-1608248597260-652196130954?q=80&w=800&auto=format&fit=crop', desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.' }
+                { title: 'Kangen Water® Liquid Castile Cleaner', img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop', desc: 'Castile soap infused with Kangen Water provides multi-surface cleaning power for counters, floors, and sinks.' }
               ].map((card, i) => (
                 <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                   <div>
