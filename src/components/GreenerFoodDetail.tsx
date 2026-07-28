@@ -75,7 +75,7 @@ const ARTICLES: ArticleDetailData[] = [
     ],
     linkCallout: {
       label: 'To find local food near you, go here.',
-      url: 'https://www.localharvest.org'
+      url: 'https://www.ams.usda.gov/local-food-directories/farmersmarkets'
     },
     bulletPoints: [
       'Buy local & seasonal produce to maximize nutrient density and save money.',
