@@ -26,20 +26,20 @@ export const ShopSection: React.FC = () => {
   };
 
   return (
-    <section id="shop" className="py-20 bg-slate-900 text-white relative">
+    <section id="shop" className="py-20 bg-[#3E4C4C] text-[#EDEEE7] relative font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Toast Notification */}
         {addedToast && (
-          <div className="fixed bottom-6 right-6 z-50 bg-teal-500 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-bottom-4 duration-300 font-medium text-sm">
-            <Check className="w-5 h-5 bg-white/20 rounded-full p-0.5" />
-            <span>Added <strong className="font-bold">{addedToast}</strong> to cart!</span>
+          <div className="fixed bottom-6 right-6 z-50 bg-[#7AD1C4] text-[#293434] px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-bottom-4 duration-300 font-bold text-sm">
+            <Check className="w-5 h-5 bg-[#293434]/20 rounded-full p-0.5" />
+            <span>Added <strong className="font-extrabold">{addedToast}</strong> to cart!</span>
           </div>
         )}
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <span className="px-3.5 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold uppercase tracking-wider border border-sky-500/30">
+          <span className="px-4 py-1.5 rounded-full bg-[#7AD1C4]/20 text-[#7AD1C4] text-xs font-bold uppercase tracking-wider border border-[#7AD1C4]/40 shadow-xs">
             Authorized Enagic® Product Line
           </span>
 
@@ -47,15 +47,15 @@ export const ShopSection: React.FC = () => {
             Browse Kangen Water® Machines & Supplements
           </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base font-sans">
+          <p className="text-slate-200 text-sm sm:text-base font-sans font-medium">
             Select your region to calculate accurate localized prices, warranties, and corporate order details.
           </p>
         </div>
 
         {/* Region Selector Ribbon */}
-        <div className="bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl border border-slate-700/80 mb-10 shadow-xl">
+        <div className="bg-[#293434] backdrop-blur-md p-4.5 rounded-2xl border border-[#7AD1C4]/30 mb-10 shadow-xl">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#7AD1C4]">
               Select Destination Region:
             </span>
 
@@ -64,10 +64,10 @@ export const ShopSection: React.FC = () => {
                 <button
                   key={r.code}
                   onClick={() => setSelectedRegion(r)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
                     selectedRegion.code === r.code
-                      ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/25 font-bold scale-105'
-                      : 'bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white'
+                      ? 'bg-[#7AD1C4] text-[#293434] shadow-lg shadow-[#7AD1C4]/30 scale-105'
+                      : 'bg-[#3E4C4C] text-slate-200 hover:bg-[#576a6a] hover:text-white'
                   }`}
                 >
                   <span>{r.flag}</span>
@@ -79,7 +79,7 @@ export const ShopSection: React.FC = () => {
         </div>
 
         {/* Product Filter Tabs */}
-        <div className="flex items-center justify-center gap-2 mb-12">
+        <div className="flex items-center justify-center gap-2 mb-12 flex-wrap">
           {[
             { id: 'all', label: 'All Products' },
             { id: 'ionizers', label: 'Water Ionizers' },
@@ -89,10 +89,10 @@ export const ShopSection: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setFilter(tab.id as any)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+              className={`px-5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 filter === tab.id
-                  ? 'bg-white text-slate-900 font-bold shadow-md'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-[#7AD1C4] text-[#293434] shadow-md scale-105'
+                  : 'text-slate-300 hover:text-white hover:bg-[#293434]'
               }`}
             >
               {tab.label}
@@ -108,60 +108,60 @@ export const ShopSection: React.FC = () => {
             return (
               <div
                 key={product.code}
-                className="group bg-slate-800/80 rounded-3xl overflow-hidden border border-slate-700/80 shadow-xl hover:border-sky-500/50 hover:shadow-sky-500/10 transition-all duration-300 flex flex-col justify-between"
+                className="group bg-[#293434] rounded-3xl overflow-hidden border border-[#7AD1C4]/20 shadow-xl hover:border-[#7AD1C4] hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
               >
                 <div>
                   {/* Image Header */}
-                  <div className="relative h-64 overflow-hidden bg-slate-950 p-6 flex items-center justify-center">
+                  <div className="relative h-64 overflow-hidden bg-[#1e2626] p-6 flex items-center justify-center">
                     {product.popular && (
-                      <span className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[11px] font-extrabold uppercase tracking-wider rounded-full shadow-md z-10 flex items-center gap-1">
-                        <Star className="w-3.5 h-3.5 fill-white" /> Popular
+                      <span className="absolute top-4 left-4 px-3 py-1 bg-[#7AD1C4] text-[#293434] text-[11px] font-extrabold uppercase tracking-wider rounded-full shadow-md z-10 flex items-center gap-1">
+                        <Star className="w-3.5 h-3.5 fill-[#293434]" /> Popular
                       </span>
                     )}
 
                     <img
                       src={product.img}
                       alt={product.name}
-                      className="max-h-52 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                      className="max-h-52 w-auto object-contain group-hover:scale-108 transition-transform duration-700 ease-out"
                     />
                   </div>
 
                   {/* Body Content */}
                   <div className="p-6 space-y-4">
                     <div>
-                      <div className="flex items-center justify-between text-xs text-sky-400 font-mono mb-1">
+                      <div className="flex items-center justify-between text-xs text-[#7AD1C4] font-mono mb-1">
                         <span>SKU: #{product.sku}</span>
                         {product.plates > 0 && (
-                          <span className="flex items-center gap-1 bg-sky-950/80 text-sky-300 px-2 py-0.5 rounded border border-sky-800/50 text-[10px] font-sans">
+                          <span className="flex items-center gap-1 bg-[#3E4C4C] text-[#7AD1C4] px-2.5 py-0.5 rounded border border-[#7AD1C4]/40 text-[10px] font-sans font-bold">
                             <Layers className="w-3 h-3" /> {product.plates} Titanium Plates
                           </span>
                         )}
                       </div>
 
-                      <h3 className="font-serif text-2xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                      <h3 className="font-serif text-2xl font-bold text-white group-hover:text-[#7AD1C4] transition-colors">
                         {product.name}
                       </h3>
 
                       <p className="text-xs text-slate-300 italic mt-0.5">{product.tagline}</p>
                     </div>
 
-                    <p className="text-slate-400 text-xs line-clamp-3 leading-relaxed font-sans">
+                    <p className="text-slate-300 text-xs line-clamp-3 leading-relaxed font-sans font-medium">
                       {product.desc}
                     </p>
 
                     {/* Warranty & Regional Price */}
-                    <div className="pt-2 border-t border-slate-700/60 flex items-center justify-between">
+                    <div className="pt-3 border-t border-[#576a6a]/40 flex items-center justify-between">
                       {product.warranty > 0 ? (
-                        <span className="text-[11px] text-slate-400 flex items-center gap-1 font-medium">
-                          <ShieldCheck className="w-3.5 h-3.5 text-teal-400" /> {product.warranty}-Yr Warranty
+                        <span className="text-[11px] text-slate-300 flex items-center gap-1 font-medium">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#7AD1C4]" /> {product.warranty}-Yr Warranty
                         </span>
                       ) : (
-                        <span className="text-[11px] text-slate-400 font-medium">Organic Supplement</span>
+                        <span className="text-[11px] text-slate-300 font-medium">Organic Supplement</span>
                       )}
 
                       <div className="text-right">
                         <span className="text-xs text-slate-400 font-mono block">{selectedRegion.currency}</span>
-                        <span className="font-serif text-2xl font-bold text-sky-400">
+                        <span className="font-serif text-2xl font-bold text-[#7AD1C4]">
                           {formatPrice(price)}
                         </span>
                       </div>
@@ -173,14 +173,14 @@ export const ShopSection: React.FC = () => {
                 <div className="p-6 pt-0 grid grid-cols-2 gap-3">
                   <button
                     onClick={() => setSelectedProduct(product)}
-                    className="w-full py-2.5 px-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold text-xs transition-colors"
+                    className="w-full py-2.5 px-3 rounded-xl bg-[#3E4C4C] hover:bg-[#576a6a] text-white font-semibold text-xs transition-colors cursor-pointer border border-[#7AD1C4]/20"
                   >
                     View Details
                   </button>
 
                   <button
                     onClick={() => handleAddToCart(product)}
-                    className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-600 hover:to-teal-600 text-white font-bold text-xs shadow-lg shadow-sky-500/20 active:scale-95 transition-all flex items-center justify-center gap-1.5"
+                    className="w-full py-2.5 px-3 rounded-xl bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] font-bold text-xs shadow-lg hover:scale-102 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <ShoppingCart className="w-4 h-4" />
                     <span>Add to Cart</span>

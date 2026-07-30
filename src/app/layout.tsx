@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} scroll-smooth`}>
-      <body className="font-sans bg-white text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
+      <body className="font-sans bg-[#EDEEE7] text-[#3E4C4C] antialiased selection:bg-[#7AD1C4] selection:text-[#3E4C4C] min-h-screen">
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

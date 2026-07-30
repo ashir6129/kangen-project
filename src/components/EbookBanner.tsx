@@ -70,11 +70,11 @@ export const EbookBanner: React.FC = () => {
           </div>
         ) : (
           <>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-1">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#7AD1C4]/20 text-[#7AD1C4] border border-[#7AD1C4]/40 text-xs font-bold uppercase tracking-wider mb-1 shadow-xs">
               <FileText className="w-3.5 h-3.5" />
               <span>29-Page Eco-Living Guide</span>
             </div>
-            <h2 className="font-serif text-2xl sm:text-4xl font-normal text-white uppercase tracking-wide">
+            <h2 className="font-serif text-2xl sm:text-4xl font-normal text-white uppercase tracking-wide drop-shadow-md">
               GET YOUR FREE ECO-LIVING EBOOK!
             </h2>
             <p className="text-xs sm:text-sm text-slate-200 max-w-xl mx-auto font-sans leading-relaxed">
@@ -82,7 +82,7 @@ export const EbookBanner: React.FC = () => {
             </p>
 
             <form onSubmit={handleSubmit} className="pt-3">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 max-w-lg mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 max-w-lg mx-auto">
                 <input
                   type="email"
                   value={email}
@@ -91,19 +91,17 @@ export const EbookBanner: React.FC = () => {
                     if (error) setError('');
                   }}
                   placeholder="Your email address..."
-                  className="w-full sm:w-80 px-5 py-3 rounded-full text-xs text-slate-800 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
+                  className="w-full sm:w-80 px-6 py-3.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto px-8 py-3 bg-[#87b076] hover:bg-[#759e64] text-white text-xs font-semibold rounded-full uppercase tracking-wider transition shadow-md disabled:opacity-70 whitespace-nowrap cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] text-xs font-bold rounded-full uppercase tracking-wider transition shadow-lg hover:scale-103 disabled:opacity-70 whitespace-nowrap cursor-pointer"
                 >
                   {isSubmitting ? 'SENDING...' : 'SEND THE EBOOK'}
                 </button>
               </div>
-              {error && (
-                <p className="mt-2 text-rose-300 text-xs font-medium">{error}</p>
-              )}
+              {error && <p className="text-rose-300 text-xs mt-2 font-medium">{error}</p>}
               <p className="text-[11px] text-slate-300 mt-3">
                 The ebook is sent to you via email or sms. Your data is kept safe; never sold or rented. Feel free to read our Privacy Policy.
               </p>

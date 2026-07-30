@@ -17,11 +17,18 @@ import { VideoSection } from '@/components/VideoSection';
 import { Footer } from '@/components/Footer';
 import { GreenerHomeDetail } from '@/components/GreenerHomeDetail';
 import { GreenerFoodDetail } from '@/components/GreenerFoodDetail';
+import { GreenerBeautyDetail } from '@/components/GreenerBeautyDetail';
+import { GreenerGardenDetail } from '@/components/GreenerGardenDetail';
+import { GreenerPetDetail } from '@/components/GreenerPetDetail';
+import { ContactFormSection } from '@/components/ContactFormSection';
 
 export default function Home() {
   const [activePage, setActivePage] = useState<string>('home');
   const [selectedDetailArticleId, setSelectedDetailArticleId] = useState<string>('detail-1');
   const [selectedFoodArticleId, setSelectedFoodArticleId] = useState<string>('food-detail-1');
+  const [selectedBeautyArticleId, setSelectedBeautyArticleId] = useState<string>('beauty-detail-4');
+  const [selectedGardenArticleId, setSelectedGardenArticleId] = useState<string>('garden-detail-1');
+  const [selectedPetArticleId, setSelectedPetArticleId] = useState<string>('pet-detail-1');
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const [consultationOpen, setConsultationOpen] = useState<boolean>(false);
   const [compareOpen, setCompareOpen] = useState<boolean>(false);
@@ -46,6 +53,15 @@ export default function Home() {
 
       const foodArt = params.get('foodArt');
       if (foodArt) setSelectedFoodArticleId(foodArt);
+
+      const beautyArt = params.get('beautyArt');
+      if (beautyArt) setSelectedBeautyArticleId(beautyArt);
+
+      const gardenArt = params.get('gardenArt');
+      if (gardenArt) setSelectedGardenArticleId(gardenArt);
+
+      const petArt = params.get('petArt');
+      if (petArt) setSelectedPetArticleId(petArt);
     };
 
     parseUrlHash();
@@ -65,6 +81,9 @@ export default function Home() {
   const handleNavigate = (page: string, targetArticleId?: string) => {
     let newHomeArt = selectedDetailArticleId;
     let newFoodArt = selectedFoodArticleId;
+    let newBeautyArt = selectedBeautyArticleId;
+    let newGardenArt = selectedGardenArticleId;
+    let newPetArt = selectedPetArticleId;
 
     if (page === 'greener-home-detail' && targetArticleId) {
       newHomeArt = targetArticleId;
@@ -74,6 +93,18 @@ export default function Home() {
       newFoodArt = targetArticleId;
       setSelectedFoodArticleId(targetArticleId);
     }
+    if (page === 'greener-beauty-detail' && targetArticleId) {
+      newBeautyArt = targetArticleId;
+      setSelectedBeautyArticleId(targetArticleId);
+    }
+    if (page === 'greener-garden-detail' && targetArticleId) {
+      newGardenArt = targetArticleId;
+      setSelectedGardenArticleId(targetArticleId);
+    }
+    if (page === 'greener-pet-detail' && targetArticleId) {
+      newPetArt = targetArticleId;
+      setSelectedPetArticleId(targetArticleId);
+    }
 
     setActivePage(page);
 
@@ -82,11 +113,17 @@ export default function Home() {
       newHash += `?homeArt=${targetArticleId || newHomeArt}`;
     } else if (page === 'greener-food-detail') {
       newHash += `?foodArt=${targetArticleId || newFoodArt}`;
+    } else if (page === 'greener-beauty-detail') {
+      newHash += `?beautyArt=${targetArticleId || newBeautyArt}`;
+    } else if (page === 'greener-garden-detail') {
+      newHash += `?gardenArt=${targetArticleId || newGardenArt}`;
+    } else if (page === 'greener-pet-detail') {
+      newHash += `?petArt=${targetArticleId || newPetArt}`;
     }
 
     if (window.location.hash !== newHash) {
       window.history.pushState(
-        { page, homeArt: newHomeArt, foodArt: newFoodArt },
+        { page, homeArt: newHomeArt, foodArt: newFoodArt, beautyArt: newBeautyArt, gardenArt: newGardenArt, petArt: newPetArt },
         '',
         newHash
       );
@@ -160,24 +197,24 @@ export default function Home() {
             <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-normal drop-shadow-lg tracking-wide">Greener Home</h1>
           </div>
 
-          <div className="wood-consult-bg py-4 px-4 shadow-inner border-y border-slate-900/40">
+          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
             <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
               <input
                 type="text"
                 placeholder="Search Greener Home..."
-                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
               />
-              <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2.5 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
                 Search
               </button>
             </div>
           </div>
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center space-y-4">
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434]">
               Create a chemical and toxin-free home with Kangen Water®.
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto">
+            <p className="text-[#576a6a] text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto font-medium">
               Your home should be a safe haven for your family. Unfortunately, conventional household cleaners are loaded with harsh toxins, chemical residues, and artificial fragrances that can harm your health and the environment. By switching to Kangen Water®, you can eliminate chemical cleaners completely while maintaining a clean, greener home with Kangen.
             </p>
           </div>
@@ -199,13 +236,15 @@ export default function Home() {
                   onClick={() => {
                     handleNavigate('greener-home-detail', card.id);
                   }}
-                  className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition cursor-pointer group"
+                  className="modern-card bg-white border border-[#3E4C4C]/15 rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer group"
                 >
                   <div>
-                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover group-hover:scale-105 transition duration-500" />
+                    <div className="h-52 overflow-hidden relative">
+                      <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" />
+                    </div>
                     <div className="p-6 space-y-3">
-                      <h3 className="font-serif text-xl font-bold text-[#333333] group-hover:text-emerald-700 transition">{card.title}</h3>
-                      <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+                      <h3 className="font-serif text-xl font-bold text-[#293434] group-hover:text-[#47a295] transition">{card.title}</h3>
+                      <p className="text-xs text-[#576a6a] leading-relaxed font-sans">{card.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -235,25 +274,25 @@ export default function Home() {
             <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-normal drop-shadow-lg tracking-wide">Greener Food</h1>
           </div>
 
-          <div className="wood-consult-bg py-4 px-4 shadow-inner border-y border-slate-900/40">
+          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
             <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
               <input
                 type="text"
                 placeholder="Search Greener Food..."
-                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
               />
-              <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2.5 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
                 Search
               </button>
             </div>
           </div>
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333] mb-2">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434] mb-2">
               Kangen Water® in the Kitchen
             </h2>
-            <p className="font-serif italic text-sm text-slate-500 mb-6">Tasty, Healthy, and Clean recipes for your table.</p>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto">
+            <p className="font-serif italic text-sm text-[#47a295] font-semibold mb-6">Tasty, Healthy, and Clean recipes for your table.</p>
+            <p className="text-[#576a6a] text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto font-medium">
               Water is the single, most important ingredient in your kitchen. Consider what type of water you are using when working in your kitchen. Tap water is full of contaminants. Simply replacing tap water with appropriate Kangen Water® makes a world of difference in flavor and quality.
             </p>
           </div>
@@ -280,13 +319,15 @@ export default function Home() {
                   onClick={() => {
                     handleNavigate('greener-food-detail', card.id);
                   }}
-                  className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition cursor-pointer group"
+                  className="modern-card bg-white border border-[#3E4C4C]/15 rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer group"
                 >
                   <div>
-                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover group-hover:scale-105 transition duration-500" />
+                    <div className="h-52 overflow-hidden relative">
+                      <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" />
+                    </div>
                     <div className="p-6 space-y-3">
-                      <h3 className="font-serif text-xl font-bold text-[#333333] group-hover:text-emerald-700 transition">{card.title}</h3>
-                      <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+                      <h3 className="font-serif text-xl font-bold text-[#293434] group-hover:text-[#47a295] transition">{card.title}</h3>
+                      <p className="text-xs text-[#576a6a] leading-relaxed font-sans">{card.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -307,33 +348,33 @@ export default function Home() {
 
       {/* GREENER BEAUTY CATEGORY VIEW */}
       {activePage === 'beauty' && (
-        <div className="bg-white">
+        <div className="bg-[#EDEEE7]">
           <div
             className="relative w-full h-72 sm:h-80 bg-cover bg-center flex items-center justify-center shadow-inner"
             style={{ backgroundImage: "url('https://www.drinkfromheaven.com/affsites/eco/images/slide/home_beauty_spa.jpg')" }}
           >
-            <div className="absolute inset-0 bg-black/35"></div>
-            <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-normal drop-shadow-lg tracking-wide">Greener Beauty</h1>
+            <div className="absolute inset-0 bg-[#293434]/50 backdrop-blur-xs"></div>
+            <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-bold drop-shadow-lg tracking-wide">Greener Beauty</h1>
           </div>
 
-          <div className="wood-consult-bg py-4 px-4 shadow-inner border-y border-slate-900/40">
+          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
             <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
               <input
                 type="text"
                 placeholder="Search Greener Beauty..."
-                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
               />
-              <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2.5 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
                 Search
               </button>
             </div>
           </div>
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333] mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434] mb-4">
               Go Green and Be Beautiful!
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto">
+            <p className="text-[#576a6a] text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto font-medium">
               As your skin absorbs 60% of what you put on it, it's time to start replacing chemical-based products with all-natural ingredients! Your skin is your largest organ, and by replacing chemical-laden beauty products with Kangen Water®, you can unlock a world of clean, green, all-natural beauty solutions. Discover how Kangen Water® can rejuvenate your skin, hair, and overall beauty routine!
             </p>
           </div>
@@ -341,17 +382,30 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 pb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Be Green, Be Beautiful!', img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop', desc: 'To have a routine that keeps you healthy and hydrated can make you feel beautiful inside and out!' },
-                { title: 'A New Approach to Skin Care', img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop', desc: 'Replacing harsh chemicals with Kangen Water for daily cleansing, toning, and hydration can make all the difference.' },
-                { title: 'Kangen® Hand Sanitizer', img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop', desc: 'Learn how to make hand sanitizer without chemical alcohol using Strong Acidic Water (pH 2.5).' },
-                { title: 'Beauty Water Soap', img: 'https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=800&auto=format&fit=crop', desc: 'These beautiful soaps make wonderful gifts, or can be used daily to nourish skin with gentle Beauty Water.' }
+                { id: 'beauty-detail-1', title: 'Clean Green Beauty', img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop', desc: 'Now that you\'ve transformed your home into a tranquil green oasis, take a closer look at adding green living to your personal care.' },
+                { id: 'beauty-detail-2', title: 'Hair Care with Kangen Water®', img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop', desc: 'Rinse your hair with Beauty Water (6.0 pH) to lock in natural moisture, reduce tangles, and achieve incredible shine.' },
+                { id: 'beauty-detail-3', title: 'A New Approach to Skin Care', img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop', desc: 'Replacing harsh chemical astringents with Kangen Beauty Water® keeps skin clean, hydrated, and youthful.' },
+                { id: 'beauty-detail-4', title: 'Be Green, Be Ravishing!', img: 'https://images.unsplash.com/photo-1512290900676-26c2a5a545b6?q=80&w=800&auto=format&fit=crop', desc: 'To have a routine that keeps you healthy and hydrated can make you feel beautiful inside and out!' },
+                { id: 'beauty-detail-5', title: 'Kangen Fragrance', img: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800&auto=format&fit=crop', desc: 'Create custom chemical-free body sprays and linen mists using Beauty Water and essential oils.' },
+                { id: 'beauty-detail-6', title: 'Herbal All-Natural Shampoo', img: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=800&auto=format&fit=crop', desc: 'Formulate a gentle, sulphate-free herbal shampoo using Kangen Water® and botanical extracts.' },
+                { id: 'beauty-detail-7', title: 'Beauty Water Lotion', img: 'https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=800&auto=format&fit=crop', desc: 'Nourish dry skin with a soothing, fast-absorbing body lotion crafted with Kangen Beauty Water®.' },
+                { id: 'beauty-detail-8', title: 'Enagic Non-Toxic Hand Sanitizer Recipe', img: 'https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80&w=800&auto=format&fit=crop', desc: 'Have you ever investigated what is in your antibacterial products? Try our natural Strong Acidic Water recipe instead.' },
+                { id: 'beauty-detail-9', title: 'Beauty Water Conditioner', img: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop', desc: 'Deeply nourish and hydrate hair with fresh Beauty Water, egg yolk, and natural Acai Berry or Sweet Almond oil. No harsh chemicals!' }
               ].map((card, i) => (
-                <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                <div
+                  key={i}
+                  onClick={() => {
+                    handleNavigate('greener-beauty-detail', card.id);
+                  }}
+                  className="modern-card bg-white border border-[#3E4C4C]/15 rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer group"
+                >
                   <div>
-                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover" />
+                    <div className="h-52 overflow-hidden relative">
+                      <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" />
+                    </div>
                     <div className="p-6 space-y-3">
-                      <h3 className="font-serif text-xl font-bold text-[#333333]">{card.title}</h3>
-                      <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+                      <h3 className="font-serif text-xl font-bold text-[#293434] group-hover:text-[#47a295] transition">{card.title}</h3>
+                      <p className="text-xs text-[#576a6a] leading-relaxed font-sans">{card.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -361,25 +415,34 @@ export default function Home() {
         </div>
       )}
 
+      {/* GREENER BEAUTY DETAIL VIEW */}
+      {activePage === 'greener-beauty-detail' && (
+        <GreenerBeautyDetail
+          initialArticleId={selectedBeautyArticleId}
+          onNavigate={handleNavigate}
+          onOpenConsultation={() => setConsultationOpen(true)}
+        />
+      )}
+
       {/* GREENER GARDEN CATEGORY VIEW */}
       {activePage === 'garden' && (
-        <div className="bg-white">
+        <div className="bg-[#EDEEE7]">
           <div
             className="relative w-full h-72 sm:h-80 bg-cover bg-center flex items-center justify-center shadow-inner"
             style={{ backgroundImage: "url('https://www.drinkfromheaven.com/affsites/eco/images/slide/home_garden_plant.jpg')" }}
           >
-            <div className="absolute inset-0 bg-black/35"></div>
-            <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-normal drop-shadow-lg tracking-wide">Greener Garden</h1>
+            <div className="absolute inset-0 bg-[#293434]/50 backdrop-blur-xs"></div>
+            <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-bold drop-shadow-lg tracking-wide">Greener Garden</h1>
           </div>
 
-          <div className="wood-consult-bg py-4 px-4 shadow-inner border-y border-slate-900/40">
+          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
             <div className="max-w-xl mx-auto flex items-center justify-center gap-3">
               <input
                 type="email"
                 placeholder="Your email address..."
-                className="w-72 sm:w-80 px-5 py-2.5 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-72 sm:w-80 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
               />
-              <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2.5 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
                 SEND THE EBOOK
               </button>
             </div>
@@ -387,38 +450,48 @@ export default function Home() {
 
           <div className="max-w-6xl mx-auto px-4 pt-14 pb-20">
             <div className="text-center max-w-4xl mx-auto mb-12">
-              <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333] mb-4">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434] mb-4">
                 Reconnect with the Earth
               </h2>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p className="text-[#576a6a] text-xs sm:text-sm leading-relaxed font-medium">
                 Gardening is great, but gardening with Kangen Water® is even better! Just like your body needs Kangen Water® for optimal hydration, your plants need this remarkable water for optimal growth, hydration, and mineralization. Kangen Water® stimulates germination and improves seedling development, keeping your plants in peak condition without the use of harmful chemicals.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
               <div className="space-y-8">
-                <div className="text-center p-6 border border-slate-200/80 rounded-xl bg-slate-50 space-y-2.5 shadow-xs">
-                  <div className="w-24 h-24 rounded-full border-2 border-emerald-600 mx-auto overflow-hidden shadow">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Cynthia Briganti" className="w-full h-full object-cover" />
+                <div className="text-center p-6 border border-[#3E4C4C]/15 rounded-2xl bg-white space-y-2.5 shadow-md">
+                  <div className="w-24 h-24 rounded-full border-4 border-[#7AD1C4] mx-auto overflow-hidden shadow">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Shahina Sajid" className="w-full h-full object-cover" />
                   </div>
-                  <h4 className="font-serif font-bold text-base text-[#333333]">Cynthia Briganti 6A8-6</h4>
-                  <p className="text-[11px] text-slate-500">Enagic® International Distributor</p>
-                  <p className="text-[11px] text-slate-700 font-mono font-semibold">818 859-0109</p>
+                  <h4 className="font-serif font-bold text-base text-[#293434]">Shahina Sajid 6A8-6</h4>
+                  <p className="text-[11px] text-[#47a295] font-bold">Enagic® International Distributor</p>
+                  <p className="text-[11px] text-slate-700 font-mono font-bold">469-648-8298</p>
                 </div>
               </div>
 
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { title: 'Benefits of Gardening', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop', desc: 'Health professionals have long touted the benefits of gardening on your mental health, budget, overall wellness, and building of the community.' },
-                  { title: 'Gardening With Kangen Water®', img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800&auto=format&fit=crop', desc: 'Gardening with Kangen Water is a great way to keep your plants and flowers healthy, vibrant, and fresh.' },
-                  { title: 'Gardening with Kids', img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=800&auto=format&fit=crop', desc: 'Children who garden show heightened environmental awareness, responsibility, interpersonal skills, and team skills.' }
+                  { id: 'garden-detail-1', title: 'A Greener Garden', img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800&auto=format&fit=crop', desc: 'Spending time in the garden is one of the simplest ways to live more lightly on the planet while doing something good for yourself.' },
+                  { id: 'garden-detail-2', title: 'Choosing the Right Water for Each Plant', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop', desc: 'Match each plant to the water it prefers — learn which crops thrive on Kangen Water®, Beauty Water®, or Neutral Water.' },
+                  { id: 'garden-detail-3', title: 'Kids Benefit From Gardening Too', img: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=800&auto=format&fit=crop', desc: 'Get kids outside and hands-in-the-dirt! Gardening builds physical fitness, motor skills, and healthier eating habits.' },
+                  { id: 'garden-detail-4', title: 'Composting Basics', img: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a81?q=80&w=800&auto=format&fit=crop', desc: 'Turn kitchen scraps into rich organic fertilizer while reducing landfill waste with Enagic® water composting.' },
+                  { id: 'garden-detail-5', title: 'Neem Oil Spray for Natural Pest Control', img: 'https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?q=80&w=800&auto=format&fit=crop', desc: 'Protect plants naturally from pests using Beauty Water (pH 6.0), neem oil, and mild Castile soap emulsifier.' }
                 ].map((card, i) => (
-                  <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                  <div
+                    key={i}
+                    onClick={() => {
+                      handleNavigate('greener-garden-detail', card.id);
+                    }}
+                    className="modern-card bg-white border border-[#3E4C4C]/15 rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer group"
+                  >
                     <div>
-                      <img src={card.img} alt={card.title} className="w-full h-48 object-cover" />
+                      <div className="h-48 overflow-hidden relative">
+                        <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" />
+                      </div>
                       <div className="p-5 space-y-2">
-                        <h3 className="font-serif text-lg font-bold text-[#333333]">{card.title}</h3>
-                        <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+                        <h3 className="font-serif text-lg font-bold text-[#293434] group-hover:text-[#47a295] transition">{card.title}</h3>
+                        <p className="text-xs text-[#576a6a] leading-relaxed font-sans">{card.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -429,64 +502,70 @@ export default function Home() {
         </div>
       )}
 
+      {/* GREENER GARDEN DETAIL VIEW */}
+      {activePage === 'greener-garden-detail' && (
+        <GreenerGardenDetail
+          initialArticleId={selectedGardenArticleId}
+          onNavigate={handleNavigate}
+          onOpenConsultation={() => setConsultationOpen(true)}
+        />
+      )}
+
       {/* GREENER PET CATEGORY VIEW */}
       {activePage === 'pet' && (
-        <div className="bg-white">
+        <div className="bg-[#EDEEE7]">
           <div
             className="relative w-full h-72 sm:h-80 bg-cover bg-center flex items-center justify-center shadow-inner"
             style={{ backgroundImage: "url('https://www.drinkfromheaven.com/affsites/eco/images/slide/home_pet.jpg')" }}
           >
-            <div className="absolute inset-0 bg-black/35"></div>
-            <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-normal drop-shadow-lg tracking-wide">Greener Pet</h1>
+            <div className="absolute inset-0 bg-[#293434]/50 backdrop-blur-xs"></div>
+            <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-bold drop-shadow-lg tracking-wide">Greener Pet</h1>
           </div>
 
-          <div className="wood-consult-bg py-4 px-4 shadow-inner border-y border-slate-900/40">
+          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
             <div className="max-w-xl mx-auto flex items-center justify-center gap-3">
               <input
                 type="email"
                 placeholder="Your email address..."
-                className="w-72 sm:w-80 px-5 py-2.5 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-72 sm:w-80 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
               />
-              <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2.5 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
                 SEND THE EBOOK
               </button>
             </div>
           </div>
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center space-y-4">
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#333333]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434]">
               Protect your Pets
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto">
+            <p className="text-[#576a6a] text-xs sm:text-sm leading-relaxed max-w-4xl mx-auto font-medium">
               Alarming amounts of heavy metals, lead, and chemical toxins have been discovered in tap water at levels much higher than those found in municipal standards, meaning that our beloved pets are much more susceptible to toxic buildup than we are. Grooming products, flea and tick treatments, and even pet food are found to contain harmful contaminants and chemicals, increasing the risk of sickness and shortening the lives of our pets. Pet owners are studying these risks of exposure and long-term effects. This means that we are the first line of defense when it comes to our fur babies, and Kangen Water® is the key to protecting our pets. Use Kangen Water® to optimally hydrate your pet, create natural holistic remedies for ailments, and to even make your own organic pet food!
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto px-4 pb-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
-                {
-                  title: 'Flea and Tick Treatments',
-                  img: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=800&auto=format&fit=crop',
-                  desc: 'How safe are the flea and tick treatments you are currently using?'
-                },
-                {
-                  title: 'Eliminate Pet Odors',
-                  img: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop',
-                  desc: 'As much as you love your pets, you probably don\'t want pet odors or urine to dominate your green home.'
-                },
-                {
-                  title: 'Pets Need Water, Too!',
-                  img: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop',
-                  desc: 'A member of the family whose hydration may be overlooked at times is your beloved pet.'
-                }
+                { id: 'pet-detail-1', title: 'Keeping Your Pet Safe from Fleas and Ticks', img: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop', desc: 'Protect your pets naturally from parasites without harsh chemical pesticides using Beauty Water and essential oils.' },
+                { id: 'pet-detail-2', title: 'Getting Rid of Pet Odors the Green Way', img: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=800&auto=format&fit=crop', desc: 'Tackle pet odors, upholstery stains, bad breath, and toy sanitation using chemical-free Enagic® water solutions.' },
+                { id: 'pet-detail-3', title: 'Homemade Kangen Water® Pet Shampoo', img: 'https://images.unsplash.com/photo-1535294435445-d7249524ef2e?q=80&w=800&auto=format&fit=crop', desc: 'Formulate a gentle, chemical-free pet shampoo with glycerine, Enagic® soap, and Kangen Water® for a shiny, soft coat.' },
+                { id: 'pet-detail-4', title: 'Don\'t Forget Your Pet\'s Hydration', img: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=800&auto=format&fit=crop', desc: 'Keep pets energized, healthy, and properly hydrated with clean Enagic® water to prevent heat stress and organ strain.' }
               ].map((card, i) => (
-                <div key={i} className="bg-slate-50 border border-slate-200/80 shadow-xs rounded-lg overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                <div
+                  key={i}
+                  onClick={() => {
+                    handleNavigate('greener-pet-detail', card.id);
+                  }}
+                  className="modern-card bg-white border border-[#3E4C4C]/15 rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer group"
+                >
                   <div>
-                    <img src={card.img} alt={card.title} className="w-full h-52 object-cover" />
-                    <div className="p-6 space-y-3">
-                      <h3 className="font-serif text-xl font-bold text-[#333333]">{card.title}</h3>
-                      <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+                    <div className="h-48 overflow-hidden relative">
+                      <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" />
+                    </div>
+                    <div className="p-5 space-y-2">
+                      <h3 className="font-serif text-base font-bold text-[#293434] group-hover:text-[#47a295] transition leading-snug">{card.title}</h3>
+                      <p className="text-xs text-[#576a6a] leading-relaxed font-sans">{card.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -496,20 +575,32 @@ export default function Home() {
         </div>
       )}
 
+      {/* GREENER PET DETAIL VIEW */}
+      {activePage === 'greener-pet-detail' && (
+        <GreenerPetDetail
+          initialArticleId={selectedPetArticleId}
+          onNavigate={handleNavigate}
+          onOpenConsultation={() => setConsultationOpen(true)}
+        />
+      )}
+
       {/* SHOP VIEW */}
       {activePage === 'shop' && <ShopSection />}
 
       {/* 5 WATER TYPES VIEW */}
       {activePage === 'water-types' && <WaterTypesSection onNavigate={handleNavigate} />}
 
-      {/* CERTIFICATIONS / ABOUT / CONTACT VIEWS */}
-      {(activePage === 'about' || activePage === 'contact' || activePage === 'certifications') && (
+      {/* CONTACT PAGE VIEW */}
+      {activePage === 'contact' && <ContactFormSection onNavigate={handleNavigate} />}
+
+      {/* CERTIFICATIONS / ABOUT VIEWS */}
+      {(activePage === 'about' || activePage === 'certifications') && (
         <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-6">
           <div className="inline-block p-3 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs uppercase tracking-wider">
             Enagic® International 6A8-6 Distributor
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900">
-            {activePage === 'certifications' ? 'Enagic® WQA Gold Seal Certifications' : 'Cynthia Briganti 6A8-6'}
+            {activePage === 'certifications' ? 'Enagic® WQA Gold Seal Certifications' : 'Shahina Sajid 6A8-6'}
           </h1>
           <p className="text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed">
             Authorized Enagic® Distributor serving clients worldwide. Providing high-performance Kangen Water® ionizers, home mineral spa units, and organic Okinawa Ukon supplements.

@@ -32,9 +32,9 @@ export const VideoSection: React.FC<VideoSectionProps> = ({ onOpenVideoLibrary }
         <div className="pt-4">
           <button
             onClick={onOpenVideoLibrary}
-            className="inline-flex items-center gap-2 bg-[#87b076] hover:bg-[#759e64] text-white px-10 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition shadow-lg cursor-pointer"
+            className="inline-flex items-center gap-2 bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-10 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-lg cursor-pointer hover:scale-105"
           >
-            <Play className="w-4 h-4 fill-white" /> Watch
+            <Play className="w-4 h-4 fill-[#293434]" /> Watch Video Library
           </button>
         </div>
       </div>

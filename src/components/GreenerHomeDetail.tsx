@@ -418,13 +418,87 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
     saveCommentsToStorage(updated);
   };
 
+  const renderFormattedParagraph = (paragraph: string, pIdx: number) => {
+    if (!paragraph.includes('\n')) {
+      return (
+        <p key={pIdx} className="text-slate-600 leading-relaxed text-sm sm:text-base">
+          {paragraph}
+        </p>
+      );
+    }
+
+    const lines = paragraph.split('\n');
+    return (
+      <div key={pIdx} className="space-y-2 py-1">
+        {lines.map((line, lIdx) => {
+          const trimmed = line.trim();
+          if (!trimmed) return <div key={lIdx} className="h-2" />;
+
+          // Header lines like "Ingredients:", "Directions:", "To Serve:"
+          if (
+            trimmed.endsWith(':') ||
+            trimmed === 'Ingredients' ||
+            trimmed === 'Directions' ||
+            trimmed === 'To Serve'
+          ) {
+            return (
+              <h4
+                key={lIdx}
+                className="font-serif font-bold text-[#333333] text-base sm:text-lg mt-4 mb-2 border-b border-slate-200 pb-1"
+              >
+                {trimmed}
+              </h4>
+            );
+          }
+
+          // Bullet point lines for ingredients/items
+          if (trimmed.startsWith('•')) {
+            const contentText = trimmed.replace(/^•\s*/, '');
+            return (
+              <div
+                key={lIdx}
+                className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base pl-3 py-1.5 bg-slate-50/70 rounded-md border border-slate-200/60 my-1 font-sans"
+              >
+                <span className="text-[#87b076] font-bold text-base select-none mt-0.5">•</span>
+                <span className="leading-relaxed font-medium">{contentText}</span>
+              </div>
+            );
+          }
+
+          // Numbered list lines for directions
+          const numMatch = trimmed.match(/^(\d+\.)\s*(.*)$/);
+          if (numMatch) {
+            return (
+              <div
+                key={lIdx}
+                className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base pl-2 py-1.5"
+              >
+                <span className="font-bold text-[#3E4C4C] text-sm font-mono min-w-[24px] select-none">
+                  {numMatch[1]}
+                </span>
+                <span className="leading-relaxed">{numMatch[2]}</span>
+              </div>
+            );
+          }
+
+          // Regular line
+          return (
+            <p key={lIdx} className="text-[#576a6a] leading-relaxed text-sm sm:text-base font-medium">
+              {trimmed}
+            </p>
+          );
+        })}
+      </div>
+    );
+  };
+
   const currentArticle = ARTICLES.find((a) => a.id === selectedArticleId) || ARTICLES[0];
 
   return (
-    <div className="bg-white min-h-screen font-sans text-slate-800">
+    <div className="bg-[#EDEEE7] min-h-screen font-sans text-[#3E4C4C]">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-6 right-6 z-50 bg-[#87b076] text-white px-5 py-3 rounded-md shadow-xl text-xs font-semibold animate-bounce flex items-center gap-2">
+        <div className="fixed top-6 right-6 z-50 bg-[#7AD1C4] text-[#293434] px-5 py-3 rounded-full shadow-xl text-xs font-bold animate-bounce flex items-center gap-2 border border-[#7AD1C4]/40">
           <span>✓</span> {toastMessage}
         </div>
       )}
@@ -434,21 +508,21 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
         className="relative w-full h-64 sm:h-72 bg-cover bg-center flex items-center justify-center shadow-inner"
         style={{ backgroundImage: `url('${currentArticle.image}')` }}
       >
-        <div className="absolute inset-0 bg-black/45 backdrop-blur-xs"></div>
-        <h1 className="relative z-10 font-serif text-3xl sm:text-5xl text-white font-normal drop-shadow-md tracking-wide">
+        <div className="absolute inset-0 bg-[#293434]/60 backdrop-blur-xs"></div>
+        <h1 className="relative z-10 font-serif text-3xl sm:text-5xl text-white font-bold drop-shadow-md tracking-wide">
           Greener Home
         </h1>
       </section>
 
       {/* Search Header Bar matching screenshot */}
-      <section className="wood-consult-bg py-3 px-4 shadow-inner border-y border-slate-900/40">
+      <section className="bg-[#3E4C4C] py-3 px-4 shadow-inner border-y border-[#7AD1C4]/30">
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
           <input
             type="text"
             placeholder="Search Greener Home..."
-            className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
           />
-          <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+          <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
             SEARCH
           </button>
         </div>
@@ -461,27 +535,27 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
           {/* LEFT SIDEBAR (3 cols) */}
           <aside className="lg:col-span-3 space-y-6">
             {/* Distributor Circle Profile Card */}
-            <div className="p-6 border border-slate-200/80 rounded-lg bg-slate-50 text-center space-y-3 shadow-xs">
-              <div className="w-24 h-24 rounded-full border-2 border-[#87b076] mx-auto overflow-hidden shadow">
+            <div className="p-6 border border-[#3E4C4C]/15 rounded-2xl bg-white text-center space-y-3 shadow-md">
+              <div className="w-24 h-24 rounded-full border-4 border-[#7AD1C4] mx-auto overflow-hidden shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
-                  alt="Cynthia Briganti"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                  alt="Shahina Sajid"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="font-serif font-bold text-base text-[#333333]">
-                Cynthia Briganti 6A8-6
+              <h4 className="font-serif font-bold text-base text-[#293434]">
+                Shahina Sajid 6A8-6
               </h4>
-              <p className="text-xs text-slate-500 leading-tight">
+              <p className="text-xs text-[#47a295] font-bold leading-tight">
                 Enagic® International Distributor
               </p>
-              <p className="text-xs text-slate-700 font-mono font-semibold">
-                📱 818 859-0109
+              <p className="text-xs text-slate-700 font-mono font-bold">
+                📱 469-648-8298
               </p>
               <div>
                 <button
                   onClick={() => onOpenConsultation?.()}
-                  className="text-xs text-emerald-700 font-semibold underline hover:text-emerald-900 cursor-pointer"
+                  className="text-xs text-[#3E4C4C] font-bold underline hover:text-[#7AD1C4] cursor-pointer transition"
                 >
                   contact
                 </button>
@@ -556,9 +630,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
               {/* Intro Paragraphs */}
               <div className="space-y-4 text-slate-700 text-sm leading-relaxed font-sans pt-2">
                 {currentArticle.content.map((paragraph, idx) => (
-                  <p key={idx} className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                    {paragraph}
-                  </p>
+                  renderFormattedParagraph(paragraph, idx)
                 ))}
               </div>
 
@@ -614,11 +686,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                         )}
 
                         <div className={sub.image ? 'md:col-span-6 space-y-3' : 'md:col-span-12 space-y-3'}>
-                          {sub.text && (
-                            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
-                              {sub.text}
-                            </p>
-                          )}
+                          {sub.text && renderFormattedParagraph(sub.text, sIdx)}
                         </div>
                       </div>
                     </div>
@@ -815,10 +883,10 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                     </div>
 
                     {/* Comment Body */}
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-line">
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-line font-medium">
                       {comm.text}
                       <span className="ml-2 inline-block">
-                        <button className="text-[11px] text-emerald-700 hover:underline cursor-pointer">
+                        <button className="text-[11px] text-[#47a295] font-bold hover:underline cursor-pointer">
                           translate
                         </button>
                       </span>
@@ -830,7 +898,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                         onClick={() => toggleLike(comm.id)}
                         className={`flex items-center gap-1.5 px-3 py-1 rounded-full border transition cursor-pointer ${
                           comm.liked
-                            ? 'bg-emerald-50 border-emerald-300 text-emerald-800 font-semibold'
+                            ? 'bg-[#7AD1C4]/20 border-[#7AD1C4] text-[#293434] font-bold'
                             : 'border-slate-200 hover:bg-slate-50 text-slate-600'
                         }`}
                       >
@@ -842,7 +910,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                         onClick={() =>
                           setReplyingToId(replyingToId === comm.id ? null : comm.id)
                         }
-                        className="font-serif font-semibold text-slate-600 hover:text-emerald-700 uppercase tracking-wider text-[11px] flex items-center gap-1 cursor-pointer"
+                        className="font-serif font-bold text-[#3E4C4C] hover:text-[#7AD1C4] uppercase tracking-wider text-[11px] flex items-center gap-1 cursor-pointer transition"
                       >
                         ↩ REPLY
                       </button>
@@ -852,7 +920,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                     {replyingToId === comm.id && (
                       <form
                         onSubmit={(e) => handleReplySubmit(comm.id, e)}
-                        className="mt-3 p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-3"
+                        className="mt-3 p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3"
                       >
                         <textarea
                           rows={3}
@@ -860,7 +928,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                           value={replyText}
                           onChange={(e) => setReplyText(e.target.value)}
                           placeholder={`Reply to ${comm.name}...`}
-                          className="w-full p-3 text-xs bg-white border border-slate-300 rounded outline-none focus:ring-2 focus:ring-emerald-500"
+                          className="w-full p-3 text-xs bg-white border border-slate-300 rounded-xl outline-none focus:ring-2 focus:ring-[#7AD1C4]"
                         />
                         <div className="flex items-center justify-end gap-2">
                           <button
@@ -872,7 +940,7 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                           </button>
                           <button
                             type="submit"
-                            className="bg-[#87b076] hover:bg-[#759e64] text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase"
+                            className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-4 py-1.5 rounded-full text-xs font-bold uppercase cursor-pointer shadow"
                           >
                             Post Reply
                           </button>

@@ -1,147 +1,236 @@
 @import "tailwindcss";
 
+:root {
+  --color-tiffany: #7AD1C4;
+  --color-tiffany-hover: #61c2b5;
+  --color-tiffany-dark: #47a295;
+  --color-tiffany-light: #e4f7f4;
+  --color-tiffany-glow: rgba(122, 209, 196, 0.35);
+
+  --color-alabaster: #EDEEE7;
+  --color-alabaster-card: #f8f9f5;
+  --color-alabaster-pure: #ffffff;
+
+  --color-outer-space: #3E4C4C;
+  --color-outer-space-dark: #293434;
+  --color-outer-space-light: #576a6a;
+  --color-outer-space-muted: #798d8d;
+}
+
 @layer base {
   html {
     font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: var(--color-alabaster);
+    color: var(--color-outer-space);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair), Georgia, serif;
+    color: var(--color-outer-space-dark);
   }
 
   body {
-    color: #333333;
-    background-color: #ffffff;
+    color: var(--color-outer-space);
+    background-color: var(--color-alabaster);
   }
 }
 
+/* Wood & Banner Overlays with Outer Space & Tiffany accents */
 .wood-bg {
-    background-color: #1e1312;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1800&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
+  background-color: var(--color-outer-space-dark);
+  background-image: radial-gradient(rgba(41, 52, 52, 0.65), rgba(41, 52, 52, 0.92)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1800&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
 }
 
 .wood-cta-bg {
-    background-color: #1e1312;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1800&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
+  background-color: var(--color-outer-space-dark);
+  background-image: linear-gradient(135deg, rgba(62, 76, 76, 0.92), rgba(41, 52, 52, 0.96)), url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1800&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
 }
 
 .wood-consult-bg {
-    background-color: #1e1312;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=1800&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
+  background-color: var(--color-outer-space);
+  background-image: linear-gradient(90deg, rgba(62, 76, 76, 0.95), rgba(41, 52, 52, 0.95)), url('https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=1800&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
 }
 
+/* Primary Tiffany & Outer Space Glow Button */
 .btn-sage-pill {
-    background-color: #87b076;
-    color: #ffffff;
-    font-weight: 600;
-    border-radius: 50px;
-    padding: 10px 28px;
-    font-size: 13px;
-    display: inline-block;
-    transition: all 0.3s ease;
+  background: linear-gradient(135deg, #7AD1C4 0%, #61c2b5 100%);
+  color: #293434;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 11px 30px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 18px rgba(122, 209, 196, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-sage-pill:hover {
-    background-color: #759e64;
-    transform: translateY(-1px);
+  background: linear-gradient(135deg, #61c2b5 0%, #47a295 100%);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(122, 209, 196, 0.6);
 }
 
+/* Primary Dark Outer Space Button */
+.btn-outer-space {
+  background: linear-gradient(135deg, #3E4C4C 0%, #293434 100%);
+  color: #7AD1C4;
+  border: 1.5px solid #7AD1C4;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 11px 28px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(62, 76, 76, 0.25);
+}
+
+.btn-outer-space:hover {
+  background: #7AD1C4;
+  color: #293434;
+  border-color: #7AD1C4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(122, 209, 196, 0.5);
+}
+
+/* Navbar Links with Aesthetic Glow */
 .nav-link-item {
-    height: 80px;
-    padding: 0 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    color: #334155;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
-    cursor: pointer;
+  height: 80px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #3E4C4C;
+  text-transform: uppercase;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border-radius: 12px;
+  position: relative;
 }
 
 .nav-link-item:hover,
 .nav-link-item.active {
-    background-color: #427a59 !important;
-    color: #ffffff !important;
+  background-color: #3E4C4C !important;
+  color: #7AD1C4 !important;
+  box-shadow: 0 4px 20px rgba(62, 76, 76, 0.25);
+}
+
+.nav-link-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 3.5px;
+  background-color: #7AD1C4;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 10px #7AD1C4;
 }
 
 .nav-icon-img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-    filter: brightness(0) opacity(0.75);
-    opacity: 0.85;
-    margin-bottom: 2px;
-    transition: all 0.2s ease;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) opacity(0.7);
+  transition: all 0.25s ease;
 }
 
 .nav-link-item:hover .nav-icon-img,
 .nav-link-item.active .nav-icon-img {
-    opacity: 1;
-    filter: brightness(0) invert(1);
+  filter: drop-shadow(0 0 4px #7AD1C4);
+  opacity: 1;
 }
 
 .nav-text-line1 {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    line-height: 1.1;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
 }
 
 .nav-text-line2 {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 1.1;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
 }
 
-.hero-badge-black {
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 8px 18px;
-    border-radius: 1px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
+/* Modern Card Styling with Glass & Tiffany Accent Borders */
+.modern-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(62, 76, 76, 0.12);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -2px rgba(62, 76, 76, 0.06);
 }
 
+.modern-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: #7AD1C4;
+  box-shadow: 0 20px 35px -5px rgba(62, 76, 76, 0.12), 0 0 20px rgba(122, 209, 196, 0.3);
+}
+
+/* Badge styling */
+.hero-badge-tiffany {
+  background-color: #3E4C4C;
+  color: #7AD1C4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  border: 1px solid #7AD1C4;
+  box-shadow: 0 4px 15px rgba(122, 209, 196, 0.3);
+  text-transform: uppercase;
+}
+
+/* Slide Transitions */
 .hero-slide {
-    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hero-slide.active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 10;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
 }
 
 .hero-slide.inactive {
-    opacity: 0;
-    transform: scale(1.03);
-    z-index: 0;
-    pointer-events: none;
+  opacity: 0;
+  transform: scale(1.04);
+  z-index: 0;
+  pointer-events: none;
 }
 
-.category-white-box {
-    background-color: #ffffff !important;
-    color: #333333 !important;
-    width: 175px;
-    padding: 12px 16px;
-    text-align: center;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
+/* Animations */
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(122, 209, 196, 0.3); }
+  50% { box-shadow: 0 0 28px rgba(122, 209, 196, 0.65); }
+}
+
+.animate-float-up {
+  animation: floatUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
 }

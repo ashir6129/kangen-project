@@ -119,20 +119,20 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 font-sans">
-      <div className="relative w-full max-w-6xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 font-sans">
+      <div className="relative w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] border border-[#3E4C4C]/20">
         {/* Header */}
-        <div className="bg-[#075f70] text-white px-6 py-4 flex items-center justify-between shadow-md">
+        <div className="bg-[#3E4C4C] text-[#EDEEE7] px-6 py-4 flex items-center justify-between shadow-md border-b border-[#7AD1C4]/30">
           <div className="flex items-center gap-3">
-            <Award className="w-6 h-6 text-amber-300" />
+            <Award className="w-6 h-6 text-[#7AD1C4]" />
             <div>
               <h2 className="font-serif text-xl sm:text-2xl font-bold">Compare Enagic® Water Ionizers</h2>
-              <p className="text-xs text-emerald-100 font-sans">Find the perfect Kangen Water® machine for your home or business</p>
+              <p className="text-xs text-[#7AD1C4] font-sans font-medium">Find the perfect Kangen Water® machine for your home or business</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full hover:bg-white/20 text-white transition focus:outline-none cursor-pointer"
+            className="p-1.5 rounded-full hover:bg-white/10 text-white transition focus:outline-none cursor-pointer"
             aria-label="Close"
           >
             <X className="w-6 h-6" />
@@ -140,48 +140,48 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
         </div>
 
         {/* Scrollable Table Container */}
-        <div className="p-4 overflow-x-auto overflow-y-auto flex-1">
+        <div className="p-4 overflow-x-auto overflow-y-auto flex-1 bg-[#EDEEE7]/30">
           <table className="w-full min-w-[800px] border-collapse text-left text-xs sm:text-sm">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50">
-                <th className="p-4 font-semibold text-slate-700 w-44 sticky left-0 bg-slate-50 z-10 shadow-r">
+              <tr className="border-b border-slate-200 bg-[#EDEEE7]">
+                <th className="p-4 font-bold text-[#293434] w-44 sticky left-0 bg-[#EDEEE7] z-10 shadow-r">
                   Features
                 </th>
                 {COMPARISON_DATA.map((item) => (
                   <th key={item.code} className="p-4 font-semibold text-center min-w-[160px] align-top">
                     {item.popular && (
-                      <span className="inline-block bg-amber-500 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full mb-1">
+                      <span className="inline-block bg-[#7AD1C4] text-[#293434] text-[10px] uppercase font-extrabold px-2.5 py-0.5 rounded-full mb-1 shadow-xs">
                         Popular
                       </span>
                     )}
-                    <img src={item.img} alt={item.name} className="w-24 h-24 object-cover mx-auto rounded-md shadow-xs mb-2 border border-slate-200" />
-                    <div className="font-serif font-bold text-slate-900 text-base">{item.name}</div>
-                    <div className="text-[11px] text-slate-500 font-normal leading-tight h-8 flex items-center justify-center">{item.tagline}</div>
-                    <div className="text-emerald-700 font-bold text-sm mt-1">{item.usPrice}</div>
+                    <img src={item.img} alt={item.name} className="w-24 h-24 object-cover mx-auto rounded-xl shadow-xs mb-2 border border-slate-200" />
+                    <div className="font-serif font-bold text-[#293434] text-base">{item.name}</div>
+                    <div className="text-[11px] text-[#576a6a] font-medium leading-tight h-8 flex items-center justify-center">{item.tagline}</div>
+                    <div className="text-[#3E4C4C] font-extrabold text-sm mt-1">{item.usPrice}</div>
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-slate-200/60 bg-white">
               {/* Titanium Plates */}
               <tr>
-                <td className="p-3 font-semibold text-slate-700 sticky left-0 bg-white z-10 shadow-r flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-emerald-600" /> Titanium Plates
+                <td className="p-3 font-bold text-[#293434] sticky left-0 bg-white z-10 shadow-r flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-[#7AD1C4]" /> Titanium Plates
                 </td>
                 {COMPARISON_DATA.map((item) => (
-                  <td key={item.code} className="p-3 text-center font-semibold text-slate-800">
+                  <td key={item.code} className="p-3 text-center font-bold text-[#293434]">
                     {item.plates > 0 ? `${item.plates} Solid Plates` : 'N/A (Futama Mineral Filters)'}
                   </td>
                 ))}
               </tr>
 
               {/* pH Output Range */}
-              <tr className="bg-slate-50/50">
-                <td className="p-3 font-semibold text-slate-700 sticky left-0 bg-slate-50/50 z-10 shadow-r flex items-center gap-2">
-                  <Droplets className="w-4 h-4 text-blue-600" /> pH Range
+              <tr className="bg-[#EDEEE7]/40">
+                <td className="p-3 font-bold text-[#293434] sticky left-0 bg-[#EDEEE7]/40 z-10 shadow-r flex items-center gap-2">
+                  <Droplets className="w-4 h-4 text-[#7AD1C4]" /> pH Range
                 </td>
                 {COMPARISON_DATA.map((item) => (
-                  <td key={item.code} className="p-3 text-center text-slate-700">
+                  <td key={item.code} className="p-3 text-center text-slate-700 font-medium">
                     {item.phRange}
                   </td>
                 ))}
@@ -189,23 +189,23 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
 
               {/* ORP Antioxidant Potential */}
               <tr>
-                <td className="p-3 font-semibold text-slate-700 sticky left-0 bg-white z-10 shadow-r">
+                <td className="p-3 font-bold text-[#293434] sticky left-0 bg-white z-10 shadow-r">
                   ORP Antioxidant Level
                 </td>
                 {COMPARISON_DATA.map((item) => (
-                  <td key={item.code} className="p-3 text-center text-emerald-700 font-medium">
+                  <td key={item.code} className="p-3 text-center text-[#3E4C4C] font-bold">
                     {item.orp}
                   </td>
                 ))}
               </tr>
 
               {/* Warranty */}
-              <tr className="bg-slate-50/50">
-                <td className="p-3 font-semibold text-slate-700 sticky left-0 bg-slate-50/50 z-10 shadow-r flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-amber-600" /> Full Warranty
+              <tr className="bg-[#EDEEE7]/40">
+                <td className="p-3 font-bold text-[#293434] sticky left-0 bg-[#EDEEE7]/40 z-10 shadow-r flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-[#7AD1C4]" /> Full Warranty
                 </td>
                 {COMPARISON_DATA.map((item) => (
-                  <td key={item.code} className="p-3 text-center text-slate-700">
+                  <td key={item.code} className="p-3 text-center text-slate-700 font-medium">
                     {item.warranty}
                   </td>
                 ))}
@@ -213,23 +213,23 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
 
               {/* Display & Languages */}
               <tr>
-                <td className="p-3 font-semibold text-slate-700 sticky left-0 bg-white z-10 shadow-r">
+                <td className="p-3 font-bold text-[#293434] sticky left-0 bg-white z-10 shadow-r">
                   Screen & Voice Languages
                 </td>
                 {COMPARISON_DATA.map((item) => (
-                  <td key={item.code} className="p-3 text-center text-slate-600">
+                  <td key={item.code} className="p-3 text-center text-slate-600 font-medium">
                     {item.languages > 1 ? `${item.languages} Languages` : 'Single Language'}
                   </td>
                 ))}
               </tr>
 
               {/* Power Supply */}
-              <tr className="bg-slate-50/50">
-                <td className="p-3 font-semibold text-slate-700 sticky left-0 bg-slate-50/50 z-10 shadow-r">
+              <tr className="bg-[#EDEEE7]/40">
+                <td className="p-3 font-bold text-[#293434] sticky left-0 bg-[#EDEEE7]/40 z-10 shadow-r">
                   Power Specifications
                 </td>
                 {COMPARISON_DATA.map((item) => (
-                  <td key={item.code} className="p-3 text-center text-slate-600 text-xs">
+                  <td key={item.code} className="p-3 text-center text-slate-600 text-xs font-medium">
                     {item.power}
                   </td>
                 ))}
@@ -237,7 +237,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
 
               {/* Select / View Button */}
               <tr>
-                <td className="p-4 font-semibold text-slate-700 sticky left-0 bg-white z-10 shadow-r">
+                <td className="p-4 font-bold text-[#293434] sticky left-0 bg-white z-10 shadow-r">
                   Actions
                 </td>
                 {COMPARISON_DATA.map((item) => (
@@ -247,7 +247,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
                         if (onSelectProduct) onSelectProduct(item.code);
                         onClose();
                       }}
-                      className="w-full bg-[#87b076] hover:bg-[#759e64] text-white py-2 px-3 rounded-full text-xs font-semibold uppercase tracking-wider transition shadow-xs cursor-pointer"
+                      className="w-full bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] py-2 px-3 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-xs cursor-pointer hover:scale-102"
                     >
                       View Details
                     </button>
@@ -259,9 +259,9 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
         </div>
 
         {/* Footer info */}
-        <div className="bg-slate-100 px-6 py-3 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 gap-2">
-          <span>* All machines generate 5 water types: Strong Kangen (11.5), Kangen Water (8.5-9.5), Clean Water (7.0), Beauty Water (6.0), Strong Acidic (2.5).</span>
-          <button onClick={onClose} className="px-5 py-1.5 bg-slate-800 text-white rounded-full hover:bg-slate-700 text-xs transition cursor-pointer">
+        <div className="bg-[#3E4C4C] text-[#EDEEE7] px-6 py-3.5 border-t border-[#7AD1C4]/20 flex flex-col sm:flex-row items-center justify-between text-xs gap-2">
+          <span className="font-medium text-slate-200">* All machines generate 5 water types: Strong Kangen (11.5), Kangen Water (8.5-9.5), Clean Water (7.0), Beauty Water (6.0), Strong Acidic (2.5).</span>
+          <button onClick={onClose} className="px-5 py-1.5 bg-[#7AD1C4] text-[#293434] rounded-full hover:bg-[#61c2b5] text-xs font-bold transition cursor-pointer shrink-0">
             Close Table
           </button>
         </div>

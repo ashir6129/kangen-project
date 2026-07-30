@@ -402,6 +402,80 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
     saveCommentsToStorage(updated);
   };
 
+  const renderFormattedParagraph = (paragraph: string, pIdx: number) => {
+    if (!paragraph.includes('\n')) {
+      return (
+        <p key={pIdx} className="text-slate-600 leading-relaxed text-sm sm:text-base">
+          {paragraph}
+        </p>
+      );
+    }
+
+    const lines = paragraph.split('\n');
+    return (
+      <div key={pIdx} className="space-y-2 py-1">
+        {lines.map((line, lIdx) => {
+          const trimmed = line.trim();
+          if (!trimmed) return <div key={lIdx} className="h-2" />;
+
+          // Header lines like "Ingredients:", "Directions:", "To Serve:"
+          if (
+            trimmed.endsWith(':') ||
+            trimmed === 'Ingredients' ||
+            trimmed === 'Directions' ||
+            trimmed === 'To Serve'
+          ) {
+            return (
+              <h4
+                key={lIdx}
+                className="font-serif font-bold text-[#333333] text-base sm:text-lg mt-4 mb-2 border-b border-slate-200 pb-1"
+              >
+                {trimmed}
+              </h4>
+            );
+          }
+
+          // Bullet point lines for ingredients/items
+          if (trimmed.startsWith('•')) {
+            const contentText = trimmed.replace(/^•\s*/, '');
+            return (
+              <div
+                key={lIdx}
+                className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base pl-3 py-1.5 bg-slate-50/70 rounded-md border border-slate-200/60 my-1 font-sans"
+              >
+                <span className="text-[#87b076] font-bold text-base select-none mt-0.5">•</span>
+                <span className="leading-relaxed font-medium">{contentText}</span>
+              </div>
+            );
+          }
+
+          // Numbered list lines for directions
+          const numMatch = trimmed.match(/^(\d+\.)\s*(.*)$/);
+          if (numMatch) {
+            return (
+              <div
+                key={lIdx}
+                className="flex items-start gap-2.5 text-slate-700 text-sm sm:text-base pl-2 py-1.5"
+              >
+                <span className="font-bold text-emerald-800 text-sm font-mono min-w-[24px] select-none">
+                  {numMatch[1]}
+                </span>
+                <span className="leading-relaxed">{numMatch[2]}</span>
+              </div>
+            );
+          }
+
+          // Regular line
+          return (
+            <p key={lIdx} className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              {trimmed}
+            </p>
+          );
+        })}
+      </div>
+    );
+  };
+
   const currentArticle = ARTICLES.find((a) => a.id === selectedArticleId) || ARTICLES[0];
 
   return (
@@ -448,19 +522,19 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
             <div className="p-6 border border-slate-200/80 rounded-lg bg-slate-50 text-center space-y-3 shadow-xs">
               <div className="w-24 h-24 rounded-full border-2 border-[#87b076] mx-auto overflow-hidden shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
-                  alt="Cynthia Briganti"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                  alt="Shahina Sajid"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h4 className="font-serif font-bold text-base text-[#333333]">
-                Cynthia Briganti 6A8-6
+                Shahina Sajid 6A8-6
               </h4>
               <p className="text-xs text-slate-500 leading-tight">
                 Enagic® International Distributor
               </p>
               <p className="text-xs text-slate-700 font-mono font-semibold">
-                📱 818 859-0109
+                📱 469-648-8298
               </p>
               <div>
                 <button
@@ -541,9 +615,7 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
               <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed font-sans pt-2">
                 {currentArticle.content.map((paragraph, idx) => (
                   <React.Fragment key={idx}>
-                    <p className="text-slate-600 leading-relaxed">
-                      {paragraph}
-                    </p>
+                    {renderFormattedParagraph(paragraph, idx)}
                     {idx === 0 && currentArticle.linkCallout && (
                       <p className="py-2">
                         <a
@@ -574,6 +646,49 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
                       </li>
                     ))}
                   </ul>
+                </div>
+              )}
+
+              {/* Sub-sections (for rich pages like Natural Flavor Ideas) */}
+              {currentArticle.subSections && currentArticle.subSections.length > 0 && (
+                <div className="space-y-8 pt-6 border-t border-slate-200">
+                  {currentArticle.subSections.map((sub, sIdx) => (
+                    <div key={sIdx} className="space-y-4">
+                      {sub.heading && (
+                        <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#333333]">
+                          {sub.heading}
+                        </h3>
+                      )}
+                      {sub.subtext && (
+                        <p className="text-xs sm:text-sm text-slate-500 italic font-serif">
+                          {sub.subtext}
+                        </p>
+                      )}
+
+                      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+                        {sub.image && (
+                          <div className="md:col-span-5 relative rounded-lg overflow-hidden border border-slate-200 shadow-xs h-56 group">
+                            <img
+                              src={sub.image}
+                              alt={sub.heading || 'Sub Feature'}
+                              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            />
+                            {sub.imageOverlayText && (
+                              <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-xs py-1.5 px-3 text-center rounded-xs shadow-md">
+                                <span className="font-serif italic text-xs text-[#333333] font-semibold">
+                                  {sub.imageOverlayText}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        <div className={sub.image ? 'md:col-span-7' : 'md:col-span-12'}>
+                          {sub.text && renderFormattedParagraph(sub.text, sIdx)}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
 

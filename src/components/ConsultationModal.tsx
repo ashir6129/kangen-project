@@ -45,37 +45,37 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
       <div className="relative w-full max-w-xl bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
         
         {/* Header */}
-        <div className="bg-[#075f70] text-white px-6 py-4 flex items-center justify-between shadow-md">
+        <div className="bg-[#3E4C4C] text-[#EDEEE7] px-6 py-4 flex items-center justify-between shadow-md border-b border-[#7AD1C4]/40">
           <div className="flex items-center gap-3">
-            <Calendar className="w-6 h-6 text-emerald-300" />
+            <Calendar className="w-6 h-6 text-[#7AD1C4]" />
             <div>
               <h2 className="font-serif text-xl sm:text-2xl font-bold">Schedule Your Free Consultation</h2>
-              <p className="text-xs text-emerald-100 font-sans">Serviced worldwide by Cynthia Briganti 6A8-6</p>
+              <p className="text-xs text-[#7AD1C4] font-sans font-medium">Serviced worldwide by Shahina Sajid 6A8-6</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full hover:bg-white/20 text-white transition focus:outline-none cursor-pointer"
+            className="p-1.5 rounded-full hover:bg-white/10 text-white transition focus:outline-none cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-6 h-6" />
           </button>
         </div>
 
-        <div className="p-6 sm:p-8">
+        <div className="p-6 sm:p-8 bg-white">
           {submitted ? (
             <div className="py-8 text-center space-y-4">
-              <CheckCircle2 className="w-16 h-16 text-[#87b076] mx-auto animate-bounce" />
-              <h3 className="font-serif text-2xl font-bold text-slate-900">Consultation Scheduled!</h3>
+              <CheckCircle2 className="w-16 h-16 text-[#7AD1C4] mx-auto animate-bounce" />
+              <h3 className="font-serif text-2xl font-bold text-[#293434]">Consultation Scheduled!</h3>
               <p className="text-slate-600 text-xs sm:text-sm font-sans max-w-md mx-auto leading-relaxed">
-                Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your mentor meeting with <span className="font-semibold text-[#075f70]">Cynthia Briganti 6A8-6</span> has been reserved for <span className="font-semibold text-slate-800">{formData.preferredDate || 'tomorrow'} at {formData.preferredTime}</span> ({formData.timezone}). Confirmation details have been sent to your email.
+                Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your mentor meeting with <span className="font-semibold text-[#47a295]">Shahina Sajid 6A8-6</span> has been reserved for <span className="font-semibold text-slate-800">{formData.preferredDate || 'tomorrow'} at {formData.preferredTime}</span> ({formData.timezone}). Confirmation details have been sent to your email.
               </p>
               <button
                 onClick={() => {
                   setSubmitted(false);
                   onClose();
                 }}
-                className="mt-4 px-8 py-2.5 bg-[#87b076] hover:bg-[#759e64] text-white text-xs font-semibold rounded-full uppercase tracking-wider shadow-md cursor-pointer"
+                className="mt-4 px-8 py-2.5 bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] text-xs font-bold rounded-full uppercase tracking-wider shadow-md cursor-pointer"
               >
                 Done
               </button>
@@ -94,7 +94,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Jane Doe"
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#075f70] text-xs bg-slate-50/50"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-slate-50/50"
                     />
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="jane@example.com"
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#075f70] text-xs bg-slate-50/50"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-slate-50/50"
                     />
                   </div>
                 </div>
@@ -125,8 +125,8 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+1 (818) 859-0109"
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#075f70] text-xs bg-slate-50/50"
+                      placeholder="469-648-8298"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-slate-50/50"
                     />
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                     <select
                       value={formData.timezone}
                       onChange={(e) => setFormData({ ...formData, timezone: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#075f70] text-xs bg-white"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-white"
                     >
                       {TIMEZONES.map((tz, i) => (
                         <option key={i} value={tz}>{tz}</option>
@@ -156,7 +156,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                     required
                     value={formData.preferredDate}
                     onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                    className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#075f70] text-xs bg-slate-50/50"
+                    className="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-slate-50/50"
                   />
                 </div>
 
@@ -167,7 +167,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                     <select
                       value={formData.preferredTime}
                       onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#075f70] text-xs bg-white"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-white"
                     >
                       <option value="09:00 AM">09:00 AM</option>
                       <option value="10:00 AM">10:00 AM</option>
@@ -187,7 +187,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                   id="sms_reminder"
                   checked={formData.smsReminder}
                   onChange={(e) => setFormData({ ...formData, smsReminder: e.target.checked })}
-                  className="rounded border-slate-300 text-[#075f70] focus:ring-[#075f70]"
+                  className="rounded border-slate-300 text-[#7AD1C4] focus:ring-[#7AD1C4]"
                 />
                 <label htmlFor="sms_reminder" className="text-xs text-slate-600 cursor-pointer">
                   Send me a reminder text message before the consultation call
@@ -197,14 +197,14 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#87b076] hover:bg-[#759e64] text-white font-semibold text-xs uppercase tracking-wider rounded-full shadow-md transition cursor-pointer"
+                  className="w-full py-3 bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] font-bold text-xs uppercase tracking-wider rounded-full shadow-md transition cursor-pointer"
                 >
                   Reserve Consultation Time
                 </button>
               </div>
 
-              <div className="text-center pt-1 text-[11px] text-slate-500 flex items-center justify-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <div className="text-center pt-1 text-[11px] text-slate-500 flex items-center justify-center gap-1 font-medium">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#7AD1C4]" />
                 <span>Your information is strictly protected and never shared or sold.</span>
               </div>
             </form>

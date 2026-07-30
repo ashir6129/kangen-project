@@ -109,16 +109,16 @@ const WATER_TYPES = [
 
 export const WaterTypesSection: React.FC<WaterTypesProps> = ({ onNavigate }) => {
   return (
-    <div className="bg-white py-14 px-4 sm:px-6 font-sans">
+    <div className="bg-[#EDEEE7] py-14 px-4 sm:px-6 font-sans text-[#3E4C4C]">
       {/* Hero Banner */}
       <div className="max-w-5xl mx-auto text-center space-y-4 mb-16">
-        <span className="inline-block px-4 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider">
+        <span className="inline-block px-4 py-1.5 rounded-full bg-[#7AD1C4]/20 text-[#7AD1C4] text-xs font-bold uppercase tracking-wider border border-[#7AD1C4]/40 shadow-xs">
           Enagic® Electrolyzed Water
         </span>
-        <h1 className="font-serif text-3xl sm:text-5xl font-normal text-slate-900">
+        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#293434]">
           The 5 Types of Kangen Water®
         </h1>
-        <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+        <p className="text-[#576a6a] text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-medium">
           Enagic® water ionizers produce 5 distinct water types through electrolysis. From healthy alkaline drinking water to non-toxic cleaning and sanitizing solutions, discover how water changes your life!
         </p>
       </div>
@@ -132,15 +132,15 @@ export const WaterTypesSection: React.FC<WaterTypesProps> = ({ onNavigate }) => 
           return (
             <div
               key={water.id}
-              className={`rounded-2xl border ${water.borderColor} ${water.lightBg} overflow-hidden shadow-sm hover:shadow-md transition p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center`}
+              className={`rounded-2xl border ${water.borderColor} ${water.lightBg} overflow-hidden shadow-md hover:shadow-lg transition p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white`}
             >
               {/* Text Side */}
               <div className={`md:col-span-7 space-y-4 ${isEven ? 'order-1' : 'order-1 md:order-2'}`}>
                 <div className="flex items-center gap-3 flex-wrap">
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold text-white ${water.color}`}>
+                  <span className={`px-3.5 py-1 rounded-full text-xs font-bold text-white ${water.color}`}>
                     {water.ph}
                   </span>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${water.badgeColor}`}>
+                  <span className={`px-3.5 py-1 rounded-full text-xs font-semibold ${water.badgeColor}`}>
                     {water.tagline}
                   </span>
                 </div>
@@ -149,16 +149,16 @@ export const WaterTypesSection: React.FC<WaterTypesProps> = ({ onNavigate }) => 
                   <Icon className="w-7 h-7 inline-block" /> {water.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                   {water.desc}
                 </p>
 
                 <div className="space-y-2 pt-2">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800">Primary Uses:</h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600 font-medium">
                     {water.uses.map((use, uIdx) => (
                       <li key={uIdx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#7AD1C4] shrink-0 mt-0.5" />
                         <span>{use}</span>
                       </li>
                     ))}
@@ -172,9 +172,9 @@ export const WaterTypesSection: React.FC<WaterTypesProps> = ({ onNavigate }) => 
                   <img
                     src={water.img}
                     alt={water.title}
-                    className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
+                    className="w-full h-full object-cover transform hover:scale-108 transition duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#293434]/70 via-transparent to-transparent flex items-end p-4">
                     <span className="text-white font-serif text-lg font-bold drop-shadow-md">
                       {water.title} ({water.ph})
                     </span>
@@ -188,14 +188,14 @@ export const WaterTypesSection: React.FC<WaterTypesProps> = ({ onNavigate }) => 
 
       {/* Bottom CTA */}
       {onNavigate && (
-        <div className="max-w-3xl mx-auto text-center mt-16 p-8 rounded-2xl bg-gradient-to-r from-[#075f70] to-[#128a9f] text-white shadow-lg space-y-4">
-          <h3 className="font-serif text-2xl font-bold">Ready to Experience Kangen Water®?</h3>
-          <p className="text-xs sm:text-sm text-emerald-100 max-w-xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center mt-16 p-8 rounded-2xl bg-[#3E4C4C] text-[#EDEEE7] border border-[#7AD1C4]/30 shadow-xl space-y-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#7AD1C4]">Ready to Experience Kangen Water®?</h3>
+          <p className="text-xs sm:text-sm text-slate-200 max-w-xl mx-auto font-medium">
             Browse our full lineup of Enagic® machines and find the perfect model for your lifestyle.
           </p>
           <button
             onClick={() => onNavigate('shop')}
-            className="btn-sage-pill uppercase text-xs font-semibold tracking-wider px-8 py-3 bg-white text-slate-900 hover:bg-slate-100 shadow-md cursor-pointer"
+            className="btn-sage-pill uppercase text-xs font-bold tracking-wider px-8 py-3.5 bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] shadow-lg cursor-pointer transition hover:scale-103"
           >
             Browse Products & Pricing
           </button>

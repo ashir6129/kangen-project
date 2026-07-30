@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShoppingCart, Search, Menu, X, ChevronDown } from 'lucide-react';
+import { ShoppingCart, Search, Menu, X, ChevronDown, Home as HomeIcon, UtensilsCrossed, Sparkles, Flower2, Dog, ShoppingBag, Mail } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 interface NavbarProps {
@@ -48,10 +48,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const { getTotalItems, setIsOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeHover, setActiveHover] = useState<'product' | 'company' | null>(null);
 
   return (
-    <header className="sticky top-0 z-40 bg-white border-t-4 border-[#075f70] shadow-xs border-b border-slate-200 font-sans">
+    <header className="sticky top-0 z-40 bg-[#EDEEE7]/95 backdrop-blur-md border-t-4 border-[#7AD1C4] shadow-md border-b border-[#3E4C4C]/15 font-sans transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
 
@@ -59,14 +58,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 rounded-md text-slate-700 hover:text-emerald-700 focus:outline-none cursor-pointer"
+              className="p-2 rounded-lg text-[#3E4C4C] hover:text-[#7AD1C4] hover:bg-[#3E4C4C]/10 focus:outline-none cursor-pointer transition"
               aria-label="Toggle Navigation"
             >
               <Menu className="w-6 h-6" />
             </button>
             <button
               onClick={onOpenSearch}
-              className="p-2 rounded-md text-slate-700 hover:text-emerald-700 focus:outline-none cursor-pointer"
+              className="p-2 rounded-lg text-[#3E4C4C] hover:text-[#7AD1C4] hover:bg-[#3E4C4C]/10 focus:outline-none cursor-pointer transition"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -82,23 +81,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               <img
                 src="https://www.drinkfromheaven.com/affsites/eco/images/logo.png"
                 alt="Kangen Water Logo"
-                className="h-10 sm:h-11 w-auto object-contain transition group-hover:opacity-90"
+                className="h-10 sm:h-11 w-auto object-contain transition group-hover:opacity-90 group-hover:scale-102"
               />
             </button>
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center h-20 gap-1">
+          <nav className="hidden lg:flex items-center h-20 gap-1.5">
             {/* GREENER HOME */}
             <button
               onClick={() => onNavigate('greener-home')}
               className={`nav-link-item ${activePage === 'greener-home' ? 'active' : ''}`}
             >
-              <img
-                src="https://www.drinkfromheaven.com/affsites/e6/images/icon_home.png"
-                alt="Home"
-                className="nav-icon-img"
-              />
+              <HomeIcon className="w-5 h-5 transition-transform group-hover:scale-110" />
               <div className="flex flex-col items-center leading-tight">
                 <span className="nav-text-line1">GREENER</span>
                 <span className="nav-text-line2">HOME</span>
@@ -110,11 +105,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onNavigate('food')}
               className={`nav-link-item ${activePage === 'food' ? 'active' : ''}`}
             >
-              <img
-                src="https://www.drinkfromheaven.com/affsites/e6/images/icon_kitchen.png"
-                alt="Kitchen"
-                className="nav-icon-img"
-              />
+              <UtensilsCrossed className="w-5 h-5 transition-transform group-hover:scale-110" />
               <div className="flex flex-col items-center leading-tight">
                 <span className="nav-text-line1">GREENER</span>
                 <span className="nav-text-line2">FOOD</span>
@@ -126,11 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onNavigate('beauty')}
               className={`nav-link-item ${activePage === 'beauty' ? 'active' : ''}`}
             >
-              <img
-                src="https://www.drinkfromheaven.com/affsites/e6/images/icon_personal.png"
-                alt="Beauty"
-                className="nav-icon-img"
-              />
+              <Sparkles className="w-5 h-5 transition-transform group-hover:scale-110" />
               <div className="flex flex-col items-center leading-tight">
                 <span className="nav-text-line1">GREENER</span>
                 <span className="nav-text-line2">BEAUTY</span>
@@ -142,11 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onNavigate('garden')}
               className={`nav-link-item ${activePage === 'garden' ? 'active' : ''}`}
             >
-              <img
-                src="https://www.drinkfromheaven.com/affsites/e6/images/icon_garden.png"
-                alt="Garden"
-                className="nav-icon-img"
-              />
+              <Flower2 className="w-5 h-5 transition-transform group-hover:scale-110" />
               <div className="flex flex-col items-center leading-tight">
                 <span className="nav-text-line1">GREENER</span>
                 <span className="nav-text-line2">GARDEN</span>
@@ -158,81 +141,43 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onNavigate('pet')}
               className={`nav-link-item ${activePage === 'pet' ? 'active' : ''}`}
             >
-              <img
-                src="https://www.drinkfromheaven.com/affsites/e6/images/icon_pets.png"
-                alt="Pet"
-                className="nav-icon-img"
-              />
+              <Dog className="w-5 h-5 transition-transform group-hover:scale-110" />
               <div className="flex flex-col items-center leading-tight">
                 <span className="nav-text-line1">GREENER</span>
                 <span className="nav-text-line2">PET</span>
               </div>
             </button>
 
-            {/* BROWSE PRODUCTS DROPDOWN */}
-            <div
-              className="relative h-20 flex items-center"
-              onMouseEnter={() => setActiveHover('product')}
-              onMouseLeave={() => setActiveHover(null)}
+            {/* SHOP CATALOG */}
+            <button
+              onClick={() => onNavigate('shop')}
+              className={`nav-link-item ${activePage === 'shop' ? 'active' : ''}`}
             >
-              <div className={`nav-link-item ${activeHover === 'product' ? 'active' : ''}`}>
-                <div className="flex flex-col items-center leading-tight pt-2">
-                  <span className="nav-text-line1">BROWSE</span>
-                  <span className="nav-text-line2 flex items-center gap-0.5">
-                    PRODUCTS <ChevronDown className="w-2.5 h-2.5 opacity-60" />
-                  </span>
-                </div>
+              <ShoppingBag className="w-5 h-5 transition-transform group-hover:scale-110" />
+              <div className="flex flex-col items-center leading-tight">
+                <span className="nav-text-line1">SHOP</span>
+                <span className="nav-text-line2">PRODUCTS</span>
               </div>
+            </button>
 
-              {activeHover === 'product' && (
-                <div className="absolute left-0 top-full mt-0 w-56 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-100">
-                  {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
-                    >
-                      {item.label}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* ABOUT COMPANY DROPDOWN */}
-            <div
-              className="relative h-20 flex items-center"
-              onMouseEnter={() => setActiveHover('company')}
-              onMouseLeave={() => setActiveHover(null)}
+            {/* CONTACT LINK */}
+            <button
+              onClick={() => onNavigate('contact')}
+              className={`nav-link-item ${activePage === 'contact' ? 'active' : ''}`}
             >
-              <div className={`nav-link-item ${activeHover === 'company' ? 'active' : ''}`}>
-                <div className="flex flex-col items-center leading-tight pt-2">
-                  <span className="nav-text-line1">ABOUT</span>
-                  <span className="nav-text-line2 flex items-center gap-0.5">
-                    COMPANY <ChevronDown className="w-2.5 h-2.5 opacity-60" />
-                  </span>
-                </div>
+              <Mail className="w-5 h-5 transition-transform group-hover:scale-110" />
+              <div className="flex flex-col items-center leading-tight">
+                <span className="nav-text-line1">GET IN</span>
+                <span className="nav-text-line2">TOUCH</span>
               </div>
-
-              {activeHover === 'company' && (
-                <div className="absolute right-0 top-full mt-0 w-52 bg-white border border-slate-200 shadow-xl z-50 py-1.5 rounded-b-md animate-in fade-in duration-100">
-                  {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="block w-full text-left px-4 py-2 text-xs text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-b border-slate-100 last:border-0 font-medium transition cursor-default"
-                    >
-                      {item.label}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            </button>
           </nav>
 
           {/* Right Action Icons: Search + Cart */}
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenSearch}
-              className="hidden lg:flex p-2 text-slate-700 hover:text-emerald-700 transition focus:outline-none cursor-pointer"
+              className="hidden lg:flex p-2.5 rounded-full text-[#3E4C4C] hover:bg-[#3E4C4C]/10 hover:text-[#7AD1C4] transition focus:outline-none cursor-pointer"
               aria-label="Search site"
               title="Search"
             >
@@ -242,13 +187,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Cart Drawer Trigger */}
             <button
               onClick={() => setIsOpen(true)}
-              className="relative p-2 text-[#075f70] hover:text-emerald-800 transition focus:outline-none flex items-center gap-1.5 border border-[#075f70]/30 rounded-full px-3 py-1.5 hover:bg-emerald-50 cursor-pointer"
+              className="relative p-2 bg-[#3E4C4C] text-[#7AD1C4] hover:bg-[#293434] transition focus:outline-none flex items-center gap-2 border border-[#7AD1C4]/40 rounded-full px-4 py-2 cursor-pointer shadow-sm hover:shadow-md hover:scale-102"
               aria-label="View Shopping Cart"
             >
-              <ShoppingCart className="w-5 h-5" />
-              <span className="text-xs font-bold text-slate-800 hidden sm:inline">Cart</span>
+              <ShoppingCart className="w-4 h-4" />
+              <span className="text-xs font-bold text-[#EDEEE7] hidden sm:inline tracking-wider uppercase">Cart</span>
               {getTotalItems() > 0 && (
-                <span className="bg-[#87b076] text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="bg-[#7AD1C4] text-[#293434] text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
                   {getTotalItems()}
                 </span>
               )}
@@ -260,91 +205,89 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* MOBILE OFF-CANVAS SLIDING DRAWER MENU */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs" onClick={() => setMobileMenuOpen(false)} />
+          <div className="fixed inset-0 bg-[#293434]/75 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
 
-          <div className="relative ml-auto w-4/5 max-w-sm bg-slate-900 text-white h-full shadow-2xl flex flex-col z-10 overflow-y-auto">
+          <div className="relative ml-auto w-4/5 max-w-sm bg-[#3E4C4C] text-[#EDEEE7] h-full shadow-2xl flex flex-col z-10 overflow-y-auto">
             {/* Mobile Header */}
-            <div className="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+            <div className="p-5 border-b border-[#576a6a]/40 flex items-center justify-between bg-[#293434]">
               <div className="flex items-center gap-2">
                 <img src="https://www.drinkfromheaven.com/affsites/eco/images/logo-2-footer.png" alt="Logo" className="h-8" />
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-1 rounded-full text-slate-400 hover:text-white cursor-pointer"
+                className="p-1.5 rounded-full text-slate-300 hover:text-white cursor-pointer hover:bg-white/10"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
 
             {/* Mobile Navigation List */}
-            <div className="p-4 space-y-1 divide-y divide-slate-800/60">
+            <div className="p-5 space-y-2">
               <button
                 onClick={() => { onNavigate('home'); setMobileMenuOpen(false); }}
-                className="flex items-center gap-3 w-full py-3 text-left text-sm font-semibold text-white hover:text-emerald-400"
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm font-semibold text-[#EDEEE7] hover:bg-[#7AD1C4]/15 hover:text-[#7AD1C4] transition"
               >
+                <HomeIcon className="w-5 h-5 text-[#7AD1C4]" />
                 Home
               </button>
               <button
                 onClick={() => { onNavigate('greener-home'); setMobileMenuOpen(false); }}
-                className="flex items-center gap-3 w-full py-3 text-left text-sm text-slate-200 hover:text-emerald-400"
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm text-[#EDEEE7] hover:bg-[#7AD1C4]/15 hover:text-[#7AD1C4] transition"
               >
-                <img src="https://www.drinkfromheaven.com/affsites/e6/images/icon_home.png" className="w-5 h-5 invert" alt="" />
+                <HomeIcon className="w-5 h-5 text-[#7AD1C4]" />
                 Greener Home
               </button>
               <button
                 onClick={() => { onNavigate('food'); setMobileMenuOpen(false); }}
-                className="flex items-center gap-3 w-full py-3 text-left text-sm text-slate-200 hover:text-emerald-400"
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm text-[#EDEEE7] hover:bg-[#7AD1C4]/15 hover:text-[#7AD1C4] transition"
               >
-                <img src="https://www.drinkfromheaven.com/affsites/e6/images/icon_kitchen.png" className="w-5 h-5 invert" alt="" />
+                <UtensilsCrossed className="w-5 h-5 text-[#7AD1C4]" />
                 Greener Food
               </button>
               <button
                 onClick={() => { onNavigate('beauty'); setMobileMenuOpen(false); }}
-                className="flex items-center gap-3 w-full py-3 text-left text-sm text-slate-200 hover:text-emerald-400"
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm text-[#EDEEE7] hover:bg-[#7AD1C4]/15 hover:text-[#7AD1C4] transition"
               >
-                <img src="https://www.drinkfromheaven.com/affsites/e6/images/icon_personal.png" className="w-5 h-5 invert" alt="" />
+                <Sparkles className="w-5 h-5 text-[#7AD1C4]" />
                 Greener Beauty
               </button>
               <button
                 onClick={() => { onNavigate('garden'); setMobileMenuOpen(false); }}
-                className="flex items-center gap-3 w-full py-3 text-left text-sm text-slate-200 hover:text-emerald-400"
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm text-[#EDEEE7] hover:bg-[#7AD1C4]/15 hover:text-[#7AD1C4] transition"
               >
-                <img src="https://www.drinkfromheaven.com/affsites/e6/images/icon_garden.png" className="w-5 h-5 invert" alt="" />
+                <Flower2 className="w-5 h-5 text-[#7AD1C4]" />
                 Greener Garden
               </button>
               <button
                 onClick={() => { onNavigate('pet'); setMobileMenuOpen(false); }}
-                className="flex items-center gap-3 w-full py-3 text-left text-sm text-slate-200 hover:text-emerald-400"
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm text-[#EDEEE7] hover:bg-[#7AD1C4]/15 hover:text-[#7AD1C4] transition"
               >
-                <img src="https://www.drinkfromheaven.com/affsites/e6/images/icon_pets.png" className="w-5 h-5 invert" alt="" />
+                <Dog className="w-5 h-5 text-[#7AD1C4]" />
                 Greener Pet
               </button>
-
-              <div className="pt-3 pb-1">
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Browse Products</span>
-                {PRODUCT_DROPDOWN_ITEMS.map((item, idx) => (
-                  <div key={idx} className="block w-full text-left py-1.5 text-xs text-slate-300">
-                    {item.label}
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-3 pb-1">
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">About Company</span>
-                {COMPANY_DROPDOWN_ITEMS.map((item, idx) => (
-                  <div key={idx} className="block w-full text-left py-1.5 text-xs text-slate-300">
-                    {item.label}
-                  </div>
-                ))}
-              </div>
+              <button
+                onClick={() => { onNavigate('shop'); setMobileMenuOpen(false); }}
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm text-[#EDEEE7] hover:bg-[#7AD1C4]/15 hover:text-[#7AD1C4] transition"
+              >
+                <ShoppingBag className="w-5 h-5 text-[#7AD1C4]" />
+                Shop Machine Catalog
+              </button>
+              <button
+                onClick={() => { onNavigate('contact'); setMobileMenuOpen(false); }}
+                className="flex items-center gap-3.5 w-full py-3 px-3 rounded-lg text-left text-sm text-[#7AD1C4] font-bold hover:bg-[#7AD1C4]/20 transition"
+              >
+                <Mail className="w-5 h-5 text-[#7AD1C4]" />
+                Contact Us
+              </button>
             </div>
 
             {/* Mobile Footer Info */}
-            <div className="mt-auto p-4 bg-slate-950 border-t border-slate-800 text-center space-y-2">
-              <p className="text-xs text-slate-400">Serviced by Cynthia Briganti 6A8-6</p>
+            <div className="mt-auto p-5 bg-[#293434] border-t border-[#576a6a]/40 text-center space-y-2.5">
+              <p className="text-xs text-slate-300">Serviced by <span className="font-semibold text-[#7AD1C4]">Shahina Sajid 6A8-6</span></p>
+              <p className="text-xs text-[#7AD1C4] font-mono font-bold">📱 469-648-8298</p>
               <button
                 onClick={() => { onOpenConsultation(); setMobileMenuOpen(false); }}
-                className="w-full py-2 bg-[#87b076] hover:bg-[#759e64] text-white text-xs font-semibold rounded-full uppercase tracking-wider"
+                className="w-full py-2.5 bg-[#7AD1C4] text-[#293434] text-xs font-bold rounded-full uppercase tracking-wider shadow-md hover:bg-[#61c2b5] transition cursor-pointer"
               >
                 Schedule Consultation
               </button>

@@ -97,12 +97,12 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
 
           {index === 0 && (
             <div className="hidden md:block absolute inset-0 max-w-6xl mx-auto pointer-events-none z-10">
-              <span className="hero-badge-black absolute top-1/2 left-20">COOKING</span>
-              <span className="hero-badge-black absolute top-1/3 left-1/3">DISHWASHING</span>
-              <span className="hero-badge-black absolute top-1/2 left-1/2">GARDENING</span>
-              <span className="hero-badge-black absolute top-1/3 right-1/4">DAILY CLEANING</span>
-              <span className="hero-badge-black absolute top-1/2 right-24">LAUNDRY</span>
-              <span className="hero-badge-black absolute bottom-24 right-1/3">CLEANSING</span>
+              <span className="hero-badge-tiffany absolute top-1/2 left-20">COOKING</span>
+              <span className="hero-badge-tiffany absolute top-1/3 left-1/3">DISHWASHING</span>
+              <span className="hero-badge-tiffany absolute top-1/2 left-1/2">GARDENING</span>
+              <span className="hero-badge-tiffany absolute top-1/3 right-1/4">DAILY CLEANING</span>
+              <span className="hero-badge-tiffany absolute top-1/2 right-24">LAUNDRY</span>
+              <span className="hero-badge-tiffany absolute bottom-24 right-1/3">CLEANSING</span>
             </div>
           )}
 
@@ -110,7 +110,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
             <h1 className="font-serif text-5xl sm:text-7xl font-normal leading-tight drop-shadow-lg">
               {slide.title}
             </h1>
-            <p className="font-serif italic text-3xl sm:text-5xl font-bold text-white mt-1 drop-shadow-md">
+            <p className="font-serif italic text-3xl sm:text-5xl font-bold text-[#7AD1C4] mt-1 drop-shadow-md">
               {slide.subtitle}
             </p>
             {slide.desc && (
@@ -121,7 +121,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
             <div className="mt-8">
               <button
                 onClick={() => onNavigate?.(slide.page)}
-                className="btn-sage-pill font-sans shadow-lg cursor-pointer"
+                className="btn-sage-pill font-sans shadow-xl cursor-pointer"
               >
                 {slide.btnText}
               </button>
