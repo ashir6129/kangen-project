@@ -93,7 +93,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
           />
 
           {/* Dark Overlay for Ultra-Crisp Text Readability */}
-          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-black/55" />
 
           {index === 0 && (
             <div className="hidden md:block absolute inset-0 max-w-6xl mx-auto pointer-events-none z-10">
@@ -107,10 +107,10 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
           )}
 
           <div className="relative max-w-5xl mx-auto h-full px-4 flex flex-col justify-center items-center text-center text-white z-10">
-            <h1 className="font-serif text-5xl sm:text-7xl font-normal leading-tight drop-shadow-lg">
+            <h1 className="font-serif text-5xl sm:text-7xl font-normal leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
               {slide.title}
             </h1>
-            <p className="font-serif italic text-3xl sm:text-5xl font-bold text-white mt-1 drop-shadow-lg">
+            <p className="font-serif italic text-3xl sm:text-5xl font-bold text-white mt-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
               {slide.subtitle}
             </p>
             {slide.desc && (
