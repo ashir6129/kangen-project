@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { EbookBanner } from './EbookBanner';
 
 interface Comment {
   id: string;
@@ -356,27 +357,8 @@ export const GreenerGardenDetail: React.FC<GreenerGardenDetailProps> = ({
         </h1>
       </section>
 
-      {/* Search Header Bar matching screenshot */}
-      <section className="bg-[#3E4C4C] py-3 px-4 shadow-inner border-y border-[#7AD1C4]/30">
-        <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
-          <input
-            type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && onOpenSearch) onOpenSearch(searchText);
-            }}
-            placeholder="Search Greener Garden..."
-            className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
-          />
-          <button
-            onClick={() => onOpenSearch && onOpenSearch(searchText)}
-            className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer"
-          >
-            SEARCH
-          </button>
-        </div>
-      </section>
+      {/* Eco-Living Ebook Banner section matching screenshot */}
+      <EbookBanner />
 
       {/* Main Content Layout (Sidebar + Article) */}
       <div className="max-w-6xl mx-auto px-4 py-12">

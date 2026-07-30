@@ -203,18 +203,7 @@ export default function Home() {
             <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-normal drop-shadow-lg tracking-wide">Greener Home</h1>
           </div>
 
-          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
-            <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
-              <input
-                type="text"
-                placeholder="Search Greener Home..."
-                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
-              />
-              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
-                Search
-              </button>
-            </div>
-          </div>
+          <EbookBanner />
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center space-y-4">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434]">
@@ -280,18 +269,7 @@ export default function Home() {
             <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-normal drop-shadow-lg tracking-wide">Greener Food</h1>
           </div>
 
-          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
-            <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
-              <input
-                type="text"
-                placeholder="Search Greener Food..."
-                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
-              />
-              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
-                Search
-              </button>
-            </div>
-          </div>
+          <EbookBanner />
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434] mb-2">
@@ -363,18 +341,7 @@ export default function Home() {
             <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-bold drop-shadow-lg tracking-wide">Greener Beauty</h1>
           </div>
 
-          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
-            <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
-              <input
-                type="text"
-                placeholder="Search Greener Beauty..."
-                className="w-72 sm:w-96 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
-              />
-              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
-                Search
-              </button>
-            </div>
-          </div>
+          <EbookBanner />
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434] mb-4">
@@ -441,18 +408,7 @@ export default function Home() {
             <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-bold drop-shadow-lg tracking-wide">Greener Garden</h1>
           </div>
 
-          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
-            <div className="max-w-xl mx-auto flex items-center justify-center gap-3">
-              <input
-                type="email"
-                placeholder="Your email address..."
-                className="w-72 sm:w-80 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
-              />
-              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
-                SEND THE EBOOK
-              </button>
-            </div>
-          </div>
+          <EbookBanner />
 
           <div className="max-w-6xl mx-auto px-4 pt-14 pb-20">
             <div className="text-center max-w-4xl mx-auto mb-12">
@@ -528,18 +484,7 @@ export default function Home() {
             <h1 className="relative z-10 font-serif text-4xl sm:text-6xl text-white font-bold drop-shadow-lg tracking-wide">Greener Pet</h1>
           </div>
 
-          <div className="bg-[#3E4C4C] py-4 px-4 shadow-inner border-y border-[#7AD1C4]/30">
-            <div className="max-w-xl mx-auto flex items-center justify-center gap-3">
-              <input
-                type="email"
-                placeholder="Your email address..."
-                className="w-72 sm:w-80 px-5 py-2.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
-              />
-              <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
-                SEND THE EBOOK
-              </button>
-            </div>
-          </div>
+          <EbookBanner />
 
           <div className="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center space-y-4">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#293434]">
