@@ -37,11 +37,11 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
               <img
                 src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop"
                 alt="Cooking with Kangen Water"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition duration-500" />
-              <div className="relative z-10 bg-[#3E4C4C] text-[#7AD1C4] border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#293434] transition duration-300">
-                <span className="font-serif italic text-lg font-bold">Cooking</span>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition duration-500" />
+              <div className="relative z-10 bg-[#1F292E]/90 text-white border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#1F292E] transition duration-300">
+                <span className="font-serif italic text-lg font-bold drop-shadow-md">Cooking</span>
               </div>
             </button>
 
@@ -53,11 +53,11 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
               <img
                 src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1000&auto=format&fit=crop"
                 alt="Beauty Care with Kangen Water"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition duration-500" />
-              <div className="relative z-10 bg-[#3E4C4C] text-[#7AD1C4] border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#293434] transition duration-300">
-                <span className="font-serif italic text-lg font-bold">Beauty</span>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition duration-500" />
+              <div className="relative z-10 bg-[#1F292E]/90 text-white border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#1F292E] transition duration-300">
+                <span className="font-serif italic text-lg font-bold drop-shadow-md">Beauty</span>
               </div>
             </button>
           </div>
@@ -70,11 +70,11 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
             <img
               src="/images/drink-glass.png"
               alt="Benefits of Kangen Water Glass"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out"
             />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition duration-500" />
-            <div className="relative z-10 bg-[#3E4C4C] text-[#7AD1C4] border border-[#7AD1C4]/40 text-center py-5 px-6 shadow-2xl rounded-2xl group-hover:bg-[#7AD1C4] group-hover:text-[#293434] transition duration-300">
-              <span className="font-serif italic text-lg sm:text-xl font-bold leading-snug">
+            <div className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition duration-500" />
+            <div className="relative z-10 bg-[#1F292E]/90 text-white border border-[#7AD1C4]/40 text-center py-5 px-6 shadow-2xl rounded-2xl group-hover:bg-[#7AD1C4] group-hover:text-[#1F292E] transition duration-300">
+              <span className="font-serif italic text-lg sm:text-xl font-bold leading-snug drop-shadow-md">
                 Benefits of<br />Kangen Water®
               </span>
             </div>
@@ -90,11 +90,11 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
               <img
                 src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1000&auto=format&fit=crop"
                 alt="Non-Toxic Cleaning"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition duration-500" />
-              <div className="relative z-10 bg-[#3E4C4C] text-[#7AD1C4] border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#293434] transition duration-300">
-                <span className="font-serif italic text-lg font-bold">Cleaning</span>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition duration-500" />
+              <div className="relative z-10 bg-[#1F292E]/90 text-white border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#1F292E] transition duration-300">
+                <span className="font-serif italic text-lg font-bold drop-shadow-md">Cleaning</span>
               </div>
             </button>
 
@@ -106,11 +106,11 @@ export const LifestyleGrid: React.FC<LifestyleGridProps> = ({ onNavigate }) => {
               <img
                 src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1000&auto=format&fit=crop"
                 alt="Gardening with Kangen Water"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition duration-500" />
-              <div className="relative z-10 bg-[#3E4C4C] text-[#7AD1C4] border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#293434] transition duration-300">
-                <span className="font-serif italic text-lg font-bold">Gardening</span>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition duration-500" />
+              <div className="relative z-10 bg-[#1F292E]/90 text-white border border-[#7AD1C4]/40 px-6 py-2.5 rounded-full shadow-xl group-hover:bg-[#7AD1C4] group-hover:text-[#1F292E] transition duration-300">
+                <span className="font-serif italic text-lg font-bold drop-shadow-md">Gardening</span>
               </div>
             </button>
           </div>

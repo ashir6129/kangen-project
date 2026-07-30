@@ -50,9 +50,36 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-[#EDEEE7]/95 backdrop-blur-md border-t-4 border-[#7AD1C4] shadow-md border-b border-[#3E4C4C]/15 font-sans transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20">
+    <>
+      {/* Top Corporate Marquee Ticker */}
+      <div className="bg-[#1F292E] text-[#EDEEE7] text-[11px] font-medium py-1.5 overflow-hidden border-b border-[#7AD1C4]/20 select-none">
+        <div className="animate-marquee whitespace-nowrap flex items-center justify-around gap-10 font-mono tracking-wide">
+          <span className="flex items-center gap-2"><Sparkles className="w-3.5 h-3.5 text-[#7AD1C4]" /> Certified OEM Enagic® Ionizers</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>Free Hydration Consultation: Shahina Sajid (469-648-8298)</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>Pure Kangen Water® pH 8.5 - 9.5</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>ISO 13485 Medical Device Standard</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>5-Year Full Factory Warranty</span>
+          <span className="text-[#7AD1C4]">•</span>
+          {/* Loop repeat */}
+          <span className="flex items-center gap-2"><Sparkles className="w-3.5 h-3.5 text-[#7AD1C4]" /> Certified OEM Enagic® Ionizers</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>Free Hydration Consultation: Shahina Sajid (469-648-8298)</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>Pure Kangen Water® pH 8.5 - 9.5</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>ISO 13485 Medical Device Standard</span>
+          <span className="text-[#7AD1C4]">•</span>
+          <span>5-Year Full Factory Warranty</span>
+        </div>
+      </div>
+
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 font-sans transition-all">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-20">
 
           {/* Left Action Buttons on Mobile */}
           <div className="flex items-center gap-2 lg:hidden">
@@ -296,5 +323,6 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       )}
     </header>
+    </>
   );
 };

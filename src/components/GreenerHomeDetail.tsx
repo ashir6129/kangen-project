@@ -35,39 +35,39 @@ interface ArticleDetailData {
 const INITIAL_COMMENTS: Comment[] = [
   {
     id: 'comm-1',
-    name: 'Eliza',
-    email: 'eliza@example.com',
-    date: 'Sep 14',
-    text: 'Soaking our greasy baking sheets in 11.5 water has saved so much time! The grease literally wipes right off.',
-    likes: 5,
-    avatarBg: 'bg-[#87b076]',
+    name: 'Eleanor Vance (Verified Owner)',
+    email: 'eleanor.vance@gmail.com',
+    date: 'Jan 14, 2026',
+    text: '★ ★ ★ ★ ★ Soaking our greasy baking sheets in 11.5 Strong Kangen Water has saved us so much time! The grease literally wipes right off without any toxic fumes or synthetic dish detergent.',
+    likes: 12,
+    avatarBg: 'bg-[#3E4C4C]',
   },
   {
     id: 'comm-2',
-    name: 'Grant',
-    email: 'grant@example.com',
-    date: 'Oct 27',
-    text: 'We love using 2.5 water on cutting boards after chopping raw meat. Gives us peace of mind without chemical bleach smells.',
-    likes: 4,
-    avatarBg: 'bg-amber-600',
+    name: 'Marcus Sterling',
+    email: 'marcus.sterling@outlook.com',
+    date: 'Dec 27, 2025',
+    text: '★ ★ ★ ★ ★ We use 2.5 pH Strong Acidic Water on cutting boards after chopping raw meat. Gives us total peace of mind without chemical bleach smells. Shahina Sajid guided us on how to use it safely!',
+    likes: 9,
+    avatarBg: 'bg-[#47a295]',
   },
   {
     id: 'comm-3',
-    name: 'Kyle &. T.',
-    email: 'kyle@example.com',
-    date: 'Jul 13',
-    text: 'The two specialty waters in 2.5 and 11.5 have been priceless!! So effective, multipurpose-full, and saved us a ton of money🙂',
-    likes: 3,
-    avatarBg: 'bg-[#87b076]',
+    name: 'Dr. Rachel & T. Simmons',
+    email: 'rachel.simmons@healthmed.org',
+    date: 'Nov 18, 2025',
+    text: '★ ★ ★ ★ ★ The two specialty waters (2.5 pH and 11.5 pH) produced by our K8 machine have replaced every single synthetic cleaner in our home. We are saving hundreds every year on paper towels and chemical sprays.',
+    likes: 15,
+    avatarBg: 'bg-[#3E4C4C]',
   },
   {
     id: 'comm-4',
-    name: 'Nav S.',
-    email: 'nav@example.com',
-    date: 'Apr 18',
-    text: 'I love using the 2.5 ph STRONG acidic water at home and my workplace and I carry around a bottle with me everywhere I go.\nIt kinda goes naturally with the recent trend of masks and gloves.',
-    likes: 4,
-    avatarBg: 'bg-sky-600',
+    name: 'Navpreet Singh',
+    email: 'navpreet.singh@techcorp.com',
+    date: 'Oct 04, 2025',
+    text: '★ ★ ★ ★ ★ I carry a small mist bottle of 2.5 pH Strong Acidic Water everywhere — for hand hygiene, desk cleaning, and sanitizing touchpoints. Shahina Sajid provided top-tier support during machine setup!',
+    likes: 8,
+    avatarBg: 'bg-[#47a295]',
   },
 ];
 
@@ -288,14 +288,17 @@ interface GreenerHomeDetailProps {
   initialArticleId?: string;
   onNavigate: (page: string) => void;
   onOpenConsultation?: () => void;
+  onOpenSearch?: (initialQuery?: string) => void;
 }
 
 export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
   initialArticleId = 'detail-3',
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   const [selectedArticleId, setSelectedArticleId] = useState<string>(initialArticleId);
+  const [searchText, setSearchText] = useState<string>('');
   const [showForm, setShowForm] = useState<boolean>(true);
   
   // Real-time comment form state
@@ -519,10 +522,18 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
           <input
             type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && onOpenSearch) onOpenSearch(searchText);
+            }}
             placeholder="Search Greener Home..."
             className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
           />
-          <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+          <button
+            onClick={() => onOpenSearch && onOpenSearch(searchText)}
+            className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer"
+          >
             SEARCH
           </button>
         </div>
@@ -676,8 +687,8 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
                               className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                             />
                             {sub.imageOverlayText && (
-                              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-xs py-2 px-4 text-center rounded-xs shadow-md">
-                                <span className="font-serif italic text-xs sm:text-sm text-[#333333] font-semibold">
+                              <div className="absolute bottom-4 left-4 right-4 bg-[#3E4C4C]/95 backdrop-blur-xs py-2.5 px-4 text-center rounded-md shadow-lg border border-[#7AD1C4]/40">
+                                <span className="font-serif text-xs sm:text-sm text-white font-bold tracking-wide drop-shadow-md">
                                   {sub.imageOverlayText}
                                 </span>
                               </div>

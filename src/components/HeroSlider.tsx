@@ -110,7 +110,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate }) => {
             <h1 className="font-serif text-5xl sm:text-7xl font-normal leading-tight drop-shadow-lg">
               {slide.title}
             </h1>
-            <p className="font-serif italic text-3xl sm:text-5xl font-bold text-[#7AD1C4] mt-1 drop-shadow-md">
+            <p className="font-serif italic text-3xl sm:text-5xl font-bold text-white mt-1 drop-shadow-lg">
               {slide.subtitle}
             </p>
             {slide.desc && (

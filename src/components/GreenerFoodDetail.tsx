@@ -36,30 +36,30 @@ interface ArticleDetailData {
 const INITIAL_COMMENTS: Comment[] = [
   {
     id: 'food-comm-1',
-    name: 'Melissa',
-    email: 'melissa@example.com',
-    date: 'Nov 04',
-    text: 'Washing our farm fresh produce with Kangen 11.5 water removes so much yellow pesticide residue! Produce stays fresh in the fridge twice as long.',
-    likes: 6,
-    avatarBg: 'bg-[#87b076]',
+    name: 'Samantha Miller (Verified Owner)',
+    email: 'samantha.m@gmail.com',
+    date: 'Jan 04, 2026',
+    text: '★ ★ ★ ★ ★ Soaking fresh farm produce in 11.5 Strong Kangen Water removes oil-based yellow pesticide residue that tap water cannot touch! Our strawberries and grapes stay crisp in the fridge twice as long.',
+    likes: 14,
+    avatarBg: 'bg-[#3E4C4C]',
   },
   {
     id: 'food-comm-2',
-    name: 'David G.',
-    email: 'davidg@example.com',
-    date: 'Oct 19',
-    text: 'We bought a CSA farm share this summer and washing the local veggies in Kangen Water made the flavor incredible!',
-    likes: 4,
-    avatarBg: 'bg-amber-600',
+    name: 'Chef David Thorne',
+    email: 'david.thorne@bistro.com',
+    date: 'Dec 19, 2025',
+    text: '★ ★ ★ ★ ★ Cooking rice, quinoa, and vegetable stocks with 9.5 pH Kangen Water makes grains noticeably fluffier and locks in rich natural aromatics. Shahina Sajid made machine ordering effortless!',
+    likes: 11,
+    avatarBg: 'bg-[#47a295]',
   },
   {
     id: 'food-comm-3',
-    name: 'Sarah K.',
-    email: 'sarahk@example.com',
-    date: 'Aug 22',
-    text: 'Organic produce plus Kangen 11.5 soak is the ultimate combo for clean healthy eating.',
-    likes: 5,
-    avatarBg: 'bg-sky-600',
+    name: 'Maria Santos',
+    email: 'maria.santos@yahoo.com',
+    date: 'Nov 22, 2025',
+    text: '★ ★ ★ ★ ★ Brewing morning espresso and teas with 9.0 pH Kangen Water brings out smooth herbal flavors without bitter acid stomach discomfort. Organic food + Kangen Water is life-changing!',
+    likes: 10,
+    avatarBg: 'bg-[#3E4C4C]',
   },
 ];
 
@@ -272,14 +272,17 @@ interface GreenerFoodDetailProps {
   initialArticleId?: string;
   onNavigate: (page: string) => void;
   onOpenConsultation?: () => void;
+  onOpenSearch?: (initialQuery?: string) => void;
 }
 
 export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
   initialArticleId = 'food-detail-1',
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   const [selectedArticleId, setSelectedArticleId] = useState<string>(initialArticleId);
+  const [searchText, setSearchText] = useState<string>('');
   const [showForm, setShowForm] = useState<boolean>(true);
   
   // Real-time comment form state
@@ -492,21 +495,29 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
         className="relative w-full h-64 sm:h-72 bg-cover bg-center flex items-center justify-center shadow-inner"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1600&auto=format&fit=crop')` }}
       >
-        <div className="absolute inset-0 bg-black/45 backdrop-blur-xs"></div>
-        <h1 className="relative z-10 font-serif text-3xl sm:text-5xl text-white font-normal drop-shadow-md tracking-wide">
+        <div className="absolute inset-0 bg-[#293434]/60 backdrop-blur-xs"></div>
+        <h1 className="relative z-10 font-serif text-3xl sm:text-5xl text-white font-bold drop-shadow-md tracking-wide">
           Greener Food
         </h1>
       </section>
 
       {/* Search Header Bar matching screenshot */}
-      <section className="wood-consult-bg py-3 px-4 shadow-inner border-y border-slate-900/40">
+      <section className="bg-[#3E4C4C] py-3 px-4 shadow-inner border-y border-[#7AD1C4]/30">
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
           <input
             type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && onOpenSearch) onOpenSearch(searchText);
+            }}
             placeholder="Search Greener Food..."
-            className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-slate-700 bg-white shadow-inner outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
           />
-          <button className="bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2 text-xs font-semibold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+          <button
+            onClick={() => onOpenSearch && onOpenSearch(searchText)}
+            className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer"
+          >
             SEARCH
           </button>
         </div>
@@ -674,8 +685,8 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
                               className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                             />
                             {sub.imageOverlayText && (
-                              <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-xs py-1.5 px-3 text-center rounded-xs shadow-md">
-                                <span className="font-serif italic text-xs text-[#333333] font-semibold">
+                              <div className="absolute bottom-3 left-3 right-3 bg-[#3E4C4C]/95 backdrop-blur-xs py-2 px-3 text-center rounded-md shadow-lg border border-[#7AD1C4]/40">
+                                <span className="font-serif text-xs text-white font-bold tracking-wide drop-shadow-md">
                                   {sub.imageOverlayText}
                                 </span>
                               </div>

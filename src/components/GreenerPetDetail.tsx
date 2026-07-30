@@ -26,30 +26,30 @@ interface ArticleDetailData {
 const INITIAL_COMMENTS: Comment[] = [
   {
     id: 'pet-comm-1',
-    name: 'Jessica W.',
-    email: 'jessica@example.com',
-    date: 'Dec 10',
-    text: 'Switching our golden retriever to Kangen Water and making the DIY flea spray with Rose Geranium oil completely stopped his scratching!',
-    likes: 15,
-    avatarBg: 'bg-[#87b076]',
+    name: 'Dr. Harrison Blake, DVM',
+    email: 'dr.blake@veterinarycare.com',
+    date: 'Jan 10, 2026',
+    text: '★ ★ ★ ★ ★ Hydrating pets with fresh 8.5 - 9.0 pH Kangen Water supports optimal digestion, vitality, and coat health. Switching our golden retriever to Kangen Water and natural Beauty Water grooming completely stopped his skin itching!',
+    likes: 21,
+    avatarBg: 'bg-[#3E4C4C]',
   },
   {
     id: 'pet-comm-2',
-    name: 'Mark T.',
-    email: 'markt@example.com',
-    date: 'Nov 24',
-    text: 'The Homemade Kangen Pet Shampoo is so easy to mix and leaves our lab’s coat insanely soft without any perfume smell.',
-    likes: 11,
-    avatarBg: 'bg-amber-600',
+    name: 'Linda & Tom Reynolds',
+    email: 'linda.reynolds@gmail.com',
+    date: 'Dec 14, 2025',
+    text: '★ ★ ★ ★ ★ The DIY Kangen Pet Shampoo (Beauty Water + liquid castile soap) is so easy to mix and leaves our lab’s coat insanely soft without any perfume chemical smells.',
+    likes: 13,
+    avatarBg: 'bg-[#47a295]',
   },
   {
     id: 'pet-comm-3',
-    name: 'Chloe B.',
-    email: 'chloe@example.com',
-    date: 'Oct 19',
-    text: 'Our rescue cat used to barely drink water until we got a pet fountain filled with Neutral Kangen Water. Her energy levels are amazing now.',
-    likes: 8,
-    avatarBg: 'bg-sky-600',
+    name: 'Chloe Bennett',
+    email: 'chloe.bennett@yahoo.com',
+    date: 'Nov 19, 2025',
+    text: '★ ★ ★ ★ ★ Our rescue cat used to barely drink water until we filled her pet fountain with Neutral 7.0 pH Kangen Water. Her energy levels are fantastic now! Shahina Sajid was so wonderful during consultation.',
+    likes: 16,
+    avatarBg: 'bg-[#3E4C4C]',
   },
 ];
 
@@ -119,14 +119,17 @@ interface GreenerPetDetailProps {
   initialArticleId?: string;
   onNavigate: (page: string, articleId?: string) => void;
   onOpenConsultation?: () => void;
+  onOpenSearch?: (initialQuery?: string) => void;
 }
 
 export const GreenerPetDetail: React.FC<GreenerPetDetailProps> = ({
   initialArticleId = 'pet-detail-1',
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   const [selectedArticleId, setSelectedArticleId] = useState<string>(initialArticleId);
+  const [searchText, setSearchText] = useState<string>('');
   const [fullname, setFullname] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [commentText, setCommentText] = useState<string>('');
@@ -343,10 +346,18 @@ export const GreenerPetDetail: React.FC<GreenerPetDetailProps> = ({
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
           <input
             type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && onOpenSearch) onOpenSearch(searchText);
+            }}
             placeholder="Search Greener Pet..."
             className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
           />
-          <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+          <button
+            onClick={() => onOpenSearch && onOpenSearch(searchText)}
+            className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer"
+          >
             SEARCH
           </button>
         </div>

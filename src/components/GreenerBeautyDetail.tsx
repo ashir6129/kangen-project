@@ -36,30 +36,30 @@ interface ArticleDetailData {
 const INITIAL_COMMENTS: Comment[] = [
   {
     id: 'beauty-comm-1',
-    name: 'Nancy M.',
-    email: 'nancy@example.com',
-    date: 'Nov 12',
-    text: 'Rinsing my hair with Beauty Water 6.0 has changed everything! My curls are so soft and no longer frizzy.',
-    likes: 8,
-    avatarBg: 'bg-[#87b076]',
+    name: 'Jessica Vance (Verified Owner)',
+    email: 'jessica.vance@gmail.com',
+    date: 'Jan 12, 2026',
+    text: '★ ★ ★ ★ ★ Rinsing my hair with 6.0 pH Beauty Water and making the DIY egg yolk + almond oil conditioner has changed everything! My hair is silky soft, shiny, and no longer frizzy.',
+    likes: 16,
+    avatarBg: 'bg-[#3E4C4C]',
   },
   {
     id: 'beauty-comm-2',
-    name: 'Elena R.',
-    email: 'elena@example.com',
-    date: 'Oct 28',
-    text: 'The "Be Green, Be Ravishing!" shea butter lotion recipe works absolute wonders for dry winter elbows and knees!',
-    likes: 6,
-    avatarBg: 'bg-purple-600',
+    name: 'Chloe Brooks',
+    email: 'chloe.brooks@designstudio.com',
+    date: 'Dec 28, 2025',
+    text: '★ ★ ★ ★ ★ The Enagic Non-Toxic Hand Sanitizer recipe (2.5 pH Strong Acidic Water + tea tree essential oil) is amazing! Leaves hands sanitized without drying or alcohol fumes.',
+    likes: 12,
+    avatarBg: 'bg-[#47a295]',
   },
   {
     id: 'beauty-comm-3',
-    name: 'Sophia L.',
-    email: 'sophia@example.com',
-    date: 'Sep 14',
-    text: 'Replacing expensive toner with fresh Kangen Beauty Water saved me hundreds of dollars a year!',
-    likes: 9,
-    avatarBg: 'bg-rose-500',
+    name: 'Amina Al-Mansoor',
+    email: 'amina.almansoor@yahoo.com',
+    date: 'Nov 14, 2025',
+    text: '★ ★ ★ ★ ★ Replacing expensive facial toners with fresh Kangen 6.0 Beauty Water saved me hundreds of dollars a year. My skin tone cleared up in 2 weeks! Shahina Sajid provides phenomenal advice.',
+    likes: 19,
+    avatarBg: 'bg-[#3E4C4C]',
   },
 ];
 
@@ -196,14 +196,17 @@ interface GreenerBeautyDetailProps {
   initialArticleId?: string;
   onNavigate: (page: string, articleId?: string) => void;
   onOpenConsultation?: () => void;
+  onOpenSearch?: (initialQuery?: string) => void;
 }
 
 export const GreenerBeautyDetail: React.FC<GreenerBeautyDetailProps> = ({
   initialArticleId = 'beauty-detail-1',
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   const [selectedArticleId, setSelectedArticleId] = useState<string>(initialArticleId);
+  const [searchText, setSearchText] = useState<string>('');
   const [fullname, setFullname] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [commentText, setCommentText] = useState<string>('');
@@ -418,10 +421,18 @@ export const GreenerBeautyDetail: React.FC<GreenerBeautyDetailProps> = ({
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
           <input
             type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && onOpenSearch) onOpenSearch(searchText);
+            }}
             placeholder="Search Greener Beauty..."
             className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
           />
-          <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+          <button
+            onClick={() => onOpenSearch && onOpenSearch(searchText)}
+            className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer"
+          >
             SEARCH
           </button>
         </div>

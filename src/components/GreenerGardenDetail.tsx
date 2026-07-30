@@ -26,30 +26,30 @@ interface ArticleDetailData {
 const INITIAL_COMMENTS: Comment[] = [
   {
     id: 'garden-comm-1',
-    name: 'Thomas H.',
-    email: 'thomas@example.com',
-    date: 'Dec 02',
-    text: 'Testing our soil pH and watering our blue hydrangeas with Slightly Acidic Beauty Water resulted in the most vibrant blue blossoms we have ever seen!',
-    likes: 12,
-    avatarBg: 'bg-[#87b076]',
+    name: 'Thomas Hayes (Verified Owner)',
+    email: 'thomas.hayes@gmail.com',
+    date: 'Jan 02, 2026',
+    text: '★ ★ ★ ★ ★ Testing our soil pH and watering our acid-loving blueberries and hydrangeas with 5.5 - 6.0 pH Beauty Water resulted in the most vibrant harvest and blossoms we have ever seen!',
+    likes: 18,
+    avatarBg: 'bg-[#3E4C4C]',
   },
   {
     id: 'garden-comm-2',
-    name: 'Sarah M.',
-    email: 'sarah@example.com',
-    date: 'Nov 18',
-    text: 'My kids love helping me water our vegetable garden every morning with Kangen Water. They actually eat all the spinach and carrots now!',
-    likes: 9,
-    avatarBg: 'bg-emerald-600',
+    name: 'Sarah Miller',
+    email: 'sarah.m@organicgardening.org',
+    date: 'Dec 18, 2025',
+    text: '★ ★ ★ ★ ★ My children love helping me water our organic kitchen vegetable garden with Kangen Water. Our spinach, kale, and tomatoes grow so lush and chemical-free!',
+    likes: 14,
+    avatarBg: 'bg-[#47a295]',
   },
   {
     id: 'garden-comm-3',
-    name: 'Robert C.',
-    email: 'robert@example.com',
-    date: 'Oct 05',
-    text: 'The Neem Oil spray recipe with Beauty Water cleared up spider mites on my fiddle-leaf fig in just two applications.',
-    likes: 14,
-    avatarBg: 'bg-amber-700',
+    name: 'Robert Chen',
+    email: 'robert.chen@techsol.com',
+    date: 'Nov 05, 2025',
+    text: '★ ★ ★ ★ ★ Combining 2.5 pH Strong Acidic Water with organic Neem oil cleared up spider mites on our fiddle-leaf figs and citrus trees in two applications without toxic pesticides.',
+    likes: 15,
+    avatarBg: 'bg-[#3E4C4C]',
   },
 ];
 
@@ -131,14 +131,17 @@ interface GreenerGardenDetailProps {
   initialArticleId?: string;
   onNavigate: (page: string, articleId?: string) => void;
   onOpenConsultation?: () => void;
+  onOpenSearch?: (initialQuery?: string) => void;
 }
 
 export const GreenerGardenDetail: React.FC<GreenerGardenDetailProps> = ({
   initialArticleId = 'garden-detail-1',
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   const [selectedArticleId, setSelectedArticleId] = useState<string>(initialArticleId);
+  const [searchText, setSearchText] = useState<string>('');
   const [fullname, setFullname] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [commentText, setCommentText] = useState<string>('');
@@ -358,10 +361,18 @@ export const GreenerGardenDetail: React.FC<GreenerGardenDetailProps> = ({
         <div className="max-w-4xl mx-auto flex items-center justify-center gap-3">
           <input
             type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && onOpenSearch) onOpenSearch(searchText);
+            }}
             placeholder="Search Greener Garden..."
             className="w-64 sm:w-96 px-5 py-2 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
           />
-          <button className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer">
+          <button
+            onClick={() => onOpenSearch && onOpenSearch(searchText)}
+            className="bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2 text-xs font-bold rounded-full uppercase tracking-wider transition shadow cursor-pointer"
+          >
             SEARCH
           </button>
         </div>

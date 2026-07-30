@@ -30,9 +30,15 @@ export default function Home() {
   const [selectedGardenArticleId, setSelectedGardenArticleId] = useState<string>('garden-detail-1');
   const [selectedPetArticleId, setSelectedPetArticleId] = useState<string>('pet-detail-1');
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [consultationOpen, setConsultationOpen] = useState<boolean>(false);
   const [compareOpen, setCompareOpen] = useState<boolean>(false);
   const [videoLibraryOpen, setVideoLibraryOpen] = useState<boolean>(false);
+
+  const handleOpenSearch = (query: string = '') => {
+    setSearchQuery(query);
+    setSearchOpen(true);
+  };
 
   // Sync active page with URL hash and listen for browser Back/Forward button clicks
   useEffect(() => {
