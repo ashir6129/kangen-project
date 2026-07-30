@@ -74,7 +74,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'pet-detail-2',
     title: 'Getting Rid of Pet Odors the Green Way',
-    image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1200&auto=format&fit=crop',
     desc: 'Tackle pet odors, upholstery stains, bad breath, and toy sanitation using chemical-free Enagic® water solutions.',
     content: [
       'Loving your pets doesn\'t mean loving the smells they can leave behind. Here are some eco-friendly ways to tackle everything from urine stains to less-than-fresh breath.',
@@ -87,7 +87,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'pet-detail-3',
     title: 'Homemade Kangen Water® Pet Shampoo',
-    image: 'https://images.unsplash.com/photo-1535294435445-d7249524ef2e?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=1200&auto=format&fit=crop',
     desc: 'Formulate a gentle, chemical-free pet shampoo with glycerine, Enagic® soap, and Kangen Water® for a shiny, soft coat.',
     content: [
       'Store-bought pet shampoos often contain harsh synthetic fragrances and sulfates that strip natural skin oils. This simple 3-ingredient DIY pet shampoo cleanses thoroughly while keeping coats soft and hydrated.',

@@ -67,7 +67,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'food-detail-1',
     title: 'Best Produce',
-    image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1200&auto=format&fit=crop',
     desc: 'Buying local and organic produce ensures fresher, healthier food while reducing exposure to pesticides and GMOs.',
     content: [
       'Even the most accomplished Kangen Gardener has to purchase fruits and veggies to supplement the growing season. Local produce is the second best option to growing your own food. Buying local ensures that you are sampling the best selection of seasonally available produce. Seasonal produce is healthier and fresher, with the added advantage of saving you money since it doesn’t have to travel as far as out-of-season goods. Purchasing a share in a CSA (Community-Supported Agriculture) is an awesome way to discover exactly what’s in season and support your local farmers.',
@@ -113,7 +113,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'food-detail-4',
     title: 'Kangen Tea',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=1200&auto=format&fit=crop',
     desc: 'Infuse tea effortlessly! Kangen Water\'s micro-clustered molecules penetrate tea leaves quickly even with room-temp water.',
     content: [
       'Kangen Water® micro-clustering allows water to penetrate tea leaves and coffee grounds rapidly, drawing out rich aromas and antioxidants without bitterness.'
@@ -163,7 +163,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'food-detail-8',
     title: 'Kangen Water® with a Twist',
-    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1200&auto=format&fit=crop',
     desc: 'Drink Green, Drink Healthy: Liven up your alkaline Kangen Water® with natural citrus, fresh berries, mint, and tea infusions.',
     content: [
       'Staying hydrated with alkaline Kangen Water® is an important step toward physical health, but a healthy diet is also paramount in overall wellness. Healthy eating supports a healthy body.',

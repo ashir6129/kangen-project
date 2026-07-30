@@ -13,7 +13,7 @@ const RECIPES: RecipeCard[] = [
   {
     title: 'Enagic Non-Toxic Hand Sanitizer Recipe',
     desc: 'Have you ever investigated what is in your antibacterial products? Try our natural Strong Acidic Water recipe instead.',
-    image: 'https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80&w=1000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1000&auto=format&fit=crop',
     link: '#shop',
   },
   {

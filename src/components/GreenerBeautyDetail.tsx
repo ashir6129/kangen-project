@@ -99,7 +99,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'beauty-detail-3',
     title: 'A New Approach to Skin Care',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop',
     desc: 'Replacing harsh chemical astringents with Kangen Beauty Water® keeps skin clean, hydrated, and youthful.',
     content: [
       'The organic skin care industry has grown exponentially as a result of consumer awareness. We are finally waking up to the fact that natural beauty products are simply better and more environmentally responsible. However, some of the natural beauty products come with a hefty price tag and most don’t live up to their claims. It’s time to take the matter into your own hands with Beauty Water.',
@@ -112,7 +112,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'beauty-detail-4',
     title: 'Be Green, Be Ravishing!',
-    image: 'https://images.unsplash.com/photo-1512290900676-26c2a5a545b6?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop',
     desc: 'To have a routine that keeps you healthy and hydrated can make you feel beautiful inside and out! Pamper yourself with all-natural beauty solutions.',
     content: [
       'Be Green, Be Ravishing! Self-care isn\'t just luxury—it\'s a fundamental part of daily health. Creating custom green beauty recipes with Kangen Water® nourishes your skin without toxic chemical exposure.',
@@ -150,7 +150,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'beauty-detail-7',
     title: 'Beauty Water Lotion',
-    image: 'https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1200&auto=format&fit=crop',
     desc: 'Nourish dry skin with a soothing, fast-absorbing body lotion crafted with Kangen Beauty Water®.',
     content: [
       'Handmade lotion infused with micro-clustered Beauty Water absorbs quickly without leaving a greasy residue.',
@@ -161,7 +161,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'beauty-detail-8',
     title: 'Enagic Non-Toxic Hand Sanitizer Recipe',
-    image: 'https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1200&auto=format&fit=crop',
     desc: 'Have you ever investigated what is in your antibacterial products? You might be surprised at the chemicals necessary for making your life germ-free. Try our natural Strong Acidic Water recipe instead.',
     content: [
       'Have you ever investigated what is in your antibacterial products? You might be surprised at the chemicals necessary for making your life germ-free. Try our natural Strong Acidic Water recipe instead.',

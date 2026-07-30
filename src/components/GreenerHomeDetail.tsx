@@ -75,7 +75,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'detail-3',
     title: 'Doing the Dishes',
-    image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=1200&auto=format&fit=crop',
     desc: 'Rinse and sanitize dishes, cutting boards, and cutlery naturally using Strong Acidic Water (pH 2.5) and Strong Kangen Water (pH 11.5).',
     content: [
       'Dishes, cutting boards, and cutlery can be cleaned and sanitized naturally using Strong Acidic Water (pH 2.5) and Strong Kangen Water (pH 11.5).'
@@ -96,7 +96,7 @@ const ARTICLES: ArticleDetailData[] = [
       {
         heading: "A Dishwashing Superstar!",
         subtext: "Make your own natural dish soap using Kangen Water and liquid castile soap for a chemical-free kitchen.",
-        image: "https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=800&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=800&auto=format&fit=crop",
         imageOverlayText: "Strong Kangen Water® Dish Soap",
         text: "Mix 1 cup of Liquid Castile Soap with 1/2 cup of Strong Kangen Water (11.5 pH) and 10 drops of lemon or orange essential oil in a dispenser bottle. Use as your daily eco-friendly dish soap for cutting grease effortlessly while staying gentle on skin."
       }
@@ -170,7 +170,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'detail-7',
     title: 'Strong Kangen Water® Dish Soap',
-    image: 'https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1607006482602-76ca97ac2a0c?q=80&w=1200&auto=format&fit=crop',
     desc: 'Stains happen. With Strong Kangen Water® make stains disappear like magic without harsh chemicals.',
     content: [
       'Mix liquid castile soap with Strong Kangen Water for a powerful natural dish soap that cuts through stubborn grease while keeping your hands moisturized.'
@@ -205,7 +205,7 @@ const ARTICLES: ArticleDetailData[] = [
   {
     id: 'detail-6',
     title: 'Kangen Water® Liquid Castile Cleaner',
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200&auto=format&fit=crop',
     desc: 'Learn how to make your own all-natural Liquid Castile Soap using pure Kangen Water® and sunflower oil.',
     content: [
       'Ingredients:\n• 16 oz Sunflower Oil\n• 5.5 oz Potassium Chloride\n• 16 oz distilled Kangen Water (collected with a steam boiler)\n• 40 oz Kangen Water\n• Essential Oil (optional)',
