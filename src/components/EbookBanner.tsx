@@ -6,7 +6,7 @@ import { CheckCircle2, FileText, HelpCircle, X } from 'lucide-react';
 export const EbookBanner: React.FC = () => {
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
-  const [countryCode, setCountryCode] = useState('+92');
+  const [countryCode, setCountryCode] = useState('+1');
   const [mobileNumber, setMobileNumber] = useState('');
   
   const [error, setError] = useState('');
@@ -119,7 +119,7 @@ export const EbookBanner: React.FC = () => {
                       setEmail(e.target.value);
                       if (error) setError('');
                     }}
-                    placeholder="ashiryeyy@gmail.com"
+                    placeholder="name@example.com"
                     className="w-full sm:w-80 px-6 py-3.5 rounded-full text-xs text-[#293434] bg-white shadow-inner outline-none focus:ring-2 focus:ring-[#7AD1C4] font-medium"
                   />
                   <button
@@ -171,7 +171,7 @@ export const EbookBanner: React.FC = () => {
                       type="text"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Ashir khan"
+                      placeholder="Full name"
                       className="flex-1 px-3 py-2 border border-slate-300 rounded text-xs text-[#293434] outline-none focus:border-[#7AD1C4] focus:ring-1 focus:ring-[#7AD1C4]"
                       required
                     />
@@ -191,8 +191,8 @@ export const EbookBanner: React.FC = () => {
                         onChange={(e) => setCountryCode(e.target.value)}
                         className="bg-slate-100 px-2 py-2 text-xs text-slate-700 font-medium outline-none border-r border-slate-200 cursor-pointer"
                       >
-                        <option value="+92">🇵🇰 +92</option>
                         <option value="+1">🇺🇸 +1</option>
+                        <option value="+92">🇵🇰 +92</option>
                         <option value="+44">🇬🇧 +44</option>
                         <option value="+61">🇦🇺 +61</option>
                         <option value="+971">🇦🇪 +971</option>
@@ -203,7 +203,7 @@ export const EbookBanner: React.FC = () => {
                         type="tel"
                         value={mobileNumber}
                         onChange={(e) => setMobileNumber(e.target.value)}
-                        placeholder="337 7465790"
+                        placeholder="469-648-8298"
                         className="flex-1 px-3 py-2 text-xs text-[#293434] outline-none"
                       />
                     </div>
