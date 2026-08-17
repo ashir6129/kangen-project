@@ -49,7 +49,7 @@ const INITIAL_COMMENTS: Comment[] = [
     name: 'Chef David Thorne',
     email: 'david.thorne@bistro.com',
     date: 'Dec 19, 2025',
-    text: '★ ★ ★ ★ ★ Cooking rice, quinoa, and vegetable stocks with 9.5 pH Kangen Water makes grains noticeably fluffier and locks in rich natural aromatics. Shahina Sajid made machine ordering effortless!',
+    text: '★ ★ ★ ★ ★ Cooking rice, quinoa, and vegetable stocks with 9.5 pH Kangen Water makes grains noticeably fluffier and locks in rich natural aromatics. Our distributor made machine ordering effortless!',
     likes: 11,
     avatarBg: 'bg-[#47a295]',
   },
@@ -516,18 +516,16 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
               <div className="w-24 h-24 rounded-full border-2 border-[#87b076] mx-auto overflow-hidden shadow">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
-                  alt="Shahina Sajid"
+                  alt="Enagic® Distributor"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h4 className="font-serif font-bold text-base text-[#333333]">
-                Shahina Sajid 6A8-6
+                Enagic® Distributor 6A8-6
               </h4>
               <p className="text-xs text-slate-500 leading-tight">
                 Enagic® International Distributor
               </p>
-              <p className="text-xs text-slate-700 font-mono font-semibold">
-                📱 469-648-8298
               </p>
               <div>
                 <button

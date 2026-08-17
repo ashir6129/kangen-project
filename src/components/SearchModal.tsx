@@ -397,7 +397,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
         {/* Footer info */}
         <div className="p-3 bg-[#3E4C4C] text-[#EDEEE7] border-t border-[#7AD1C4]/20 flex items-center justify-between text-xs px-6">
-          <span className="text-slate-300 font-medium">Serviced by <strong className="text-[#7AD1C4]">Shahina Sajid 6A8-6</strong></span>
+          <span className="text-slate-300 font-medium">Serviced by <strong className="text-[#7AD1C4]">Enagic® Distributor 6A8-6</strong></span>
           <button
             onClick={onClose}
             className="px-4 py-1 bg-white/10 text-white rounded-full hover:bg-white/20 transition cursor-pointer"

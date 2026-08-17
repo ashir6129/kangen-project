@@ -50,7 +50,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
             <Calendar className="w-6 h-6 text-[#7AD1C4]" />
             <div>
               <h2 className="font-serif text-xl sm:text-2xl font-bold">Schedule Your Free Consultation</h2>
-              <p className="text-xs text-[#7AD1C4] font-sans font-medium">Serviced worldwide by Shahina Sajid 6A8-6</p>
+              <p className="text-xs text-[#7AD1C4] font-sans font-medium">Serviced worldwide by Enagic® Distributor 6A8-6</p>
             </div>
           </div>
           <button
@@ -68,7 +68,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
               <CheckCircle2 className="w-16 h-16 text-[#7AD1C4] mx-auto animate-bounce" />
               <h3 className="font-serif text-2xl font-bold text-[#293434]">Consultation Scheduled!</h3>
               <p className="text-slate-600 text-xs sm:text-sm font-sans max-w-md mx-auto leading-relaxed">
-                Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your mentor meeting with <span className="font-semibold text-[#47a295]">Shahina Sajid 6A8-6</span> has been reserved for <span className="font-semibold text-slate-800">{formData.preferredDate || 'tomorrow'} at {formData.preferredTime}</span> ({formData.timezone}). Confirmation details have been sent to your email.
+                Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your mentor meeting has been reserved for <span className="font-semibold text-slate-800">{formData.preferredDate || 'tomorrow'} at {formData.preferredTime}</span> ({formData.timezone}). Confirmation details have been sent to your email.
               </p>
               <button
                 onClick={() => {
@@ -125,7 +125,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="469-648-8298"
+                      placeholder="e.g. 555-000-0000"
                       className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-slate-50/50"
                     />
                   </div>

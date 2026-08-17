@@ -203,7 +203,7 @@ export const EbookBanner: React.FC = () => {
                         type="tel"
                         value={mobileNumber}
                         onChange={(e) => setMobileNumber(e.target.value)}
-                        placeholder="469-648-8298"
+                        placeholder="e.g. 555-000-0000"
                         className="flex-1 px-3 py-2 text-xs text-[#293434] outline-none"
                       />
                     </div>

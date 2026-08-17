@@ -371,18 +371,16 @@ export const GreenerGardenDetail: React.FC<GreenerGardenDetailProps> = ({
               <div className="w-24 h-24 rounded-full border-4 border-[#7AD1C4] mx-auto overflow-hidden shadow">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
-                  alt="Shahina Sajid"
+                  alt="Enagic® Distributor"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h4 className="font-serif font-bold text-base text-[#293434]">
-                Shahina Sajid 6A8-6
+                Enagic® Distributor 6A8-6
               </h4>
               <p className="text-xs text-[#47a295] font-bold leading-tight">
                 Enagic® International Distributor
               </p>
-              <p className="text-xs text-slate-700 font-mono font-bold">
-                📱 469-648-8298
               </p>
               <div>
                 <button

@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="animate-marquee whitespace-nowrap flex items-center justify-around gap-10 font-mono tracking-wide">
           <span className="flex items-center gap-2"><Sparkles className="w-3.5 h-3.5 text-[#7AD1C4]" /> Certified OEM Enagic® Ionizers</span>
           <span className="text-[#7AD1C4]">•</span>
-          <span>Free Hydration Consultation: Shahina Sajid (469-648-8298)</span>
+          <span>Free Hydration Consultation</span>
           <span className="text-[#7AD1C4]">•</span>
           <span>Pure Kangen Water® pH 8.5 - 9.5</span>
           <span className="text-[#7AD1C4]">•</span>
@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Loop repeat */}
           <span className="flex items-center gap-2"><Sparkles className="w-3.5 h-3.5 text-[#7AD1C4]" /> Certified OEM Enagic® Ionizers</span>
           <span className="text-[#7AD1C4]">•</span>
-          <span>Free Hydration Consultation: Shahina Sajid (469-648-8298)</span>
+          <span>Free Hydration Consultation</span>
           <span className="text-[#7AD1C4]">•</span>
           <span>Pure Kangen Water® pH 8.5 - 9.5</span>
           <span className="text-[#7AD1C4]">•</span>
@@ -310,8 +310,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Mobile Footer Info */}
             <div className="mt-auto p-5 bg-[#293434] border-t border-[#576a6a]/40 text-center space-y-2.5">
-              <p className="text-xs text-slate-300">Serviced by <span className="font-semibold text-[#7AD1C4]">Shahina Sajid 6A8-6</span></p>
-              <p className="text-xs text-[#7AD1C4] font-mono font-bold">📱 469-648-8298</p>
+              <p className="text-xs text-slate-300">Serviced by <span className="font-semibold text-[#7AD1C4]">Enagic® Distributor 6A8-6</span></p>
+              <p className="text-xs text-[#7AD1C4] font-mono font-bold">📱 Contact Us</p>
               <button
                 onClick={() => { onOpenConsultation(); setMobileMenuOpen(false); }}
                 className="w-full py-2.5 bg-[#7AD1C4] text-[#293434] text-xs font-bold rounded-full uppercase tracking-wider shadow-md hover:bg-[#61c2b5] transition cursor-pointer"

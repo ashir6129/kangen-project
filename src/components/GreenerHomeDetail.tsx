@@ -48,7 +48,7 @@ const INITIAL_COMMENTS: Comment[] = [
     name: 'Marcus Sterling',
     email: 'marcus.sterling@outlook.com',
     date: 'Dec 27, 2025',
-    text: '★ ★ ★ ★ ★ We use 2.5 pH Strong Acidic Water on cutting boards after chopping raw meat. Gives us total peace of mind without chemical bleach smells. Shahina Sajid guided us on how to use it safely!',
+    text: '★ ★ ★ ★ ★ We use 2.5 pH Strong Acidic Water on cutting boards after chopping raw meat. Gives us total peace of mind without chemical bleach smells. Our distributor guided us on how to use it safely!',
     likes: 9,
     avatarBg: 'bg-[#47a295]',
   },
@@ -66,7 +66,7 @@ const INITIAL_COMMENTS: Comment[] = [
     name: 'Navpreet Singh',
     email: 'navpreet.singh@techcorp.com',
     date: 'Oct 04, 2025',
-    text: '★ ★ ★ ★ ★ I carry a small mist bottle of 2.5 pH Strong Acidic Water everywhere — for hand hygiene, desk cleaning, and sanitizing touchpoints. Shahina Sajid provided top-tier support during machine setup!',
+    text: '★ ★ ★ ★ ★ I carry a small mist bottle of 2.5 pH Strong Acidic Water everywhere — for hand hygiene, desk cleaning, and sanitizing touchpoints. Our distributor provided top-tier support during machine setup!',
     likes: 8,
     avatarBg: 'bg-[#47a295]',
   },
@@ -532,18 +532,16 @@ export const GreenerHomeDetail: React.FC<GreenerHomeDetailProps> = ({
               <div className="w-24 h-24 rounded-full border-4 border-[#7AD1C4] mx-auto overflow-hidden shadow">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
-                  alt="Shahina Sajid"
+                  alt="Enagic® Distributor"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h4 className="font-serif font-bold text-base text-[#293434]">
-                Shahina Sajid 6A8-6
+                Enagic® Distributor 6A8-6
               </h4>
               <p className="text-xs text-[#47a295] font-bold leading-tight">
                 Enagic® International Distributor
               </p>
-              <p className="text-xs text-slate-700 font-mono font-bold">
-                📱 469-648-8298
               </p>
               <div>
                 <button

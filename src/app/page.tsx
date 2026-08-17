@@ -424,11 +424,10 @@ export default function Home() {
               <div className="space-y-8">
                 <div className="text-center p-6 border border-[#3E4C4C]/15 rounded-2xl bg-white space-y-2.5 shadow-md">
                   <div className="w-24 h-24 rounded-full border-4 border-[#7AD1C4] mx-auto overflow-hidden shadow">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Shahina Sajid" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Enagic® Distributor" className="w-full h-full object-cover" />
                   </div>
-                  <h4 className="font-serif font-bold text-base text-[#293434]">Shahina Sajid 6A8-6</h4>
+                  <h4 className="font-serif font-bold text-base text-[#293434]">Enagic® Distributor 6A8-6</h4>
                   <p className="text-[11px] text-[#47a295] font-bold">Enagic® International Distributor</p>
-                  <p className="text-[11px] text-slate-700 font-mono font-bold">469-648-8298</p>
                 </div>
               </div>
 
@@ -551,7 +550,7 @@ export default function Home() {
             Enagic® International 6A8-6 Distributor
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900">
-            {activePage === 'certifications' ? 'Enagic® WQA Gold Seal Certifications' : 'Shahina Sajid 6A8-6'}
+            {activePage === 'certifications' ? 'Enagic® WQA Gold Seal Certifications' : 'Enagic® Distributor 6A8-6'}
           </h1>
           <p className="text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed">
             Authorized Enagic® Distributor serving clients worldwide. Providing high-performance Kangen Water® ionizers, home mineral spa units, and organic Okinawa Ukon supplements.

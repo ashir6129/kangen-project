@@ -254,7 +254,7 @@ export const CartDrawer: React.FC = () => {
                     required
                     value={checkoutData.phone}
                     onChange={(e) => setCheckoutData({ ...checkoutData, phone: e.target.value })}
-                    placeholder="469-648-8298"
+                    placeholder="e.g. 555-000-0000"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-[#7AD1C4] outline-none bg-slate-50/50"
                   />
                 </div>

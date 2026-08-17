@@ -54,20 +54,20 @@ export const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({ isOpen, on
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 font-sans">
-      <div className="relative w-full max-w-5xl bg-[#3E4C4C] text-[#EDEEE7] rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] border border-[#7AD1C4]/30">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 font-sans">
+      <div className="relative w-full max-w-5xl bg-slate-900 text-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         {/* Modal Header */}
-        <div className="bg-[#293434] px-6 py-4 flex items-center justify-between border-b border-[#7AD1C4]/30">
+        <div className="bg-slate-800 px-6 py-4 flex items-center justify-between border-b border-slate-700">
           <div className="flex items-center gap-3">
-            <Video className="w-6 h-6 text-[#7AD1C4]" />
+            <Video className="w-6 h-6 text-emerald-400" />
             <div>
               <h2 className="font-serif text-xl sm:text-2xl font-bold text-white">Kangen Water® Video Library</h2>
-              <p className="text-xs text-[#7AD1C4] font-medium">Watch live demonstrations, pH experiments & machine tutorials</p>
+              <p className="text-xs text-slate-400">Watch live demonstrations, pH experiments & machine tutorials</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full hover:bg-white/10 text-white transition focus:outline-none cursor-pointer"
+            className="p-1.5 rounded-full hover:bg-slate-700 text-slate-300 transition focus:outline-none cursor-pointer"
             aria-label="Close"
           >
             <X className="w-6 h-6" />
@@ -75,9 +75,9 @@ export const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({ isOpen, on
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 overflow-y-auto space-y-6 flex-1 bg-[#293434]/90">
+        <div className="p-6 overflow-y-auto space-y-6 flex-1">
           {/* Main Video Player Container */}
-          <div className="relative w-full rounded-xl overflow-hidden bg-black aspect-16/9 shadow-lg border border-[#7AD1C4]/20">
+          <div className="relative w-full rounded-xl overflow-hidden bg-black aspect-16/9 shadow-lg border border-slate-800">
             {isPlaying ? (
               <iframe
                 src={`${selectedVideo.embedUrl}?autoplay=1`}
@@ -93,23 +93,23 @@ export const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({ isOpen, on
                   alt={selectedVideo.title}
                   className="w-full h-full object-cover opacity-80"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-between p-6">
-                  <span className="inline-block px-3 py-1 bg-[#7AD1C4] text-[#293434] text-xs font-bold rounded-full self-start shadow-md">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-between p-6">
+                  <span className="inline-block px-3 py-1 bg-emerald-600 text-white text-xs font-semibold rounded-full self-start">
                     {selectedVideo.category} ({selectedVideo.duration})
                   </span>
                   <div className="space-y-2">
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold drop-shadow-md text-white">
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold drop-shadow-md">
                       {selectedVideo.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-200 max-w-2xl drop-shadow font-medium">
+                    <p className="text-xs sm:text-sm text-slate-300 max-w-2xl drop-shadow">
                       {selectedVideo.desc}
                     </p>
                     <div className="pt-2">
                       <button
                         onClick={() => setIsPlaying(true)}
-                        className="inline-flex items-center gap-2 bg-[#7AD1C4] hover:bg-[#61c2b5] text-[#293434] px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition shadow-lg cursor-pointer hover:scale-103"
+                        className="inline-flex items-center gap-2 bg-[#87b076] hover:bg-[#759e64] text-white px-6 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider transition shadow-lg cursor-pointer"
                       >
-                        <Play className="w-4 h-4 fill-[#293434]" /> Watch Demonstration Now
+                        <Play className="w-4 h-4 fill-white" /> Watch Demonstration Now
                       </button>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({ isOpen, on
 
           {/* Video List Selector Grid */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#7AD1C4]">Select Video:</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Select Video:</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {VIDEOS.map((vid) => {
                 const isActive = vid.id === selectedVideo.id;
@@ -131,11 +131,10 @@ export const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({ isOpen, on
                       setSelectedVideo(vid);
                       setIsPlaying(false);
                     }}
-                    className={`flex items-center gap-4 p-3 rounded-xl border text-left transition cursor-pointer ${
-                      isActive
-                        ? 'bg-[#3E4C4C] border-[#7AD1C4] ring-2 ring-[#7AD1C4]/50'
-                        : 'bg-[#1e2626]/80 border-slate-700 hover:bg-[#3E4C4C]/60'
-                    }`}
+                    className={`flex items-center gap-4 p-3 rounded-xl border text-left transition cursor-pointer ${isActive
+                      ? 'bg-slate-800 border-emerald-500 ring-2 ring-emerald-500/50'
+                      : 'bg-slate-950/60 border-slate-800 hover:bg-slate-800/60'
+                      }`}
                   >
                     <div className="relative w-24 h-16 rounded-lg overflow-hidden shrink-0 border border-slate-700">
                       <img src={vid.thumbnail} alt={vid.title} className="w-full h-full object-cover" />
@@ -145,7 +144,7 @@ export const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({ isOpen, on
                     </div>
                     <div className="space-y-1 min-w-0">
                       <div className="text-xs font-semibold text-white truncate">{vid.title}</div>
-                      <div className="text-[11px] text-slate-300 flex items-center gap-2">
+                      <div className="text-[11px] text-slate-400 flex items-center gap-2">
                         <span>{vid.category}</span>
                         <span>•</span>
                         <span>{vid.duration}</span>
@@ -159,11 +158,11 @@ export const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({ isOpen, on
         </div>
 
         {/* Modal Footer */}
-        <div className="bg-[#293434] px-6 py-3 border-t border-[#7AD1C4]/20 flex items-center justify-between text-xs text-slate-300">
-          <span>Serviced by <strong className="text-[#7AD1C4]">Shahina Sajid 6A8-6</strong> • Enagic® Independent Distributor</span>
+        <div className="bg-slate-800 px-6 py-3 border-t border-slate-700 flex items-center justify-between text-xs text-slate-400">
+          <span>Serviced by Cynthia Briganti 6A8-6 • Enagic® Independent Distributor</span>
           <button
             onClick={onClose}
-            className="px-5 py-1.5 bg-[#3E4C4C] text-white rounded-full hover:bg-[#576a6a] transition cursor-pointer font-semibold border border-[#7AD1C4]/30"
+            className="px-5 py-1.5 bg-slate-700 text-white rounded-full hover:bg-slate-600 transition cursor-pointer"
           >
             Close Library
           </button>

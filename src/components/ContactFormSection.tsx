@@ -54,13 +54,13 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
               <div className="w-28 h-28 rounded-full border-4 border-[#7AD1C4] mx-auto overflow-hidden shadow-md">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
-                  alt="Shahina Sajid"
+                  alt="Enagic® Distributor"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
                 <h3 className="font-serif font-bold text-xl text-[#293434]">
-                  Shahina Sajid
+                  Your Enagic® Distributor
                 </h3>
                 <p className="text-xs text-[#47a295] font-bold mt-0.5">
                   Enagic® Independent Distributor
@@ -74,8 +74,8 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
                   </div>
                   <div>
                     <span className="block text-[10px] text-slate-400 font-bold uppercase">Direct Phone</span>
-                    <a href="tel:4696488298" className="font-mono font-bold text-[#293434] hover:text-[#7AD1C4] transition">
-                      469-648-8298
+                    <a href="#" className="font-mono font-bold text-[#293434] hover:text-[#7AD1C4] transition">
+                      Contact via Phone
                     </a>
                   </div>
                 </div>
@@ -86,8 +86,8 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
                   </div>
                   <div>
                     <span className="block text-[10px] text-slate-400 font-bold uppercase">Direct Email</span>
-                    <a href="mailto:Shanz.javed@gmail.com" className="font-sans font-bold text-[#293434] hover:text-[#7AD1C4] transition break-all">
-                      Shanz.javed@gmail.com
+                    <a href="#" className="font-sans font-bold text-[#293434] hover:text-[#7AD1C4] transition break-all">
+                      Contact via Email
                     </a>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
             {/* Quick Benefits Note */}
             <div className="p-5 bg-[#3E4C4C] text-[#EDEEE7] border border-[#7AD1C4]/30 rounded-2xl space-y-2.5 text-xs shadow-md">
               <h4 className="font-serif font-bold text-[#7AD1C4] text-sm">
-                Why Contact Shahina Sajid?
+                Why Contact Us?
               </h4>
               <ul className="space-y-2 text-slate-200 font-medium">
                 <li className="flex items-center gap-2">
@@ -136,7 +136,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
                   Send a Direct Message
                 </h2>
                 <p className="text-slate-600 text-xs sm:text-sm mt-1 font-medium">
-                  Fill out the form below to reach Shahina Sajid directly. We are happy to assist with any questions.
+                   Fill out the form below to reach us directly. We are happy to assist with any questions.
                 </p>
               </div>
 
@@ -145,7 +145,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
                   <CheckCircle2 className="w-16 h-16 text-[#7AD1C4] mx-auto animate-bounce" />
                   <h3 className="font-serif text-2xl font-bold text-[#293434]">Message Received!</h3>
                   <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your message regarding <span className="font-semibold text-[#3E4C4C]">&quot;{formData.subject}&quot;</span> has been sent to <span className="font-semibold text-slate-900">Shahina Sajid</span>. We will follow up via {formData.preferredMethod === 'phone' ? 'phone' : 'email'} at <span className="font-semibold text-slate-900">{formData.email}</span> shortly.
+                    Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your message regarding <span className="font-semibold text-[#3E4C4C]">&quot;{formData.subject}&quot;</span> has been sent to our team. We will follow up via {formData.preferredMethod === 'phone' ? 'phone' : 'email'} at <span className="font-semibold text-slate-900">{formData.email}</span> shortly.
                   </p>
                   <button
                     onClick={() => {
@@ -216,7 +216,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
                           type="tel"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="e.g. 469-648-8298"
+                          placeholder="e.g. 555-000-0000"
                           className="w-full pl-10 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#7AD1C4] text-xs bg-slate-50/50"
                         />
                       </div>
