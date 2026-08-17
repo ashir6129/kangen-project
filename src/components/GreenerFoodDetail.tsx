@@ -526,7 +526,6 @@ export const GreenerFoodDetail: React.FC<GreenerFoodDetailProps> = ({
               <p className="text-xs text-slate-500 leading-tight">
                 Enagic® International Distributor
               </p>
-              </p>
               <div>
                 <button
                   onClick={() => onOpenConsultation?.()}

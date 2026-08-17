@@ -441,7 +441,6 @@ export const GreenerBeautyDetail: React.FC<GreenerBeautyDetailProps> = ({
               <p className="text-xs text-[#47a295] font-bold leading-tight">
                 Enagic® International Distributor
               </p>
-              </p>
               <div>
                 <button
                   onClick={() => onOpenConsultation?.()}
